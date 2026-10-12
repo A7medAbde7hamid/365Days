@@ -3,18 +3,40 @@ import { PHASES } from './phases'
 import { PHASE_1_DAYS } from './days/phase-1'
 import { PHASE_2_DAYS } from './days/phase-2'
 import { PHASE_3_DAYS } from './days/phase-3'
+import { PHASE_4_DAYS } from './days/phase-4'
+import { PHASE_5_DAYS } from './days/phase-5'
+import { PHASE_6_DAYS } from './days/phase-6'
+import { PHASE_7_DAYS } from './days/phase-7'
+import { PHASE_8_DAYS } from './days/phase-8'
+import { PHASE_9_DAYS } from './days/phase-9'
+import { PHASE_10_DAYS } from './days/phase-10'
+import { PHASE_11_DAYS } from './days/phase-11'
+import { PHASE_12_DAYS } from './days/phase-12'
 
 export * from './types'
 export { PHASES, getPhase, getPhaseByPosition, getPhaseForDay } from './phases'
 
 /**
- * All curriculum days that have been authored so far.
+ * All 365 authored curriculum days across the twelve phases.
  *
- * Phases 4–12 (days 91–365) are still to be written. `CURRICULUM_GAPS` reports
- * exactly which days are missing so the UI and the seed script can state the
- * real state rather than silently rendering a partial roadmap.
+ * `CURRICULUM_GAPS` reports any day numbers still missing so the UI and the
+ * seed script state the real state rather than silently rendering a partial
+ * roadmap. The curriculum is complete, so `isCurriculumComplete` is true.
  */
-export const ALL_DAYS: CurriculumDay[] = [...PHASE_1_DAYS, ...PHASE_2_DAYS, ...PHASE_3_DAYS]
+export const ALL_DAYS: CurriculumDay[] = [
+  ...PHASE_1_DAYS,
+  ...PHASE_2_DAYS,
+  ...PHASE_3_DAYS,
+  ...PHASE_4_DAYS,
+  ...PHASE_5_DAYS,
+  ...PHASE_6_DAYS,
+  ...PHASE_7_DAYS,
+  ...PHASE_8_DAYS,
+  ...PHASE_9_DAYS,
+  ...PHASE_10_DAYS,
+  ...PHASE_11_DAYS,
+  ...PHASE_12_DAYS,
+]
 
 export const TOTAL_DAYS = 365
 

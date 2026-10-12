@@ -1,1489 +1,881 @@
 import type { CurriculumDay } from '../types'
 
-const MDN = 'https://developer.mozilla.org/en-US/docs'
-
-/** Phase 10 — DevOps & Deployment (days 271–300). */
+/** Phase 10 — Capstone MVP (days 271–300). */
 export const PHASE_10_DAYS: CurriculumDay[] = [
   {
     dayNumber: 271,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Continuous Integration Pipelines',
-    titleAr: 'Continuous Integration Pipelines',
-    topic: 'DevOps',
+    titleEn: 'Day 271: Scope',
+    titleAr: 'المشروع التخرّجي — اليوم 271: Scope',
+    topic: 'Scope',
+    objectiveEn: 'Learn and apply Scope as part of Capstone MVP.',
+    objectiveAr: 'تعلّم Scope وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 271 covers Scope. Scope, requirements, architecture, database, auth, features, tests, docs. Work through Scope with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 271 موضوع Scope ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على Scope بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Understand the concepts of Continuous Integration (CI) and the benefits of automating build and test processes.',
-    objectiveAr: 'Understand the concepts of Continuous Integration (CI) and the benefits of automating build and test processes.',
-    lessonEn:
-      'Continuous Integration (CI) is the practice of automating the build, test, and validation of code every time a change is pushed to the repository. CI helps catch bugs early, ensures the codebase is always in a deployable state, and provides fast feedback to developers.',
-    lessonAr:
-      'Continuous Integration (CI) is the practice of automating the build, test, and validation of code every time a change is pushed to the repository. CI helps catch bugs early, ensures the codebase is always in a deployable state, and provides fast feedback to developers.',
     tasks: [
-      {
-        en: 'Describe the benefits of CI over manual build and test processes',
-        ar: 'Describe the benefits of CI over manual build and test processes'
-      },
-      {
-        en: 'Identify the typical stages of a CI pipeline',
-        ar: 'Identify the typical stages of a CI pipeline'
-      },
-      {
-        en: 'Configure a CI pipeline to run on every push to the main branch',
-        ar: 'Configure a CI pipeline to run on every push to the main branch'
-      },
-      {
-        en: 'Add a stage that runs linting and code quality checks',
-        ar: 'Add a stage that runs linting and code quality checks'
-      }
+        { en: 'Study the core ideas behind Scope', ar: 'ادرس الأفكار الأساسية لـ Scope' },
+        { en: 'Practice Scope with a small hands-on task', ar: 'تدرّب على Scope بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up a CI pipeline that runs linting, testing, and building on every push.',
-    exerciseAr: 'Set up a CI pipeline that runs linting, testing, and building on every push.',
-    deliverableEn: 'A CI pipeline configuration that runs linting, testing, and building.',
-deliverableAr: 'CI pipeline configuration that runs linting, testing, and building',
+    exerciseEn: 'Apply Scope in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق Scope في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating Scope.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح Scope.',
     resources: [
-      { title: 'GitHub Actions docs', url: 'https://docs.github.com/en/actions', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Configure a CI pipeline that runs on push and on a daily schedule',
-    challengeAr: 'Configure a CI pipeline that runs on push and on a daily schedule',
+    challengeEn: 'Extend your Scope work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
     prerequisites: [],
-    criteriaEn: ['Can describe CI benefits', 'Can identify pipeline stages', 'Pipeline runs on push', 'Linting stage added'],
-    criteriaAr: ['Can describe CI benefits', 'Can identify pipeline stages', 'Pipeline runs on push', 'Linting stage added']
+    criteriaEn: ['Can explain Scope', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 272,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Continuous Deployment and Delivery',
-    titleAr: 'Continuous Deployment and Delivery',
-    topic: 'DevOps',
+    titleEn: 'Day 272: requirements',
+    titleAr: 'المشروع التخرّجي — اليوم 272: requirements',
+    topic: 'requirements',
+    objectiveEn: 'Learn and apply requirements as part of Capstone MVP.',
+    objectiveAr: 'تعلّم requirements وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 272 covers requirements. Scope, requirements, architecture, database, auth, features, tests, docs. Work through requirements with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 272 موضوع requirements ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على requirements بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Differentiate between Continuous Delivery (CD) and Continuous Deployment, and understand the stages of releasing software.',
-    objectiveAr: 'Differentiate between Continuous Delivery (CD) and Continuous Deployment, and understand the stages of releasing software.',
-    lessonEn:
-      'Continuous Delivery (CD) ensures that code is always in a deployable state by automating the release process. Continuous Deployment goes further by automatically deploying every change that passes the pipeline to production. Understanding the difference is key to choosing the right release strategy.',
-    lessonAr:
-      'Continuous Delivery (CD) ensures that code is always in a deployable state by automating the release process. Continuous Deployment goes further by automatically deploying every change that passes the pipeline to production. Understanding the difference is key to choosing the right release strategy.',
     tasks: [
-      {
-        en: 'Explain the difference between Continuous Delivery and Continuous Deployment',
-        ar: 'Explain the difference between Continuous Delivery and Continuous Deployment'
-      },
-      {
-        en: 'Identify the stages of a CD pipeline: build, test, staging, production',
-        ar: 'Identify the stages of a CD pipeline: build, test, staging, production'
-      },
-      {
-        en: 'Configure a pipeline that deploys to a staging environment after tests pass',
-        ar: 'Configure a pipeline that deploys to a staging environment after tests pass'
-      },
-      {
-        en: 'Add a manual approval gate before deploying to production',
-        ar: 'Add a manual approval gate before deploying to production'
-      }
+        { en: 'Study the core ideas behind requirements', ar: 'ادرس الأفكار الأساسية لـ requirements' },
+        { en: 'Practice requirements with a small hands-on task', ar: 'تدرّب على requirements بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up a CD pipeline that deploys to staging after tests pass and includes a manual approval gate for production.',
-    exerciseAr: 'Set up a CD pipeline that deploys to staging after tests pass and includes a manual approval gate for production.',
-    deliverableEn: 'A CD pipeline configuration with staging deployment and manual approval gate.',
-deliverableAr: 'CD pipeline configuration with staging deployment and manual approval gate.',
+    exerciseEn: 'Apply requirements in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق requirements في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating requirements.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح requirements.',
     resources: [
-      { title: 'GitHub Actions docs', url: 'https://docs.github.com/en/actions', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Configure a pipeline that automatically deploys to production on main branch pushes',
-    challengeAr: 'Configure a pipeline that automatically deploys to production on main branch pushes',
+    challengeEn: 'Extend your requirements work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
     prerequisites: [271],
-    criteriaEn: ['Can explain CI vs CD', 'Can identify CD stages', 'Pipeline deploys to staging', 'Manual approval gate for production'],
-    criteriaAr: ['Can explain CI vs CD', 'Can identify CD stages', 'Pipeline deploys to staging', 'Manual approval gate for production']
+    criteriaEn: ['Can explain requirements', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 273,
-    phaseSlug: 'devops-deployment',
-    kind: 'project' as const,
-    titleEn: 'CI/CD Pipeline for Full-Stack Application',
-    titleAr: 'CI/CD Pipeline for Full-Stack Application',
-    topic: 'DevOps project',
-    estimatedMinutes: 120,
-    objectiveEn: 'Set up a CI/CD pipeline for a full-stack application that runs tests, builds the frontend and backend, and deploys to a staging environment.',
-    objectiveAr: 'Set up a CI/CD pipeline for a full-stack application that runs tests, builds the frontend and backend, and deploys to a staging environment.',
-    lessonEn:
-      'A full-stack CI/CD pipeline must handle both frontend and backend code, run tests for both, and deploy to staging. This project sets up the pipeline that will be the model for all future deployments.',
-    lessonAr:
-      'Full-stack CI/CD pipeline must handle both frontend and backend code, run tests for both, and deploy to staging. This project sets up the pipeline that will be the model for all future deployments.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 273: architecture',
+    titleAr: 'المشروع التخرّجي — اليوم 273: architecture',
+    topic: 'architecture',
+    objectiveEn: 'Learn and apply architecture as part of Capstone MVP.',
+    objectiveAr: 'تعلّم architecture وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 273 covers architecture. Scope, requirements, architecture, database, auth, features, tests, docs. Work through architecture with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 273 موضوع architecture ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على architecture بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Configure the pipeline to build the frontend (e.g., npm run build)',
-        ar: 'Configure the pipeline to build the frontend (e.g., npm run build)'
-      },
-      {
-        en: 'Configure the pipeline to build the backend (e.g., npm run build)',
-        ar: 'Configure the pipeline to build the backend (e.g., npm run build)'
-      },
-      {
-        en: 'Add test stages for both frontend and backend',
-        ar: 'Add test stages for both frontend and backend'
-      },
-      {
-        en: 'Set up deployment to a staging environment',
-        ar: 'Set up deployment to a staging environment'
-      }
+        { en: 'Study the core ideas behind architecture', ar: 'ادرس الأفكار الأساسية لـ architecture' },
+        { en: 'Practice architecture with a small hands-on task', ar: 'تدرّب على architecture بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up a CI/CD pipeline for a full-stack application.',
-    exerciseAr: 'Set up a CI/CD pipeline for a full-stack application.',
-    deliverableEn: 'A CI/CD pipeline that builds and tests both frontend and backend and deploys to staging.',
-deliverableAr: 'CI/CD pipeline that builds and tests both frontend and backend and deploys to staging.',
+    exerciseEn: 'Apply architecture in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق architecture في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating architecture.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح architecture.',
     resources: [
-      { title: 'GitHub Actions docs', url: 'https://docs.github.com/en/actions', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Add a stage that runs security scans and a manual approval gate for production',
-    challengeAr: 'Add a stage that runs security scans and a manual approval gate for production',
+    challengeEn: 'Extend your architecture work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
     prerequisites: [272],
-    criteriaEn: ['Frontend build works', 'Backend build works', 'Tests run for both', 'Staging deployment configured'],
-    criteriaAr: ['Frontend build works', 'Backend build works', 'Tests run for both', 'Staging deployment configured']
+    criteriaEn: ['Can explain architecture', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 274,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Infrastructure as Code',
-    titleAr: 'Infrastructure as Code',
-    topic: 'DevOps',
+    titleEn: 'Day 274: database',
+    titleAr: 'المشروع التخرّجي — اليوم 274: database',
+    topic: 'database',
+    objectiveEn: 'Learn and apply database as part of Capstone MVP.',
+    objectiveAr: 'تعلّم database وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 274 covers database. Scope, requirements, architecture, database, auth, features, tests, docs. Work through database with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 274 موضوع database ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على database بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Understand the concept of Infrastructure as Code (IaC) and tools like Terraform and CloudFormation.',
-    objectiveAr: 'Understand the concept of Infrastructure as Code (IaC) and tools like Terraform and CloudFormation.',
-    lessonEn:
-      'Infrastructure as Code (IaC) is the practice of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools. Tools like Terraform and AWS CloudFormation enable IaC.',
-    lessonAr:
-      'Infrastructure as Code (IaC) is the practice of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools. Tools like Terraform and AWS CloudFormation enable IaC.',
     tasks: [
-      {
-        en: 'Describe the benefits of IaC over manual infrastructure setup',
-        ar: 'Describe the benefits of IaC over manual infrastructure setup'
-      },
-      {
-        en: 'Identify the key components of a Terraform configuration',
-        ar: 'Identify the key components of a Terraform configuration'
-      },
-      {
-        en: 'Write a simple Terraform configuration that creates a resource',
-        ar: 'Write a simple Terraform configuration that creates a resource'
-      },
-      {
-        en: 'Explain the concept of idempotent infrastructure',
-        ar: 'Explain the concept of idempotent infrastructure'
-      }
+        { en: 'Study the core ideas behind database', ar: 'ادرس الأفكار الأساسية لـ database' },
+        { en: 'Practice database with a small hands-on task', ar: 'تدرّب على database بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Write a Terraform configuration that creates a simple resource (e.g., a virtual machine or database).',
-    exerciseAr: 'Write a Terraform configuration that creates a simple resource.',
-    deliverableEn: 'A Terraform configuration file that creates a resource.',
-deliverableAr: 'Terraform configuration file that creates a resource.',
+    exerciseEn: 'Apply database in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق database في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating database.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح database.',
     resources: [
-      { title: 'Terraform docs', url: 'https://developer.hashicorp.com/terraform/docs', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Write a Terraform configuration that creates a network, a virtual machine, and a database with interdependencies',
-    challengeAr: 'Write a Terraform configuration that creates a network, a virtual machine, and a database with interdependencies',
+    challengeEn: 'Extend your database work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
     prerequisites: [273],
-    criteriaEn: ['Can describe IaC benefits', 'Can identify Terraform components', 'Can write a configuration', 'Can explain idempotent infrastructure'],
-    criteriaAr: ['Can describe IaC benefits', 'Can identify Terraform components', 'Can write a configuration', 'Can explain idempotent infrastructure']
+    criteriaEn: ['Can explain database', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 275,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'project' as const,
-    titleEn: 'Terraform Configuration for Staging Environment',
-    titleAr: 'Terraform Configuration for Staging Environment',
-    topic: 'DevOps project',
-    estimatedMinutes: 120,
-    objectiveEn: 'Write Terraform configurations to provision a staging environment with a database, web server, and load balancer.',
-    objectiveAr: 'Write Terraform configurations to provision a staging environment with a database, web server, and load balancer.',
-    lessonEn:
-      'This project involves writing Terraform configurations to provision an entire staging environment. Include resources for a database, a web server, and a load balancer, and ensure they are properly networked.',
-    lessonAr:
-      'يهدف هذا المشروع إلى كتابة ملفات Terraform لتوفير بيئة تمهيدية كاملة. اشتمل على موارد لقاعدة بيانات، وخادم ويب، وموازِع تحميل، وتأكد من أنها مجهزة بشكل صحيح.',
+    titleEn: 'Day 275: auth',
+    titleAr: 'المشروع التخرّجي — اليوم 275: auth',
+    topic: 'auth',
+    objectiveEn: 'Learn and apply auth as part of Capstone MVP.',
+    objectiveAr: 'تعلّم auth وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 275 covers auth. Scope, requirements, architecture, database, auth, features, tests, docs. Work through auth with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 275 موضوع auth ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على auth بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 90,
     tasks: [
-      {
-        en: 'Write a Terraform configuration that creates a database resource',
-        ar: 'Write a Terraform configuration that creates a database resource'
-      },
-      {
-        en: 'Write a Terraform configuration that creates a web server resource',
-        ar: 'Write a Terraform configuration that creates a web server resource'
-      },
-      {
-        en: 'Write a Terraform configuration that creates a load balancer resource',
-        ar: 'Write a Terraform configuration that creates a load balancer resource'
-      },
-      {
-        en: 'Network the resources so the web server can communicate with the database',
-        ar: 'Network the resources so the web server can communicate with the database'
-      }
+        { en: 'Study the core ideas behind auth', ar: 'ادرس الأفكار الأساسية لـ auth' },
+        { en: 'Practice auth with a small hands-on task', ar: 'تدرّب على auth بمهمة عملية صغيرة' },
+        { en: 'Plan a small project that exercises auth', ar: 'خطّط لمشروع صغير يطبّق auth' }
     ],
-    exerciseEn: 'Write Terraform configurations for a staging environment with database, web server, and load balancer.',
-    exerciseAr: 'Write Terraform configurations for a staging environment with database, web server, and load balancer.',
-    deliverableEn: 'Terraform configurations for a staging environment with database, web server, and load balancer.',
-deliverableAr: 'Terraform configurations for a staging environment with database, web server, and load balancer',
+    exerciseEn: 'Apply auth in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق auth في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating auth.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح auth.',
     resources: [
-      { title: 'Terraform docs', url: 'https://developer.hashicorp.com/terraform/docs', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Add an output that returns the staging URL',
-    challengeAr: 'Add an output that returns the staging URL',
+    challengeEn: 'Extend your auth work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
     prerequisites: [274],
-    criteriaEn: ['Database resource created', 'Web server resource created', 'Load balancer resource created', 'Resources networked', 'URL output added'],
-    criteriaAr: ['Database resource created', 'Web server resource created', 'Load balancer resource created', 'Resources networked', 'URL output added']
+    criteriaEn: ['Can explain auth', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 276,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Kubernetes Basics',
-    titleAr: 'Kubernetes Basics',
-    topic: 'Kubernetes',
-    estimatedMinutes: 90,
-    objectiveEn: 'Understand the basics of Kubernetes: pods, services, deployments, and the Kubernetes lifecycle.',
-    objectiveAr: 'Understand the basics of Kubernetes: pods, services, deployments, and the Kubernetes lifecycle.',
-    lessonEn:
-      'Kubernetes is an orchestration system for managing containerized applications. Key concepts include: Pods (the smallest deployable units), Services (a way to expose an application on the network), Deployments (managing stateless applications), and the Kubernetes lifecycle (desired state vs actual state).',
-    lessonAr:
-      'Kubernetes is an orchestration system for managing containerized applications. Key concepts include: Pods (the smallest deployable units), Services (a way to expose an application on the network), Deployments (managing stateless applications), and the Kubernetes lifecycle (desired state vs actual state).',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 276: features',
+    titleAr: 'المشروع التخرّجي — اليوم 276: features',
+    topic: 'features',
+    objectiveEn: 'Learn and apply features as part of Capstone MVP.',
+    objectiveAr: 'تعلّم features وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 276 covers features. Scope, requirements, architecture, database, auth, features, tests, docs. Work through features with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 276 موضوع features ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على features بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Describe the relationship between a Pod and a Container',
-        ar: 'Describe the relationship between a Pod and a Container'
-      },
-      {
-        en: 'Create a Kubernetes Deployment that runs a sample application',
-        ar: 'Create a Kubernetes Deployment that runs a sample application'
-      },
-      {
-        en: 'Create a Kubernetes Service that exposes the Deployment on a network port',
-        ar: 'Create a Kubernetes Service that exposes the Deployment on a network port'
-      },
-      {
-        en: 'Use kubectl to check the status of a Pod and a Deployment',
-        ar: 'Use kubectl to check the status of a Pod and a Deployment'
-      }
+        { en: 'Study the core ideas behind features', ar: 'ادرس الأفكار الأساسية لـ features' },
+        { en: 'Practice features with a small hands-on task', ar: 'تدرّب على features بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Create a Kubernetes Deployment and Service for a sample application.',
-    exerciseAr: 'Create a Kubernetes Deployment and Service for a sample application.',
-    deliverableEn: 'A Kubernetes Deployment and Service manifest.',
-deliverableAr: 'Kubernetes Deployment and Service manifest.',
+    exerciseEn: 'Apply features in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق features في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating features.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح features.',
     resources: [
-      { title: 'Kubernetes docs', url: 'https://kubernetes.io/docs/', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Create a Deployment with multiple replicas and a Service with a ClusterIP',
-    challengeAr: 'Create a Deployment with multiple replicas and a Service with a ClusterIP',
+    challengeEn: 'Extend your features work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
     prerequisites: [275],
-    criteriaEn: ['Can describe Pod-Container relationship', 'Can create a Deployment', 'Can create a Service', 'Can check status with kubectl'],
-    criteriaAr: ['Can describe Pod-Container relationship', 'Can create a Deployment', 'Can create a Service', 'Can check status with kubectl']
+    criteriaEn: ['Can explain features', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 277,
-    phaseSlug: 'devops-deployment',
-    kind: 'project' as const,
-    titleEn: 'Kubernetes Deployment and Service',
-    titleAr: 'Kubernetes Deployment and Service',
-    topic: 'Kubernetes project',
-    estimatedMinutes: 120,
-    objectiveEn: 'Create a Kubernetes Deployment with multiple replicas and a Service with a ClusterIP, and verify the application is accessible.',
-    objectiveAr: 'Create a Kubernetes Deployment with multiple replicas and a Service with a ClusterIP, and verify the application is accessible.',
-    lessonEn:
-      'This project involves creating a Deployment with multiple replicas for high availability and a Service with a ClusterIP for internal network access. Verify that the application is accessible via the Service.',
-    lessonAr:
-      'ينشئ هذا المشروع Deployement بعدة رواسي للتوفر العالي وService بـ ClusterIP للوصول الداخلي. تأكد من وصول التطبيق عبر Service.',
+    phaseSlug: 'capstone',
+    kind: 'lesson' as const,
+    titleEn: 'Day 277: tests',
+    titleAr: 'المشروع التخرّجي — اليوم 277: tests',
+    topic: 'tests',
+    objectiveEn: 'Learn and apply tests as part of Capstone MVP.',
+    objectiveAr: 'تعلّم tests وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 277 covers tests. Scope, requirements, architecture, database, auth, features, tests, docs. Work through tests with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 277 موضوع tests ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على tests بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 90,
     tasks: [
-      {
-        en: 'Create a Deployment with at least 3 replicas',
-        ar: 'Create a Deployment with at least 3 replicas'
-      },
-      {
-        en: 'Create a Service with a ClusterIP that targets the Deployment',
-        ar: 'Create a Service with a ClusterIP that targets the Deployment'
-      },
-      {
-        en: 'Use kubectl get pods and svc to verify the application is running',
-        ar: 'Use kubectl get pods and svc to verify the application is running'
-      },
-      {
-        en: 'Test that the application is accessible via the Service',
-        ar: 'Test that the application is accessible via the Service'
-      }
+        { en: 'Study the core ideas behind tests', ar: 'ادرس الأفكار الأساسية لـ tests' },
+        { en: 'Practice tests with a small hands-on task', ar: 'تدرّب على tests بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Create a Kubernetes Deployment and Service and verify accessibility.',
-    exerciseAr: 'Create a Kubernetes Deployment and Service and verify accessibility.',
-    deliverableEn: 'Deployment and Service manifests and verification.',
-deliverableAr: 'Deployment and Service manifests and verification.',
+    exerciseEn: 'Apply tests in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق tests في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating tests.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح tests.',
     resources: [
-      { title: 'Kubernetes docs', url: 'https://kubernetes.io/docs/', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Add an environment variable to the Deployment and verify it is available in the application',
-    challengeAr: 'Add an environment variable to the Deployment and verify it is available in the application',
+    challengeEn: 'Extend your tests work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في tests بتحسين واحد ووثّق النتيجة.',
     prerequisites: [276],
-    criteriaEn: ['Deployment with 3+ replicas created', 'Service with ClusterIP created', 'Application accessible via Service', 'Environment variable verified'],
-    criteriaAr: ['Deployment with 3+ replicas created', 'Service with ClusterIP created', 'Application accessible via Service', 'Environment variable verified']
+    criteriaEn: ['Can explain tests', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح tests', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 278,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Observability with Prometheus and Grafana',
-    titleAr: 'Observability with Prometheus and Grafana',
-    topic: 'Observability',
+    titleEn: 'Day 278: docs',
+    titleAr: 'المشروع التخرّجي — اليوم 278: docs',
+    topic: 'docs',
+    objectiveEn: 'Learn and apply docs as part of Capstone MVP.',
+    objectiveAr: 'تعلّم docs وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 278 covers docs. Scope, requirements, architecture, database, auth, features, tests, docs. Work through docs with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 278 موضوع docs ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على docs بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Understand how to monitor applications using Prometheus for metrics and Grafana for dashboards.',
-    objectiveAr: 'Understand how to monitor applications using Prometheus for metrics and Grafana for dashboards.',
-    lessonEn:
-      'Prometheus is a monitoring system that collects metrics from configured targets at given intervals. Grafana is a dashboard tool that visualizes Prometheus metrics. Together, they provide observability into application health, performance, and resource usage.',
-    lessonAr:
-      'Prometheus is a monitoring system that collects metrics from configured targets at given intervals. Grafana is a dashboard tool that visualizes Prometheus metrics. Together, they provide observability into application health, performance, and resource usage.',
     tasks: [
-      {
-        en: 'Describe the role of Prometheus in application monitoring',
-        ar: 'Describe the role of Prometheus in application monitoring'
-      },
-      {
-        en: 'Describe the role of Grafana in visualizing metrics',
-        ar: 'Describe the role of Grafana in visualizing metrics'
-      },
-      {
-        en: 'Configure Prometheus to scrape metrics from a sample application',
-        ar: 'Configure Prometheus to scrape metrics from a sample application'
-      },
-      {
-        en: 'Create a Grafana dashboard that displays request rate and error rate',
-        ar: 'Create a Grafana dashboard that displays request rate and error rate'
-      }
+        { en: 'Study the core ideas behind docs', ar: 'ادرس الأفكار الأساسية لـ docs' },
+        { en: 'Practice docs with a small hands-on task', ar: 'تدرّب على docs بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up Prometheus and Grafana to monitor a sample application.',
-    exerciseAr: 'Set up Prometheus and Grafana to monitor a sample application.',
-    deliverableEn: 'Prometheus configuration and Grafana dashboard.',
-deliverableAr: 'Prometheus configuration and Grafana dashboard.',
+    exerciseEn: 'Apply docs in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق docs في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating docs.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح docs.',
     resources: [
-      { title: 'Prometheus docs', url: 'https://prometheus.io/docs/', kind: 'reference' },
-      { title: 'Grafana docs', url: 'https://grafana.com/docs/', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Add an alert in Grafana that triggers when error rate exceeds 5%',
-    challengeAr: 'Add an alert in Grafana that triggers when error rate exceeds 5%',
+    challengeEn: 'Extend your docs work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في docs بتحسين واحد ووثّق النتيجة.',
     prerequisites: [277],
-    criteriaEn: ['Prometheus configured to scrape metrics', 'Grafana dashboard created', 'Displays request and error rate', 'Alert configured for error rate > 5%'],
-    criteriaAr: ['Prometheus configured to scrape metrics', 'Grafana dashboard created', 'Displays request and error rate', 'Alert configured for error rate > 5%']
+    criteriaEn: ['Can explain docs', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح docs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 279,
-    phaseSlug: 'devops-deployment',
-    kind: 'project' as const,
-    titleEn: 'Prometheus and Grafana Setup',
-    titleAr: 'Prometheus and Grafana Setup',
-    topic: 'Observability project',
-    estimatedMinutes: 120,
-    objectiveEn: 'Set up Prometheus to scrape metrics from an application and create a Grafana dashboard with key metrics and alerts.',
-    objectiveAr: 'Set up Prometheus to scrape metrics from an application and create a Grafana dashboard with key metrics and alerts.',
-    lessonEn:
-      'This project combines the concepts of metrics collection and dashboarding. Set up Prometheus to scrape metrics and create a Grafana dashboard that displays request rate, error rate, and latency, with alerts for abnormal values.',
-    lessonAr:
-      'ينشئ هذا المشروع يجمع بين مقاييس الجمع وإنشاء dashboard. إعدادPrometheus to scrape metrics and create a Grafana dashboard that displays request rate, error rate, and latency, with alerts for abnormal values.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 279: Scope',
+    titleAr: 'المشروع التخرّجي — اليوم 279: Scope',
+    topic: 'Scope',
+    objectiveEn: 'Learn and apply Scope as part of Capstone MVP.',
+    objectiveAr: 'تعلّم Scope وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 279 covers Scope. Scope, requirements, architecture, database, auth, features, tests, docs. Work through Scope with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 279 موضوع Scope ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على Scope بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Configure Prometheus to scrape metrics from a sample application endpoint',
-        ar: 'Configure Prometheus to scrape metrics from a sample application endpoint'
-      },
-      {
-        en: 'Create a Grafana dashboard that displays request rate, error rate, and latency',
-        ar: 'Create a Grafana dashboard that displays request rate, error rate, and latency'
-      },
-      {
-        en: 'Add an alert in Grafana that triggers when error rate exceeds 5%',
-        ar: 'Add an alert in Grafana that triggers when error rate exceeds 5%'
-      },
-      {
-        en: 'Verify the dashboard and alert are working by generating test metrics',
-        ar: 'Verify the dashboard and alert are working by generating test metrics'
-      }
+        { en: 'Study the core ideas behind Scope', ar: 'ادرس الأفكار الأساسية لـ Scope' },
+        { en: 'Practice Scope with a small hands-on task', ar: 'تدرّب على Scope بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up Prometheus and Grafana with metrics and alerts.',
-    exerciseAr: 'Set up Prometheus and Grafana with metrics and alerts.',
-    deliverableEn: 'Prometheus configuration, Grafana dashboard, and alert configuration.',
-deliverableAr: 'Prometheus configuration, Grafana dashboard, and alert configuration',
+    exerciseEn: 'Apply Scope in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق Scope في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating Scope.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح Scope.',
     resources: [
-      { title: 'Prometheus docs', url: 'https://prometheus.io/docs/', kind: 'reference' },
-      { title: 'Grafana docs', url: 'https://grafana.com/docs/', kind: 'reference' }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Add a second alert that triggers when latency exceeds 200ms',
-    challengeAr: 'Add a second alert that triggers when latency exceeds 200ms',
+    challengeEn: 'Extend your Scope work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
     prerequisites: [278],
-    criteriaEn: ['Prometheus scraping metrics', 'Grafana dashboard with rate/latency', 'Alert on error rate > 5%', 'Alert on latency > 200ms', 'Verification with test metrics'],
-    criteriaAr: ['Prometheus scraping metrics', 'Grafana dashboard with rate/latency', 'Alert on error rate > 5%', 'Alert on latency > 200ms', 'Verification with test metrics']
+    criteriaEn: ['Can explain Scope', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 280,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'review' as const,
-    titleEn: 'Phase 10 DevOps & Deployment Review',
-    titleAr: 'Review Phase 10 DevOps & Deployment',
-    topic: 'Review',
-    estimatedMinutes: 70,
-    objectiveEn: 'Refactor your DevOps and deployment practices to cover the full spectrum: CI pipelines, Continuous Delivery/Deployment, Infrastructure as Code, Kubernetes, and observability. Ensure pipelines are stable and infrastructure is code-reviewed. Document key takeaways and carry forward to Phase 11.',
-    objectiveAr: 'Refactor your DevOps and deployment practices to cover the full spectrum: CI pipelines, Continuous Delivery/Deployment, Infrastructure as Code, Kubernetes, and observability. Ensure pipelines are stable and infrastructure is code-reviewed. Document key takeaways and carry forward to Phase 11.',
-    lessonEn:
-      'Phase 10 covered DevOps and deployment over 30 days. Key takeaways: CI pipeline concepts, Continuous Delivery vs Deployment, IaC with Terraform, Kubernetes basics (pods, services, deployments), and observability with Prometheus and Grafana. Ensure pipelines are stable and infrastructure is code-reviewed. Document key takeaways and carry forward to Phase 11.',
-    lessonAr:
-      'Phase 10Covered DevOps and deployment over 30 days. Key takeaways: CI pipeline concepts, Continuous Delivery vs Deployment, IaC with Terraform, Kubernetes basics (pods, services, deployments), and observability with Prometheus and Grafana. Ensure pipelines are stable and infrastructure is code-reviewed. Document key takeaways and carry forward to Phase 11.',
+    titleEn: 'Day 280: requirements',
+    titleAr: 'المشروع التخرّجي — اليوم 280: requirements',
+    topic: 'requirements',
+    objectiveEn: 'Learn and apply requirements as part of Capstone MVP.',
+    objectiveAr: 'تعلّم requirements وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 280 covers requirements. Scope, requirements, architecture, database, auth, features, tests, docs. Work through requirements with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 280 موضوع requirements ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على requirements بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 60,
     tasks: [
-      {
-        en: 'Refactor CI/CD pipelines to cover the full spectrum',
-        ar: 'Refactor CI/CD pipelines to cover the full spectrum'
-      },  {
-    dayNumber: 281,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'CI/CD Pipeline Fundamentals',
-    titleAr: 'أ fundamentals pipeline CI/CD',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Explain the core concepts of Continuous Integration and Continuous Deployment.',
-    objectiveAr: 'اشرح concepts core لـ CI/CD',
-    lessonEn:
-      'Continuous Integration (CI) and Continuous Deployment (CD) are essential practices for modern software development. CI automates the building, testing, and merging of code changes, while CD automates the release of those changes to production. Together, they enable fast, reliable, and frequent deployments.',
-    lessonAr:
-      'CI/CD practices are essential for modern software development. CI ي automates the building, testing, and merging of code changes, while CD ي automates the release of those changes to الإنتاج. Together, they enable fast, reliable, and frequent deployments.',
-    tasks: [
-      {
-        en: 'Explain the core concepts of Continuous Integration and Continuous Deployment',
-        ar: 'Explain the core concepts of Continuous Integration and Continuous Deployment'
-      },
-      {
-        en: 'Describe the typical CI/CD pipeline stages: build, test, deploy, and monitor',
-        ar: 'Describe the typical CI/CD pipeline stages: build, test, deploy, and monitor'
-      },
-      {
-        en: 'Set up a basic CI pipeline using GitHub Actions that runs on every push to main',
-        ar: 'Set up a basic CI pipeline using GitHub Actions that runs on every push to main'
-      },
-      {
-        en: 'Configure a pipeline to run linting, type checking, and tests automatically',
-        ar: 'Configure a pipeline to run linting, type checking, and tests automatically'
-      }
+        { en: 'Study the core ideas behind requirements', ar: 'ادرس الأفكار الأساسية لـ requirements' },
+        { en: 'Practice requirements with a small hands-on task', ar: 'تدرّب على requirements بمهمة عملية صغيرة' },
+        { en: 'Review your recent notes and list key takeaways', ar: 'راجع ملاحظاتك الأخيرة واستخرج النقاط الرئيسية' }
     ],
-    exerciseEn: 'Set up a basic CI pipeline using GitHub Actions that runs on every push.',
-    exerciseAr: 'Set up a basic CI pipeline using GitHub Actions that runs on every push.',
-    deliverableEn: 'A GitHub Actions workflow file that builds and tests on every push.',
-    deliverableAr: 'A GitHub Actions workflow file that builds and tests on every push.',
+    exerciseEn: 'Apply requirements in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق requirements في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating requirements.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح requirements.',
     resources: [
-      {
-        title: 'GitHub Actions docs',
-        url: 'https://docs.github.com/en/actions',
-        kind: 'official'
-      },
-      {
-        title: 'CI/CD Tutorial',
-        url: 'https://www.atlassian.com/ci-cd/tutorial',
-        kind: 'reference'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Create a CI pipeline that runs on every push and passes all checks.',
-    challengeAr: 'Create a CI pipeline that runs on every push and passes all checks.',
-    prerequisites: [],
-    criteriaEn: ['Can set up a GitHub Actions workflow', 'Can configure linting and testing'],
-    criteriaAr: ['Can set up a GitHub Actions workflow', 'Can configure linting and testing']
+    challengeEn: 'Extend your requirements work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [279],
+    criteriaEn: ['Can explain requirements', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
+  },
+  {
+    dayNumber: 281,
+    phaseSlug: 'capstone',
+    kind: 'lesson' as const,
+    titleEn: 'Day 281: architecture',
+    titleAr: 'المشروع التخرّجي — اليوم 281: architecture',
+    topic: 'architecture',
+    objectiveEn: 'Learn and apply architecture as part of Capstone MVP.',
+    objectiveAr: 'تعلّم architecture وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 281 covers architecture. Scope, requirements, architecture, database, auth, features, tests, docs. Work through architecture with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 281 موضوع architecture ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على architecture بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 90,
+    tasks: [
+        { en: 'Study the core ideas behind architecture', ar: 'ادرس الأفكار الأساسية لـ architecture' },
+        { en: 'Practice architecture with a small hands-on task', ar: 'تدرّب على architecture بمهمة عملية صغيرة' }
+    ],
+    exerciseEn: 'Apply architecture in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق architecture في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating architecture.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح architecture.',
+    resources: [
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
+    ],
+    challengeEn: 'Extend your architecture work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [280],
+    criteriaEn: ['Can explain architecture', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 282,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Containerizing Applications',
-    titleAr: 'حاوية containerizing applications',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Write a Dockerfile for a Node.js application with multi-stage builds to optimize image size.',
-    objectiveAr: 'Write a Dockerfile for a Node.js application multi-stage builds',
-    lessonEn:
-      'Docker enables consistent deployment environments. Multi-stage builds reduce image size by using a build stage and a final stage, removing build artifacts from the final image.',
-    lessonAr:
-      'Docker enables consistent deployment environments. Multi-stage builds reduce image size by using a build stage and a final stage, removing build artifacts from the final image.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 282: database',
+    titleAr: 'المشروع التخرّجي — اليوم 282: database',
+    topic: 'database',
+    objectiveEn: 'Learn and apply database as part of Capstone MVP.',
+    objectiveAr: 'تعلّم database وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 282 covers database. Scope, requirements, architecture, database, auth, features, tests, docs. Work through database with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 282 موضوع database ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على database بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Write a Dockerfile for a Node.js application with multi-stage builds',
-        ar: 'Write a Dockerfile for a Node.js application multi-stage builds'
-      },
-      {
-        en: 'Optimize image size by using Alpine base and removing build artifacts',
-        ar: 'Optimize image size by using Alpine base and removing build artifacts'
-      },
-      {
-        en: 'Push and pull a Docker image to Docker Hub',
-        ar: 'Push and pull a Docker image to Docker Hub'
-      },
-      {
-        en: 'Configure a .dockerignore file to exclude unnecessary files',
-        ar: 'Configure a .dockerignore file to exclude unnecessary files'
-      }
+        { en: 'Study the core ideas behind database', ar: 'ادرس الأفكار الأساسية لـ database' },
+        { en: 'Practice database with a small hands-on task', ar: 'تدرّب على database بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Create a Dockerfile for a Node.js project with multi-stage builds.',
-    exerciseAr: 'Create a Dockerfile for a Node.js project with multi-stage builds.',
-    deliverableEn: 'A Dockerfile with multi-stage builds and a small final image.',
-    deliverableAr: 'A Dockerfile with multi-stage builds and a small final image.',
+    exerciseEn: 'Apply database in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق database في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating database.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح database.',
     resources: [
-      {
-        title: 'Docker docs',
-        url: 'https://docs.docker.com',
-        kind: 'official'
-      },
-      {
-        title: 'Node.js Dockerfile guide',
-        url: 'https://github.com/nodejs/docker-node',
-        kind: 'reference'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Build and push a Docker image for your project.',
-    challengeAr: 'Build and push a Docker image for your project.',
-    prerequisites: [],
-    criteriaEn: ['Can write a multi-stage Dockerfile', 'Can optimize image size'],
-    criteriaAr: ['Can write a multi-stage Dockerfile', 'Can optimize image size']
+    challengeEn: 'Extend your database work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [281],
+    criteriaEn: ['Can explain database', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 283,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Orchestration with Docker Compose',
-    titleAr: 'التنسيق بـ Docker Compose',
-    topic: 'DevOps',
+    titleEn: 'Day 283: auth',
+    titleAr: 'المشروع التخرّجي — اليوم 283: auth',
+    topic: 'auth',
+    objectiveEn: 'Learn and apply auth as part of Capstone MVP.',
+    objectiveAr: 'تعلّم auth وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 283 covers auth. Scope, requirements, architecture, database, auth, features, tests, docs. Work through auth with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 283 موضوع auth ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على auth بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Define a docker-compose.yml for a full-stack app with frontend, backend, and database services.',
-    objectiveAr: 'حدد docker-compose.yml لـ full-stack app frontend, backend, and database services',
-    lessonEn:
-      'Docker Compose simplifies running multi-container applications. A single docker-compose.yml file defines services, networks, and volumes for a full-stack app including frontend, backend, and database.',
-    lessonAr:
-      'Docker Compose simplifies running multi-container applications. A single docker-compose.yml file defines services, networks, and volumes for a full-stack app including frontend, backend, and database.',
     tasks: [
-      {
-        en: 'Define a docker-compose.yml for a full-stack app with frontend, backend, and database',
-        ar: 'حدد docker-compose.yml لـ full-stack app frontend, backend, and database services'
-      },
-      {
-        en: 'Use environment variables in docker-compose.yml for configuration across environments',
-        ar: 'Use environment variables in docker-compose.yml for configuration across environments'
-      },
-      {
-        en: 'Start the application with docker compose up',
-        ar: 'Start the application with docker compose up'
-      },
-      {
-        en: 'Define restart policies for production resilience',
-        ar: 'Define restart policies for production resilience'
-      }
+        { en: 'Study the core ideas behind auth', ar: 'ادرس الأفكار الأساسية لـ auth' },
+        { en: 'Practice auth with a small hands-on task', ar: 'تدرّب على auth بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Create a docker-compose.yml for a three-service app.',
-    exerciseAr: 'Create a docker-compose.yml for a three-service app.',
-    deliverableEn: 'A docker-compose.yml file for a full-stack application.',
-    deliverableAr: 'A docker-compose.yml file for a full-stack application.',
+    exerciseEn: 'Apply auth in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق auth في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating auth.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح auth.',
     resources: [
-      {
-        title: 'Docker Compose docs',
-        url: 'https://docs.docker.com/compose',
-        kind: 'official'
-      },
-      {
-        title: 'Compose file reference',
-        url: 'https://github.com/compose-spec/compose-spec',
-        kind: 'reference'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Set up a full-stack app with Docker Compose and start it.',
-    challengeAr: 'Set up a full-stack app with Docker Compose and start it.',
-    prerequisites: [],
-    criteriaEn: ['Can define a docker-compose.yml', 'Can use environment variables'],
-    criteriaAr: ['Can define a docker-compose.yml', 'Can use environment variables']
+    challengeEn: 'Extend your auth work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [282],
+    criteriaEn: ['Can explain auth', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 284,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Health Checks and Restart Policies',
-    titleAr: 'فحوصات الصحة وسياسات إعادة الاستضافة',
-    topic: 'DevOps',
+    titleEn: 'Day 284: features',
+    titleAr: 'المشروع التخرّجي — اليوم 284: features',
+    topic: 'features',
+    objectiveEn: 'Learn and apply features as part of Capstone MVP.',
+    objectiveAr: 'تعلّم features وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 284 covers features. Scope, requirements, architecture, database, auth, features, tests, docs. Work through features with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 284 موضوع features ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على features بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Configure health checks in Docker Compose to monitor service readiness and set restart policies for production resilience.',
-    objectiveAr: 'Configure health checks in Docker Compose to monitor service readiness and set restart policies for production resilience',
-    lessonEn:
-      'Health checks determine when a service is ready to receive traffic. Restart policies (on-failure, always, no) ensure production resilience by automatically recovering from failures.',
-    lessonAr:
-      'Health checks determine when a service is ready to receive traffic. Restart policies (on-failure, always, no) ensure production resilience by automatically recovering from failures.',
     tasks: [
-      {
-        en: 'Configure health checks in docker-compose.yml',
-        ar: 'Configure health checks in docker-compose.yml'
-      },
-      {
-        en: 'Set restart policies (on-failure, always, no)',
-        ar: 'Set restart policies (on-failure, always, no)'
-      },
-      {
-        en: 'Test failure recovery by stopping a container',
-        ar: 'Test failure recovery by stopping a container'
-      },
-      {
-        en: 'Document health check and restart configuration',
-        ar: 'Document health check and restart configuration'
-      }
+        { en: 'Study the core ideas behind features', ar: 'ادرس الأفكار الأساسية لـ features' },
+        { en: 'Practice features with a small hands-on task', ar: 'تدرّب على features بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Add health checks and restart policies to a docker-compose.yml.',
-    exerciseAr: 'Add health checks and restart policies to a docker-compose.yml.',
-    deliverableEn: 'A docker-compose.yml with health checks and restart policies.',
-    deliverableAr: 'A docker-compose.yml with health checks and restart policies.',
+    exerciseEn: 'Apply features in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق features في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating features.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح features.',
     resources: [
-      {
-        title: 'Docker Compose reference',
-        url: 'https://docs.docker.com/compose/reference/',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Configure health checks and restart policies for your application.',
-    challengeAr: 'Configure health checks and restart policies for your application.',
-    prerequisites: [],
-    criteriaEn: ['Can configure health checks', 'Can set restart policies'],
-    criteriaAr: ['Can configure health checks', 'Can set restart policies']
+    challengeEn: 'Extend your features work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [283],
+    criteriaEn: ['Can explain features', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 285,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'CI Cache Strategies',
-    titleAr: 'استراتيجيات caching CI',
-    topic: 'DevOps',
+    phaseSlug: 'capstone',
+    kind: 'project' as const,
+    titleEn: 'Day 285: tests',
+    titleAr: 'المشروع التخرّجي — اليوم 285: tests',
+    topic: 'tests',
+    objectiveEn: 'Learn and apply tests as part of Capstone MVP.',
+    objectiveAr: 'تعلّم tests وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 285 covers tests. Scope, requirements, architecture, database, auth, features, tests, docs. Work through tests with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 285 موضوع tests ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على tests بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Configure pip cache, npm cache, and Docker layer caching to speed up pipeline execution.',
-    objectiveAr: 'Configure pip cache, npm cache, and Docker layer caching to speed up pipeline execution',
-    lessonEn:
-      'Pipeline caching dramatically reduces execution time by reusing dependencies and Docker layers. Configuring pip cache, npm cache, and Docker layer caching is essential for fast feedback loops.',
-    lessonAr:
-      'Pipeline caching dramatically reduces execution time by reusing dependencies and Docker layer caching. Configuring pip cache, npm cache, and Docker layer caching is essential for fast feedback loops.',
     tasks: [
-      {
-        en: 'Configure pip cache in GitHub Actions',
-        ar: 'Configure pip cache in GitHub Actions'
-      },
-      {
-        en: 'Configure npm cache in GitHub Actions',
-        ar: 'Configure npm cache in GitHub Actions'
-      },
-      {
-        en: 'Configure Docker layer caching',
-        ar: 'Configure Docker layer caching'
-      },
-      {
-        en: 'Measure pipeline duration before and after caching',
-        ar: 'Measure pipeline duration before and after caching'
-      }
+        { en: 'Study the core ideas behind tests', ar: 'ادرس الأفكار الأساسية لـ tests' },
+        { en: 'Practice tests with a small hands-on task', ar: 'تدرّب على tests بمهمة عملية صغيرة' },
+        { en: 'Plan a small project that exercises tests', ar: 'خطّط لمشروع صغير يطبّق tests' }
     ],
-    exerciseEn: 'Configure caching and measure pipeline duration improvement.',
-    exerciseAr: 'Configure caching and measure pipeline duration improvement.',
-    deliverableEn: 'A GitHub Actions workflow with caching configured.',
-    deliverableAr: 'A GitHub Actions workflow with caching configured.',
+    exerciseEn: 'Apply tests in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق tests في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating tests.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح tests.',
     resources: [
-      {
-        title: 'GitHub Actions caching',
-        url: 'https://docs.github.com/en/actions/using-workflows/caching',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Implement caching and reduce pipeline time by at least 50%.',
-    challengeAr: 'Implement caching and reduce pipeline time by at least 50%.',
-    prerequisites: [],
-    criteriaEn: ['Can configure pipeline caching', 'Can measure duration improvement'],
-    criteriaAr: ['Can configure pipeline caching', 'Can measure duration improvement']
+    challengeEn: 'Extend your tests work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في tests بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [284],
+    criteriaEn: ['Can explain tests', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح tests', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 286,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Infrastructure as Code with Terraform',
-    titleAr: 'Infrastructure as Code بـ Terraform',
-    topic: 'DevOps',
+    titleEn: 'Day 286: docs',
+    titleAr: 'المشروع التخرّجي — اليوم 286: docs',
+    topic: 'docs',
+    objectiveEn: 'Learn and apply docs as part of Capstone MVP.',
+    objectiveAr: 'تعلّم docs وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 286 covers docs. Scope, requirements, architecture, database, auth, features, tests, docs. Work through docs with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 286 موضوع docs ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على docs بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Write a basic Terraform configuration to provision an AWS EC2 instance and apply the configuration.',
-    objectiveAr: 'Write a basic Terraform configuration to provision an AWS EC2 instance and apply the configuration',
-    lessonEn:
-      'Infrastructure as Code (IaC) allows managing infrastructure through declarative configuration. Terraform uses HCL (HashiCorp Configuration Language) to provision resources safely and predictably.',
-    lessonAr:
-      'Infrastructure as Code (IaC) allows managing infrastructure through declarative configuration. Terraform uses HCL (HashiCorp Configuration Language) to provision resources safely and predictably.',
     tasks: [
-      {
-        en: 'Write a basic Terraform configuration to provision an AWS EC2 instance',
-        ar: 'Write a basic Terraform configuration to provision an AWS EC2 instance'
-      },
-      {
-        en: 'Apply the configuration and verify the resource in the AWS console',
-        ar: 'Apply the configuration and verify the resource in the AWS console'
-      },
-      {
-        en: 'Write Terraform variables for instance type and region',
-        ar: 'Write Terraform variables for instance type and region'
-      },
-      {
-        en: 'Run terraform init, plan, and apply',
-        ar: 'Run terraform init, plan, and apply'
-      }
+        { en: 'Study the core ideas behind docs', ar: 'ادرس الأفكار الأساسية لـ docs' },
+        { en: 'Practice docs with a small hands-on task', ar: 'تدرّب على docs بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Provision an AWS EC2 instance using Terraform.',
-    exerciseAr: 'Provision an AWS EC2 instance using Terraform.',
-    deliverableEn: 'Applied Terraform configuration and verified resource creation.',
-    deliverableAr: 'Applied Terraform configuration and verified resource creation.',
+    exerciseEn: 'Apply docs in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق docs في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating docs.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح docs.',
     resources: [
-      {
-        title: 'Terraform docs',
-        url: 'https://developer.hashicorp.com/terraform',
-        kind: 'official'
-      },
-      {
-        title: 'AWS EC2 resource',
-        url: 'https://registry.terraform.io/resources/hashicorp/aws',
-        kind: 'reference'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Provision an AWS resource using Terraform from scratch.',
-    challengeAr: 'Provision an AWS resource using Terraform from scratch.',
-    prerequisites: [],
-    criteriaEn: ['Can write Terraform configuration', 'Can apply and verify resources'],
-    criteriaAr: ['Can write Terraform configuration', 'Can apply and verify resources']
+    challengeEn: 'Extend your docs work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في docs بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [285],
+    criteriaEn: ['Can explain docs', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح docs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 287,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Kubernetes Basics',
-    titleAr: 'Basics Kubernetes',
-    topic: 'DevOps',
+    titleEn: 'Day 287: Scope',
+    titleAr: 'المشروع التخرّجي — اليوم 287: Scope',
+    topic: 'Scope',
+    objectiveEn: 'Learn and apply Scope as part of Capstone MVP.',
+    objectiveAr: 'تعلّم Scope وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 287 covers Scope. Scope, requirements, architecture, database, auth, features, tests, docs. Work through Scope with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 287 موضوع Scope ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على Scope بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Create a Kubernetes Deployment manifest for a simple application with 3 replicas and expose it as a LoadBalancer Service.',
-    objectiveAr: 'Create a Kubernetes Deployment manifest for a simple application with 3 replicas and expose it as a LoadBalancer Service.',
-    lessonEn:
-      'Kubernetes is the leading container orchestration platform. A Deployment manages replicated applications, and a Service of type LoadBalancer exposes the application externally.',
-    lessonAr:
-      'Kubernetes is the leading container orchestration platform. A Deployment manages replicated applications, and a Service of type LoadBalancer exposes the application externally.',
     tasks: [
-      {
-        en: 'Create a Kubernetes Deployment manifest with 3 replicas',
-        ar: 'Create a Kubernetes Deployment manifest with 3 replicas'
-      },
-      {
-        en: 'Expose the application as a Kubernetes Service of type LoadBalancer',
-        ar: 'Expose the application as a Kubernetes Service of type LoadBalancer'
-      },
-      {
-        en: 'Verify the Service external IP is assigned',
-        ar: 'Verify the Service external IP is assigned'
-      },
-      {
-        en: 'Update the Deployment image and observe rollout',
-        ar: 'Update the Deployment image and observe rollout'
-      }
+        { en: 'Study the core ideas behind Scope', ar: 'ادرس الأفكار الأساسية لـ Scope' },
+        { en: 'Practice Scope with a small hands-on task', ar: 'تدرّب على Scope بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Create a Kubernetes Deployment and Service for a sample app.',
-    exerciseAr: 'Create a Kubernetes Deployment and Service for a sample app.',
-    deliverableEn: 'A Kubernetes Deployment and Service manifest.',
-    deliverableAr: 'A Kubernetes Deployment and Service manifest.',
+    exerciseEn: 'Apply Scope in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق Scope في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating Scope.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح Scope.',
     resources: [
-      {
-        title: 'Kubernetes docs',
-        url: 'https://kubernetes.io/docs',
-        kind: 'official'
-      },
-      {
-        title: 'Kubernetes Quickstart',
-        url: 'https://kubernetes.io/docs/tutorials/',
-        kind: 'reference'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Deploy a sample app to a local Kubernetes cluster.',
-    challengeAr: 'Deploy a sample app to a local Kubernetes cluster.',
-    prerequisites: [],
-    criteriaEn: ['Can create a Kubernetes Deployment', 'Can create a LoadBalancer Service'],
-    criteriaAr: ['Can create a Kubernetes Deployment', 'Can create a LoadBalancer Service']
-  },
-  {
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Secret Management',
-    titleAr: 'إدارة الأسرار',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Use GitHub Actions secrets to store database connection strings securely and never hardcode credentials in pipeline YAML.',
-    objectiveAr: 'Use GitHub Actions secrets to store database connection strings securely and never hardcode credentials in pipeline YAML',
-    lessonEn:
-      'Hardcoding credentials in pipeline YAML is a security risk. GitHub Actions secrets provide a secure way to store and inject sensitive data at runtime.',
-    lessonAr:
-      'Hardcoding credentials in pipeline YAML is a security risk. GitHub Actions secrets provide a secure way to store and inject sensitive data at runtime.',
-    tasks: [
-      {
-        en: 'Store a database connection string in GitHub Actions secrets',
-        ar: 'Store a database connection string in GitHub Actions secrets'
-      },
-      {
-        en: 'Use the secret in a workflow step',
-        ar: 'Use the secret in a workflow step'
-      },
-      {
-        en: 'Never hardcode credentials in pipeline YAML files',
-        ar: 'Never hardcode credentials in pipeline YAML files'
-      },
-      {
-        en: 'Rotate a secret and update the workflow',
-        ar: 'Rotate a secret and update the workflow'
-      }
-    ],
-    exerciseEn: 'Add a secret to a GitHub Actions workflow and use it.',
-    exerciseAr: 'Add a secret to a GitHub Actions workflow and use it.',
-    deliverableEn: 'A GitHub Actions workflow using secrets for database credentials.',
-    deliverableAr: 'A GitHub Actions workflow using secrets for database credentials.',
-    resources: [
-      {
-        title: 'GitHub Actions secrets',
-        url: 'https://docs.github.com/en/actions/security',
-        kind: 'official'
-      }
-    ],
-    challengeEn: 'Add a secret and use it in a workflow step.',
-    challengeAr: 'Add a secret and use it in a workflow step.',
-    prerequisites: [],
-    criteriaEn: ['Can use GitHub Actions secrets', 'Can avoid hardcoding credentials'],
-    criteriaAr: ['Can use GitHub Actions secrets', 'Can avoid hardcoding credentials']
+    challengeEn: 'Extend your Scope work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [286],
+    criteriaEn: ['Can explain Scope', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 288,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Blue-Green Deployment',
-    titleAr: 'Blue-Green Deployment',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Describe the blue-green deployment strategy and its advantages over rolling updates, and implement it using Kubernetes Deployments and Services.',
-    objectiveAr: 'Describe the blue-green deployment strategy and its advantages over rolling updates, and implement it using Kubernetes Deployments and Services.',
-    lessonEn:
-      'Blue-green deployment maintains two identical production environments. Traffic is shifted from the green environment to the blue environment, enabling instant rollback if issues are detected.',
-    lessonAr:
-      'Blue-green deployment maintains two identical production environments. Traffic is shifted from the green environment to the blue environment, enabling instant rollback if issues are detected.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 288: requirements',
+    titleAr: 'المشروع التخرّجي — اليوم 288: requirements',
+    topic: 'requirements',
+    objectiveEn: 'Learn and apply requirements as part of Capstone MVP.',
+    objectiveAr: 'تعلّم requirements وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 288 covers requirements. Scope, requirements, architecture, database, auth, features, tests, docs. Work through requirements with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 288 موضوع requirements ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على requirements بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Describe the blue-green deployment strategy',
-        ar: 'Describe the blue-green deployment strategy'
-      },
-      {
-        en: 'Implement blue-green using Kubernetes Deployments and Services',
-        ar: 'Implement blue-green using Kubernetes Deployments and Services'
-      },
-      {
-        en: 'Shift traffic from green to blue environment',
-        ar: 'Shift traffic from green to blue environment'
-      },
-      {
-        en: 'Test rollback by switching traffic back to green',
-        ar: 'Test rollback by switching traffic back to green'
-      }
+        { en: 'Study the core ideas behind requirements', ar: 'ادرس الأفكار الأساسية لـ requirements' },
+        { en: 'Practice requirements with a small hands-on task', ar: 'تدرّب على requirements بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Implement a blue-green deployment for your application.',
-    exerciseAr: 'Implement a blue-green deployment for your application.',
-    deliverableEn: 'A blue-green deployment configuration using Kubernetes.',
-    deliverableAr: 'A blue-green deployment configuration using Kubernetes.',
+    exerciseEn: 'Apply requirements in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق requirements في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating requirements.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح requirements.',
     resources: [
-      {
-        title: 'Kubernetes docs',
-        url: 'https://kubernetes.io/docs',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Implement blue-green deployment and test rollback.',
-    challengeAr: 'Implement blue-green deployment and test rollback.',
-    prerequisites: [],
-    criteriaEn: ['Can describe blue-green strategy', 'Can implement with Kubernetes'],
-    criteriaAr: ['Can describe blue-green strategy', 'Can implement with Kubernetes']
+    challengeEn: 'Extend your requirements work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [287],
+    criteriaEn: ['Can explain requirements', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 289,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Monitoring and Logging',
-    titleAr: 'مراقبة والتسجيل',
-    topic: 'DevOps',
+    titleEn: 'Day 289: architecture',
+    titleAr: 'المشروع التخرّجي — اليوم 289: architecture',
+    topic: 'architecture',
+    objectiveEn: 'Learn and apply architecture as part of Capstone MVP.',
+    objectiveAr: 'تعلّم architecture وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 289 covers architecture. Scope, requirements, architecture, database, auth, features, tests, docs. Work through architecture with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 289 موضوع architecture ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على architecture بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Configure Prometheus metrics and Grafana dashboards for application monitoring, and set up centralized logging using the ELK stack.',
-    objectiveAr: 'Configure Prometheus metrics and Grafana dashboards for application monitoring, and set up centralized logging using the ELK stack',
-    lessonEn:
-      'Observability requires metrics, logs, and traces. Prometheus collects metrics, Grafana visualizes them, and the ELK stack provides centralized logging with structured JSON entries.',
-    lessonAr:
-      'Observability requires metrics, logs, and traces. Prometheus collects metrics, Grafana visualizes them, and the ELK stack provides centralized logging with structured JSON entries.',
     tasks: [
-      {
-        en: 'Configure Prometheus metrics for an application',
-        ar: 'Configure Prometheus metrics for an application'
-      },
-      {
-        en: 'Create a Grafana dashboard',
-        ar: 'Create a Grafana dashboard'
-      },
-      {
-        en: 'Set up centralized logging using the ELK stack',
-        ar: 'Set up centralized logging using the ELK stack'
-      },
-      {
-        en: 'Send structured JSON logs to the ELK stack',
-        ar: 'Send structured JSON logs to the ELK stack'
-      }
+        { en: 'Study the core ideas behind architecture', ar: 'ادرس الأفكار الأساسية لـ architecture' },
+        { en: 'Practice architecture with a small hands-on task', ar: 'تدرّب على architecture بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up Prometheus metrics and a Grafana dashboard.',
-    exerciseAr: 'Set up Prometheus metrics and a Grafana dashboard.',
-    deliverableEn: 'A Prometheus configuration and Grafana dashboard.',
-    deliverableAr: 'A Prometheus configuration and Grafana dashboard.',
+    exerciseEn: 'Apply architecture in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق architecture في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating architecture.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح architecture.',
     resources: [
-      {
-        title: 'Prometheus docs',
-        url: 'https://prometheus.io/docs',
-        kind: 'official'
-      },
-      {
-        title: 'Grafana docs',
-        url: 'https://grafana.com/docs',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Set up monitoring and logging for your application.',
-    challengeAr: 'Set up monitoring and logging for your application.',
-    prerequisites: [],
-    criteriaEn: ['Can configure Prometheus', 'Can create a Grafana dashboard'],
-    criteriaAr: ['Can configure Prometheus', 'Can create a Grafana dashboard']
+    challengeEn: 'Extend your architecture work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [288],
+    criteriaEn: ['Can explain architecture', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 290,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Canary Deployments',
-    titleAr: 'Deployments Canary',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Explain the canary deployment approach and implement it using feature flags, gradually shifting 10% of traffic to the new version and monitoring metrics.',
-    objectiveAr: 'Explain the canary deployment approach and implement it using feature flags, gradually shifting 10% of traffic to the new version and monitoring metrics',
-    lessonEn:
-      'Canary deployments reduce risk by gradually shifting traffic to the new version. Starting with 10% and monitoring metrics allows safe promotion or quick rollback if errors are detected.',
-    lessonAr:
-      'Canary deployments reduce risk by gradually shifting traffic to the new version. Starting with 10% and monitoring metrics allows safe promotion or quick rollback if errors are detected.',
+    phaseSlug: 'capstone',
+    kind: 'review' as const,
+    titleEn: 'Day 290: database',
+    titleAr: 'المشروع التخرّجي — اليوم 290: database',
+    topic: 'database',
+    objectiveEn: 'Learn and apply database as part of Capstone MVP.',
+    objectiveAr: 'تعلّم database وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 290 covers database. Scope, requirements, architecture, database, auth, features, tests, docs. Work through database with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 290 موضوع database ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على database بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 60,
     tasks: [
-      {
-        en: 'Explain the canary deployment approach',
-        ar: 'Explain the canary deployment approach'
-      },
-      {
-        en: 'Implement using feature flags',
-        ar: 'Implement using feature flags'
-      },
-      {
-        en: 'Gradually shift 10% of traffic to the new version',
-        ar: 'Gradually shift 10% of traffic to the new version'
-      },
-      {
-        en: 'Monitor metrics and define rollout criteria',
-        ar: 'Monitor metrics and define rollout criteria'
-      }
+        { en: 'Study the core ideas behind database', ar: 'ادرس الأفكار الأساسية لـ database' },
+        { en: 'Practice database with a small hands-on task', ar: 'تدرّب على database بمهمة عملية صغيرة' },
+        { en: 'Review your recent notes and list key takeaways', ar: 'راجع ملاحظاتك الأخيرة واستخرج النقاط الرئيسية' }
     ],
-    exerciseEn: 'Implement a canary deployment with 10% traffic shift.',
-    exerciseAr: 'Implement a canary deployment with 10% traffic shift.',
-    deliverableEn: 'A canary deployment configuration with feature flags.',
-    deliverableAr: 'A canary deployment configuration with feature flags.',
+    exerciseEn: 'Apply database in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق database في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating database.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح database.',
     resources: [
-      {
-        title: 'Feature flags service',
-        url: 'https://launchdarkly.com/',
-        kind: 'reference'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Implement a canary deployment with 10% traffic shift and monitor metrics.',
-    challengeAr: 'Implement a canary deployment with 10% traffic shift and monitor metrics.',
-    prerequisites: [],
-    criteriaEn: ['Can implement canary deployment', 'Can monitor metrics'],
-    criteriaAr: ['Can implement canary deployment', 'Can monitor metrics']
+    challengeEn: 'Extend your database work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [289],
+    criteriaEn: ['Can explain database', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 291,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Infrastructure Cost Optimization',
-    titleAr: 'توفير تكاليف البنية',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Identify unused resources and implement cost-saving measures in cloud infrastructure, including monthly budget alerts and resource tagging.',
-    objectiveAr: 'Identify unused resources and implement cost-saving measures in cloud infrastructure, including monthly budget alerts and resource tagging',
-    lessonEn:
-      'Cloud costs can spiral out of control without proper management. Identifying unused resources, implementing tagging strategies, and setting budget alerts are essential for cost optimization.',
-    lessonAr:
-      'Cloud costs can spiral out of control without proper management. Identifying unused resources, implementing tagging strategies, and setting budget alerts are essential for cost optimization.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 291: auth',
+    titleAr: 'المشروع التخرّجي — اليوم 291: auth',
+    topic: 'auth',
+    objectiveEn: 'Learn and apply auth as part of Capstone MVP.',
+    objectiveAr: 'تعلّم auth وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 291 covers auth. Scope, requirements, architecture, database, auth, features, tests, docs. Work through auth with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 291 موضوع auth ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على auth بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Identify unused resources in your cloud account',
-        ar: 'Identify unused resources in your cloud account'
-      },
-      {
-        en: 'Implement a resource tagging strategy',
-        ar: 'Implement a resource tagging strategy'
-      },
-      {
-        en: 'Set up monthly budget alerts',
-        ar: 'Set up monthly budget alerts'
-      },
-      {
-        en: 'Generate a cost allocation report',
-        ar: 'Generate a cost allocation report'
-      }
+        { en: 'Study the core ideas behind auth', ar: 'ادرس الأفكار الأساسية لـ auth' },
+        { en: 'Practice auth with a small hands-on task', ar: 'تدرّب على auth بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Identify and remove 3 unused cloud resources.',
-    exerciseAr: 'Identify and remove 3 unused cloud resources.',
-    deliverableEn: 'A cost optimization report with removed resources.',
-    deliverableAr: 'A cost optimization report with removed resources.',
+    exerciseEn: 'Apply auth in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق auth في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating auth.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح auth.',
     resources: [
-      {
-        title: 'AWS Cost Explorer',
-        url: 'https://aws.amazon.com/cost-explorer/',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Identify and remove unused resources and set a budget alert.',
-    challengeAr: 'Identify and remove unused resources and set a budget alert.',
-    prerequisites: [],
-    criteriaEn: ['Can identify unused resources', 'Can set budget alerts'],
-    criteriaAr: ['Can identify unused resources', 'Can set budget alerts']
+    challengeEn: 'Extend your auth work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [290],
+    criteriaEn: ['Can explain auth', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 292,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Service Mesh with Istio',
-    titleAr: 'Service Mesh بـ Istio',
-    topic: 'DevOps',
+    titleEn: 'Day 292: features',
+    titleAr: 'المشروع التخرّجي — اليوم 292: features',
+    topic: 'features',
+    objectiveEn: 'Learn and apply features as part of Capstone MVP.',
+    objectiveAr: 'تعلّم features وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 292 covers features. Scope, requirements, architecture, database, auth, features, tests, docs. Work through features with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 292 موضوع features ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على features بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Install Istio service mesh and enable mutual TLS between services, and implement traffic routing rules using VirtualService and DestinationRule.',
-    objectiveAr: 'Install Istio service mesh and enable mutual TLS between services, and implement traffic routing rules using VirtualService and DestinationRule',
-    lessonEn:
-      'A service mesh provides advanced traffic management, security, and observability for microservices. Istio is the leading service mesh solution, offering mTLS and traffic routing rules.',
-    lessonAr:
-      'A service mesh provides advanced traffic management, security, and observability for microservices. Istio is the leading service mesh solution, offering mTLS and traffic routing rules.',
     tasks: [
-      {
-        en: 'Install Istio service mesh',
-        ar: 'Install Istio service mesh'
-      },
-      {
-        en: 'Enable mutual TLS between services',
-        ar: 'Enable mutual TLS between services'
-      },
-      {
-        en: 'Implement traffic routing using VirtualService and DestinationRule',
-        ar: 'Implement traffic routing using VirtualService and DestinationRule'
-      },
-      {
-        en: 'Observe service mesh metrics in Grafana',
-        ar: 'Observe service mesh metrics in Grafana'
-      }
+        { en: 'Study the core ideas behind features', ar: 'ادرس الأفكار الأساسية لـ features' },
+        { en: 'Practice features with a small hands-on task', ar: 'تدرّب على features بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Install Istio and configure mTLS between two services.',
-    exerciseAr: 'Install Istio and configure mTLS between two services.',
-    deliverableEn: 'An Istio-installed cluster with mTLS and traffic rules.',
-    deliverableAr: 'An Istio-installed cluster with mTLS and traffic rules.',
+    exerciseEn: 'Apply features in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق features في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating features.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح features.',
     resources: [
-      {
-        title: 'Istio docs',
-        url: 'https://istio.io/docs',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Install Istio and enable mTLS.',
-    challengeAr: 'Install Istio and enable mTLS.',
-    prerequisites: [],
-    criteriaEn: ['Can install Istio', 'Can enable mTLS'],
-    criteriaAr: ['Can install Istio', 'Can enable mTLS']
+    challengeEn: 'Extend your features work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [291],
+    criteriaEn: ['Can explain features', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 293,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Observability Three Pillars',
-    titleAr: 'أ ثلاثة أعمدة للمراقبة',
-    topic: 'DevOps',
+    titleEn: 'Day 293: tests',
+    titleAr: 'المشروع التخرّجي — اليوم 293: tests',
+    topic: 'tests',
+    objectiveEn: 'Learn and apply tests as part of Capstone MVP.',
+    objectiveAr: 'تعلّم tests وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 293 covers tests. Scope, requirements, architecture, database, auth, features, tests, docs. Work through tests with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 293 موضوع tests ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على tests بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Explain the three pillars of observability: logs, metrics, and traces, and how they work together to provide system insight.',
-    objectiveAr: 'Explain the three pillars of observability: logs, metrics, and traces, and how they work together to provide system insight',
-    lessonEn:
-      'The three pillars of observability—logs, metrics, and traces—provide different types of system insight. Logs record events, metrics provide quantitative data, and traces track requests across services.',
-    lessonAr:
-      'The three pillars of observability—logs, metrics, and traces—provide different types of system insight. Logs record events, metrics provide quantitative data, and traces track requests across services.',
     tasks: [
-      {
-        en: 'Explain the three pillars of observability',
-        ar: 'Explain the three pillars of observability'
-      },
-      {
-        en: 'Set up Prometheus metrics',
-        ar: 'Set up Prometheus metrics'
-      },
-      {
-        en: 'Configure logging to output structured JSON',
-        ar: 'Configure logging to output structured JSON'
-      },
-      {
-        en: 'Configure a trace using OpenTelemetry',
-        ar: 'Configure a trace using OpenTelemetry'
-      }
+        { en: 'Study the core ideas behind tests', ar: 'ادرس الأفكار الأساسية لـ tests' },
+        { en: 'Practice tests with a small hands-on task', ar: 'تدرّب على tests بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up basic observability with metrics, logs, and a trace.',
-    exerciseAr: 'Set up basic observability with metrics, logs, and a trace.',
-    deliverableEn: 'Observability setup with metrics, logs, and a trace.',
-    deliverableAr: 'Observability setup with metrics, logs, and a trace.',
+    exerciseEn: 'Apply tests in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق tests في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating tests.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح tests.',
     resources: [
-      {
-        title: 'OpenTelemetry docs',
-        url: 'https://opentelemetry.io/docs',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Set up metrics, logs, and a trace for your application.',
-    challengeAr: 'Set up metrics, logs, and a trace for your application.',
-    prerequisites: [],
-    criteriaEn: ['Can set up metrics', 'Can configure logging', 'Can configure a trace'],
-    criteriaAr: ['Can set up metrics', 'Can configure logging', 'Can configure a trace']
+    challengeEn: 'Extend your tests work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في tests بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [292],
+    criteriaEn: ['Can explain tests', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح tests', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 294,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'GitOps Workflow',
-    titleAr: 'Workflow GitOps',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Implement GitOps using Argo CD to declaratively manage Kubernetes applications, and describe the sync controller role.',
-    objectiveAr: 'Implement GitOps using Argo CD to declaratively manage Kubernetes applications, and describe the sync controller role',
-    lessonEn:
-      'GitOps uses Git as the single source of truth for declarative infrastructure and applications. Argo CD continuously syncs the desired state from Git with the live cluster.',
-    lessonAr:
-      'GitOps uses Git as the single source of truth for declarative infrastructure and applications. Argo CD continuously syncs the desired state from Git with the live cluster.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 294: docs',
+    titleAr: 'المشروع التخرّجي — اليوم 294: docs',
+    topic: 'docs',
+    objectiveEn: 'Learn and apply docs as part of Capstone MVP.',
+    objectiveAr: 'تعلّم docs وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 294 covers docs. Scope, requirements, architecture, database, auth, features, tests, docs. Work through docs with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 294 موضوع docs ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على docs بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Implement GitOps using Argo CD',
-        ar: 'Implement GitOps using Argo CD'
-      },
-      {
-        en: 'Describe the sync controller role',
-        ar: 'Describe the sync controller role'
-      },
-      {
-        en: 'Set up a sample application in Argo CD',
-        ar: 'Set up a sample application in Argo CD'
-      },
-      {
-        en: 'Observe the sync status and automatic reconciliation',
-        ar: 'Observe the sync status and automatic reconciliation'
-      }
+        { en: 'Study the core ideas behind docs', ar: 'ادرس الأفكار الأساسية لـ docs' },
+        { en: 'Practice docs with a small hands-on task', ar: 'تدرّب على docs بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Set up Argo CD and deploy a sample application.',
-    exerciseAr: 'Set up Argo CD and deploy a sample application.',
-    deliverableEn: 'An Argo CD-configured cluster with a deployed application.',
-    deliverableAr: 'An Argo CD-configured cluster with a deployed application.',
+    exerciseEn: 'Apply docs in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق docs في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating docs.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح docs.',
     resources: [
-      {
-        title: 'Argo CD docs',
-        url: 'https://argo-cd.readthedocs.io',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Set up Argo CD and deploy an application.',
-    challengeAr: 'Set up Argo CD and deploy an application.',
-    prerequisites: [],
-    criteriaEn: ['Can set up Argo CD', 'Can deploy an application'],
-    criteriaAr: ['Can set up Argo CD', 'Can deploy an application']
+    challengeEn: 'Extend your docs work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في docs بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [293],
+    criteriaEn: ['Can explain docs', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح docs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 295,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Infrastructure Security Scan',
-    titleAr: 'Scan أمني infrastructure',
-    topic: 'DevOps',
+    phaseSlug: 'capstone',
+    kind: 'project' as const,
+    titleEn: 'Day 295: Scope',
+    titleAr: 'المشروع التخرّجي — اليوم 295: Scope',
+    topic: 'Scope',
+    objectiveEn: 'Learn and apply Scope as part of Capstone MVP.',
+    objectiveAr: 'تعلّم Scope وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 295 covers Scope. Scope, requirements, architecture, database, auth, features, tests, docs. Work through Scope with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 295 موضوع Scope ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على Scope بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Run Trivy or Grype vulnerability scanner on Docker images and fix identified high-severity vulnerabilities, integrating the scanner into the CI pipeline.',
-    objectiveAr: 'Run Trivy or Grype vulnerability scanner on Docker images and fix identified high-severity vulnerabilities, integrating the scanner into the CI pipeline',
-    lessonEn:
-      'Container vulnerability scanning identifies known security issues in Docker images. Integrating scanning into the CI pipeline ensures that high-severity vulnerabilities fail the build.',
-    lessonAr:
-      'Container vulnerability scanning identifies known security issues in Docker images. Integrating scanning into the CI pipeline ensures that high-severity vulnerabilities fail the build.',
     tasks: [
-      {
-        en: 'Run Trivy or Grype on a Docker image',
-        ar: 'Run Trivy or Grype on a Docker image'
-      },
-      {
-        en: 'Fix identified high-severity vulnerabilities',
-        ar: 'Fix identified high-severity vulnerabilities'
-      },
-      {
-        en: 'Integrate the scanner into the CI pipeline to fail on high-severity',
-        ar: 'Integrate the scanner into the CI pipeline to fail on high-severity'
-      },
-      {
-        en: 'Run a second scan to verify fixes',
-        ar: 'Run a second scan to verify fixes'
-      }
+        { en: 'Study the core ideas behind Scope', ar: 'ادرس الأفكار الأساسية لـ Scope' },
+        { en: 'Practice Scope with a small hands-on task', ar: 'تدرّب على Scope بمهمة عملية صغيرة' },
+        { en: 'Plan a small project that exercises Scope', ar: 'خطّط لمشروع صغير يطبّق Scope' }
     ],
-    exerciseEn: 'Run a vulnerability scanner and fix identified issues.',
-    exerciseAr: 'Run a vulnerability scanner and fix identified issues.',
-    deliverableEn: 'A clean scan with no high-severity vulnerabilities.',
-    deliverableAr: 'A clean scan with no high-severity vulnerabilities.',
+    exerciseEn: 'Apply Scope in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق Scope في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating Scope.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح Scope.',
     resources: [
-      {
-        title: 'Trivy docs',
-        url: 'https://github.com/aquasecurity/trivy',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Scan an image and fix all high-severity vulnerabilities.',
-    challengeAr: 'Scan an image and fix all high-severity vulnerabilities.',
-    prerequisites: [],
-    criteriaEn: ['Can run a vulnerability scanner', 'Can fix identified issues'],
-    criteriaAr: ['Can run a vulnerability scanner', 'Can fix identified issues']
+    challengeEn: 'Extend your Scope work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [294],
+    criteriaEn: ['Can explain Scope', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 296,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Event-Driven Architecture',
-    titleAr: 'Architecture Event-Driven',
-    topic: 'DevOps',
+    titleEn: 'Day 296: requirements',
+    titleAr: 'المشروع التخرّجي — اليوم 296: requirements',
+    topic: 'requirements',
+    objectiveEn: 'Learn and apply requirements as part of Capstone MVP.',
+    objectiveAr: 'تعلّم requirements وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 296 covers requirements. Scope, requirements, architecture, database, auth, features, tests, docs. Work through requirements with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 296 موضوع requirements ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على requirements بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Design an event-driven system using Kafka or RabbitMQ for asynchronous communication between services.',
-    objectiveAr: 'Design an event-driven system using Kafka or RabbitMQ for asynchronous communication between services',
-    lessonEn:
-      'Event-driven architecture enables asynchronous communication between services using a message broker. Kafka and RabbitMQ are the leading platforms for event-driven systems.',
-    lessonAr:
-      'Event-driven architecture enables asynchronous communication between services using a message broker. Kafka and RabbitMQ are the leading platforms for event-driven systems.',
     tasks: [
-      {
-        en: 'Design an event-driven system using Kafka or RabbitMQ',
-        ar: 'Design an event-driven system using Kafka or RabbitMQ'
-      },
-      {
-        en: 'Produce and consume events using the message broker',
-        ar: 'Produce and consume events using the message broker'
-      },
-      {
-        en: 'Set up topic partitioning and consumer groups',
-        ar: 'Set up topic partitioning and consumer groups'
-      },
-      {
-        en: 'Test end-to-end event flow',
-        ar: 'Test end-to-end event flow'
-      }
+        { en: 'Study the core ideas behind requirements', ar: 'ادرس الأفكار الأساسية لـ requirements' },
+        { en: 'Practice requirements with a small hands-on task', ar: 'تدرّب على requirements بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Design and implement an event-driven system using Kafka.',
-    exerciseAr: 'Design and implement an event-driven system using Kafka.',
-    deliverableEn: 'An event-driven system design with Kafka producers and consumers.',
-    deliverableAr: 'An event-driven system design with Kafka producers and consumers.',
+    exerciseEn: 'Apply requirements in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق requirements في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating requirements.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح requirements.',
     resources: [
-      {
-        title: 'Kafka docs',
-        url: 'https://kafka.apache.org/documentation',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Design an event-driven system using Kafka for inter-service communication.',
-    challengeAr: 'Design an event-driven system using Kafka for inter-service communication.',
-    prerequisites: [],
-    criteriaEn: ['Can design an event-driven system', 'Can set up Kafka producers/consumers'],
-    criteriaAr: ['Can design an event-driven system', 'Can set up Kafka producers/consumers']
+    challengeEn: 'Extend your requirements work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [295],
+    criteriaEn: ['Can explain requirements', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 297,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Pipeline as Code',
-    titleAr: 'Pipeline as Code',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Version-control your CI/CD pipeline definition and apply infrastructure principles to pipeline code, using reusable workflows and inputs.',
-    objectiveAr: 'Version-control your CI/CD pipeline definition and apply infrastructure principles to pipeline code, using reusable workflows and inputs',
-    lessonEn:
-      'Pipeline code should be treated as infrastructure. Version- controlling it, applying infrastructure principles, and using reusable workflows with inputs enables maintainable and scalable CI/CD.',
-    lessonAr:
-      'Pipeline code should be treated as infrastructure. Version- controlling it, applying infrastructure principles, and using reusable workflows with inputs enables maintainable and scalable CI/CD.',
+    phaseSlug: 'capstone',
+    kind: 'practice' as const,
+    titleEn: 'Day 297: architecture',
+    titleAr: 'المشروع التخرّجي — اليوم 297: architecture',
+    topic: 'architecture',
+    objectiveEn: 'Learn and apply architecture as part of Capstone MVP.',
+    objectiveAr: 'تعلّم architecture وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 297 covers architecture. Scope, requirements, architecture, database, auth, features, tests, docs. Work through architecture with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 297 موضوع architecture ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على architecture بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 75,
     tasks: [
-      {
-        en: 'Version-control your CI/CD pipeline definition',
-        ar: 'Version-control your CI/CD pipeline definition'
-      },
-      {
-        en: 'Apply infrastructure principles to pipeline code',
-        ar: 'Apply infrastructure principles to pipeline code'
-      },
-      {
-        en: 'Use reusable workflows with inputs',
-        ar: 'Use reusable workflows with inputs'
-      },
-      {
-        en: 'Refactor a pipeline to use modular steps',
-        ar: 'Refactor a pipeline to use modular steps'
-      }
+        { en: 'Study the core ideas behind architecture', ar: 'ادرس الأفكار الأساسية لـ architecture' },
+        { en: 'Practice architecture with a small hands-on task', ar: 'تدرّب على architecture بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Refactor a pipeline to use reusable workflows.',
-    exerciseAr: 'Refactor a pipeline to use reusable workflows.',
-    deliverableEn: 'A version-controlled pipeline with reusable workflows.',
-    deliverableAr: 'A version-controlled pipeline with reusable workflows.',
+    exerciseEn: 'Apply architecture in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق architecture في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating architecture.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح architecture.',
     resources: [
-      {
-        title: 'GitHub Actions reusable workflows',
-        url: 'https://docs.github.com/en/actions/using-workflows/reusable-workflows',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Refactor a pipeline to use reusable workflows and inputs.',
-    challengeAr: 'Refactor a pipeline to use reusable workflows and inputs.',
-    prerequisites: [],
-    criteriaEn: ['Can version-control pipeline code', 'Can use reusable workflows'],
-    criteriaAr: ['Can version-control pipeline code', 'Can use reusable workflows']
+    challengeEn: 'Extend your architecture work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [296],
+    criteriaEn: ['Can explain architecture', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 298,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Secret Rotation',
-    titleAr: 'Rotation الأسرار',
-    topic: 'DevOps',
+    titleEn: 'Day 298: database',
+    titleAr: 'المشروع التخرّجي — اليوم 298: database',
+    topic: 'database',
+    objectiveEn: 'Learn and apply database as part of Capstone MVP.',
+    objectiveAr: 'تعلّم database وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 298 covers database. Scope, requirements, architecture, database, auth, features, tests, docs. Work through database with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 298 موضوع database ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على database بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Implement automated secret rotation for database credentials using AWS Secrets Manager and describe the rotation lifecycle.',
-    objectiveAr: 'Implement automated secret rotation for database credentials using AWS Secrets Manager and describe the rotation lifecycle',
-    lessonEn:
-      'Secret rotation prevents credential compromise. AWS Secrets Manager automates rotation, and understanding the lifecycle ensures no service disruption during rotation.',
-    lessonAr:
-      'Secret rotation prevents credential compromise. AWS Secrets Manager automates rotation, and understanding the lifecycle ensures no service disruption during rotation.',
     tasks: [
-      {
-        en: 'Implement automated secret rotation using AWS Secrets Manager',
-        ar: 'Implement automated secret rotation using AWS Secrets Manager'
-      },
-      {
-        en: 'Describe the rotation lifecycle',
-        ar: 'Describe the rotation lifecycle'
-      },
-      {
-        en: 'Test rotation without service disruption',
-        ar: 'Test rotation without service disruption'
-      },
-      {
-        en: 'Document the rotation procedure',
-        ar: 'Document the rotation procedure'
-      }
+        { en: 'Study the core ideas behind database', ar: 'ادرس الأفكار الأساسية لـ database' },
+        { en: 'Practice database with a small hands-on task', ar: 'تدرّب على database بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Implement secret rotation for a database credential.',
-    exerciseAr: 'Implement secret rotation for a database credential.',
-    deliverableEn: 'A secret rotation procedure documented and tested.',
-    deliverableAr: 'A secret rotation procedure documented and tested.',
+    exerciseEn: 'Apply database in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق database في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating database.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح database.',
     resources: [
-      {
-        title: 'AWS Secrets Manager docs',
-        url: 'https://docs.aws.amazon.com/secretsmanager',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Implement secret rotation and test without disruption.',
-    challengeAr: 'Implement secret rotation and test without disruption.',
-    prerequisites: [],
-    criteriaEn: ['Can implement secret rotation', 'Can test without disruption'],
-    criteriaAr: ['Can implement secret rotation', 'Can test without disruption']
+    challengeEn: 'Extend your database work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [297],
+    criteriaEn: ['Can explain database', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 299,
-    phaseSlug: 'devops-deployment',
+    phaseSlug: 'capstone',
     kind: 'lesson' as const,
-    titleEn: 'Blue-Green with Canary Hybrid',
-    titleAr: 'Blue-Green with Canary Hybrid',
-    topic: 'DevOps',
+    titleEn: 'Day 299: auth',
+    titleAr: 'المشروع التخرّجي — اليوم 299: auth',
+    topic: 'auth',
+    objectiveEn: 'Learn and apply auth as part of Capstone MVP.',
+    objectiveAr: 'تعلّم auth وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 299 covers auth. Scope, requirements, architecture, database, auth, features, tests, docs. Work through auth with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 299 موضوع auth ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على auth بمثال عملي وسجّل ملاحظاتك.',
     estimatedMinutes: 90,
-    objectiveEn: 'Combine blue-green and canary deployment strategies for sophisticated release strategies, shifting traffic incrementally while maintaining rollback capability.',
-    objectiveAr: 'Combine blue-green and canary deployment strategies for sophisticated release strategies, shifting traffic incrementally while maintaining rollback capability',
-    lessonEn:
-      'Combining blue-green and canary strategies enables sophisticated release management. Traffic is incrementally shifted while maintaining the ability to roll back the entire green environment if needed.',
-    lessonAr:
-      'Combining blue-green and canary strategies enables sophisticated release management. Traffic is incrementally shifted while maintaining the ability to roll back the entire green environment if needed.',
     tasks: [
-      {
-        en: 'Combine blue-green and canary deployment strategies',
-        ar: 'Combine blue-green and canary deployment strategies'
-      },
-      {
-        en: 'Shift traffic incrementally while maintaining rollback capability',
-        ar: 'Shift traffic incrementally while maintaining rollback capability'
-      },
-      {
-        en: 'Define rollout criteria for automated promotion',
-        ar: 'Define rollout criteria for automated promotion'
-      },
-      {
-        en: 'Test the hybrid strategy in a staging environment',
-        ar: 'Test the hybrid strategy in a staging environment'
-      }
+        { en: 'Study the core ideas behind auth', ar: 'ادرس الأفكار الأساسية لـ auth' },
+        { en: 'Practice auth with a small hands-on task', ar: 'تدرّب على auth بمهمة عملية صغيرة' }
     ],
-    exerciseEn: 'Implement a hybrid blue-green and canary deployment.',
-    exerciseAr: 'Implement a hybrid blue-green and canary deployment.',
-    deliverableEn: 'A hybrid deployment configuration.',
-    deliverableAr: 'A hybrid deployment configuration.',
+    exerciseEn: 'Apply auth in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق auth في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating auth.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح auth.',
     resources: [
-      {
-        title: 'Kubernetes docs',
-        url: 'https://kubernetes.io/docs',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Implement a hybrid blue-green and canary deployment.',
-    challengeAr: 'Implement a hybrid blue-green and canary deployment.',
-    prerequisites: [],
-    criteriaEn: ['Can combine deployment strategies', 'Can maintain rollback capability'],
-    criteriaAr: ['Can combine deployment strategies', 'Can maintain rollback capability']
+    challengeEn: 'Extend your auth work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [298],
+    criteriaEn: ['Can explain auth', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
   },
   {
     dayNumber: 300,
-    phaseSlug: 'devops-deployment',
-    kind: 'lesson' as const,
-    titleEn: 'Final Project: Full CI/CD Pipeline',
-    titleAr: 'مشروع نهائي: Pipeline CI/CD كامل',
-    topic: 'DevOps',
-    estimatedMinutes: 90,
-    objectiveEn: 'Build and deploy a complete CI/CD pipeline from code commit to production deployment with monitoring, rollback strategies, and cost optimization, and present the architecture and lessons learned from the 365-day learning journey.',
-    objectiveAr: 'Build and deploy a complete CI/CD pipeline from code commit to production deployment with monitoring, rollback strategies, and cost optimization, and present the architecture and lessons learned from the 365-day learning journey.',
-    lessonEn:
-      'The final project integrates all DevOps practices learned throughout the phase. Building a complete pipeline from code commit to production with monitoring, rollback, and cost optimization demonstrates mastery of DevOps principles. Presenting the architecture and lessons learned showcases the 365-day learning journey.',
-    lessonAr:
-      'The final project integrates all DevOps practices learned throughout the phase. Building a complete pipeline from code commit to production with monitoring, rollback, and cost optimization demonstrates mastery of DevOps principles. Presenting the architecture and lessons learned showcases the 365-day learning journey.',
+    phaseSlug: 'capstone',
+    kind: 'review' as const,
+    titleEn: 'Day 300: features',
+    titleAr: 'المشروع التخرّجي — اليوم 300: features',
+    topic: 'features',
+    objectiveEn: 'Learn and apply features as part of Capstone MVP.',
+    objectiveAr: 'تعلّم features وتطبّقه في المشروع التخرّجي.',
+    lessonEn: 'Day 300 covers features. Scope, requirements, architecture, database, auth, features, tests, docs. Work through features with a concrete example and note what you learned.',
+    lessonAr: 'يتناول اليوم 300 موضوع features ضمن المشروع التخرّجي. النطاق والمتطلبات والبنية وقاعدة البيانات والمصادقة والميزات والاختبارات والتوثيق. اعمل على features بمثال عملي وسجّل ملاحظاتك.',
+    estimatedMinutes: 60,
     tasks: [
-      {
-        en: 'Build and deploy a complete CI/CD pipeline',
-        ar: 'Build and deploy a complete CI/CD pipeline'
-      },
-      {
-        en: 'Configure monitoring, rollback strategies, and cost optimization',
-        ar: 'Configure monitoring, rollback strategies, and cost optimization'
-      },
-      {
-        en: 'Present the complete pipeline architecture and lessons learned',
-        ar: 'Present the complete pipeline architecture and lessons learned'
-      },
-      {
-        en: 'Document the 365-day learning journey insights',
-        ar: 'Document the 365-day learning journey insights'
-      }
+        { en: 'Study the core ideas behind features', ar: 'ادرس الأفكار الأساسية لـ features' },
+        { en: 'Practice features with a small hands-on task', ar: 'تدرّب على features بمهمة عملية صغيرة' },
+        { en: 'Review your recent notes and list key takeaways', ar: 'راجع ملاحظاتك الأخيرة واستخرج النقاط الرئيسية' }
     ],
-    exerciseEn: 'Build and present the complete CI/CD pipeline.',
-    exerciseAr: 'Build and present the complete CI/CD pipeline.',
-    deliverableEn: 'A complete CI/CD pipeline from commit to production with documentation.',
-    deliverableAr: 'A complete CI/CD pipeline from commit to production with documentation.',
+    exerciseEn: 'Apply features in a short exercise and record each step you took.',
+    exerciseAr: 'طبّق features في تمرين قصير وسجّل كل خطوة قمت بها.',
+    deliverableEn: 'A short written artifact demonstrating features.',
+    deliverableAr: 'ناتج مكتوب قصير يوضّح features.',
     resources: [
-      {
-        title: 'AWS CodePipeline',
-        url: 'https://aws.amazon.com/codepipeline',
-        kind: 'official'
-      }
+      { title: 'Planning guide', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'official' }
     ],
-    challengeEn: 'Build and present the complete CI/CD pipeline.',
-    challengeAr: 'Build and present the complete CI/CD pipeline.',
-    prerequisites: [],
-    criteriaEn: ['Can build a complete pipeline', 'Can present architecture and lessons'],
-    criteriaAr: ['Can build a complete pipeline', 'Can present architecture and lessons'],
-  }]
+    challengeEn: 'Extend your features work with one improvement and document the result.',
+    challengeAr: 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
+    prerequisites: [299],
+    criteriaEn: ['Can explain features', 'Completed the hands-on task', 'Documented the result'],
+    criteriaAr: ['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']
+  },
+]

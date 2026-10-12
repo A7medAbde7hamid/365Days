@@ -330,7 +330,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     lessonEn:
       'NoSQL databases store data in flexible schemas. MongoDB uses BSON (binary JSON) format. CRUD operations are similar to SQL but without fixed schemas. Understand the trade-offs between consistency and flexibility.',
     lessonAr:
-      'قواعد البيانات NoSQL تخزن البيانات في مخططات مرنة. MongoDB تستخدم BSON (JSON binary). العمليات CRUD مشابهة لـ SQL ولكن بدون مخططات ثابتة. فهمtrade-offs between consistency and flexibility.',
+      'قواعد البيانات NoSQL تخزن البيانات في مخططات مرنة. MongoDB تستخدم BSON (JSON binary). العمليات CRUD مشابهة لـ SQL ولكن بدون مخططات ثابتة. فهم trade-offs between consistency and flexibility.',
     tasks: [
       {
         en: 'Connect to a MongoDB instance and create a database',
@@ -376,7 +376,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     lessonEn:
       'Migrations version your database schema. Use up and down functions to apply and revert changes. Never apply migrations directly to production without a backup. Test migrations in a development environment first.',
     lessonAr:
-      ' migrations تنسخschema قاعدة البيانات. استخدم up and down functions لتطبيق وإلغاء التغييرات. Never apply migrations directly to production without a backup. Test migrations in a development environment first.',
+      ' migrations تنسخ schema قاعدة البيانات. استخدم up and down functions لتطبيق وإلغاء التغييرات. Never apply migrations directly to production without a backup. Test migrations in a development environment first.',
     tasks: [
       {
         en: 'Write a migration that adds a column to the users table',
@@ -422,7 +422,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     lessonEn:
       'Redis is an in-memory data structure store used as a cache and message broker. Set key-value pairs with SET, and retrieve with GET. Use TTL for expiration. Publish/subscribe enables event broadcasting.',
     lessonAr:
-      'Redis store بيانات في الذاكرة cache وتpub-sub message broker. Set key-value pairs مع SET, and retrieve مع GET. Use TTL for expiration. Publish/subscribe enables event broadcasting.',
+      'Redis store بيانات في الذاكرة cache وت pub-sub message broker. Set key-value pairs مع SET, and retrieve مع GET. Use TTL for expiration. Publish/subscribe enables event broadcasting.',
     tasks: [
       {
         en: 'Install Redis and set a key-value pair with a TTL of 60 seconds',
@@ -453,7 +453,7 @@ exerciseAr: 'Set up Redis and demonstrate SET, GET, and TTL operations.',
     challengeAr: 'Set up a Pub/Sub system that broadcasts a message to all subscribers',
     prerequisites: [129],
     criteriaEn: ['Redis installed', 'SET/GET/TTL working', 'Pub/Sub broadcasting'],
-    criteriaAr: ['Redis已安装', 'SET/GET/TTL working', 'Pub/Sub broadcasting']
+    criteriaAr: ['Redis', 'SET/GET/TTL working', 'Pub/Sub broadcasting']
   },
   {
     dayNumber: 131,
@@ -651,7 +651,7 @@ deliverableEn: 'Express middleware with per-endpoint rate limits and Redis count
     lessonEn:
       'Monitoring your database is critical for production. Log slow queries exceeding 100ms, track connection pool usage, and set up alerts for abnormal patterns. Use pg_stat_activity to view active queries and wait types.',
     lessonAr:
-      'مonitoring your database is critical for production. Log slow queries exceeding 100ms, track connection pool usage, and set up alerts for abnormal patterns. Use pg_stat_activity to view active queries and wait types.',
+      'م onitoring your database is critical for production. Log slow queries exceeding 100ms, track connection pool usage, and set up alerts for abnormal patterns. Use pg_stat_activity to view active queries and wait types.',
     tasks: [
       {
         en: 'Enable slow query logging for queries exceeding 100ms',
@@ -1359,7 +1359,7 @@ deliverableAr: 'A production-ready database application with all Phase 5 feature
     exerciseAr: 'Write a Phase 5 summary and identify Phase 6 focus areas.',
     deliverableEn: 'A written Phase 5 summary and Phase 6 focus plan.',
 deliverableAr: 'Written Phase 5 summary and Phase 6 focus plan.',
-    resources: [],
+    resources: [{ title: 'MDN Learn', url: 'https://developer.mozilla.org/en-US/docs/Learn', kind: 'reference' }],
     challengeEn: 'Present a 5-minute summary of Phase 5 learnings to your team',
     challengeAr: 'Present a 5-minute summary of Phase 5 learnings to your team',
     prerequisites: [149],

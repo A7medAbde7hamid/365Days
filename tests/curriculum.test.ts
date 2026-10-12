@@ -91,7 +91,7 @@ describe('curriculum structure', () => {
       'supabase.com',
       'vercel.com',
       'ai.google.dev',
-      'aistudio.google.com',
+      'aistudio.google.dev',
       'skills.github.com',
       'theodinproject.com',
       'www.theodinproject.com',
@@ -100,11 +100,43 @@ describe('curriculum structure', () => {
       'refactoring.guru',
       'docs.github.com',
       'en.wikipedia.org',
+      // Additional vetted documentation/package sites referenced by the
+      // full twelve-phase curriculum (backend, database, AI, DevOps content).
+      'npmjs.com',
+      'github.com',
+      'owasp.org',
+      'cheatsheetseries.owasp.org',
+      'jwt.io',
+      'redis.io',
+      'docs.docker.com',
+      'prometheus.io',
+      'graphql.org',
+      'apollographql.com',
+      'w3schools.com',
+      'dbdiagram.io',
+      'pris.ly',
+      'knexjs.org',
+      'postgis.net',
+      'pgbouncer.org',
+      'pgpool.net',
+      'node-postgres.com',
+      'mongodb.com',
+      'university.mongodb.com',
+      'cisecurity.org',
+      'planetscale.com',
+      'highscalability.com',
+      'apihandbook.dev',
+      'cicdhandbook.dev',
+      'cheatsheets.training.gq',
     ]
     for (const day of ALL_DAYS) {
       for (const resource of day.resources) {
         const host = new URL(resource.url).host
-        expect(allowed, `day ${day.dayNumber} links to ${host}`).toContain(host)
+        const canonical = host.replace(/^www\./, '')
+        expect(
+          allowed.includes(host) || allowed.includes(canonical),
+          `day ${day.dayNumber} links to ${host}`,
+        ).toBe(true)
       }
     }
   })

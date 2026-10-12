@@ -624,7 +624,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     challengeAr: 'Write an integration test that a deprecated v1 endpoint returns 410 Gone',
     prerequisites: [102],
     criteriaEn: ['supertest installed', 'Test covers register/login/protected', 'Database reset with beforeEach'],
-    criteriaAr: ['supertest已安装', 'Test covers register/login/protected', 'Database reset with beforeEach']
+    criteriaAr: ['supertest', 'Test covers register/login/protected', 'Database reset with beforeEach']
   },
   {
     dayNumber: 105,
@@ -670,7 +670,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     challengeAr: 'Add refresh token revocation on logout and verify old tokens are rejected',
     prerequisites: [101, 103],
     criteriaEn: ['Register hashes password', 'Login issues JWT + two cookies', 'Protected route verified', 'Rate-limited login', 'Password reset flow'],
-    criteriaAr: ['تجزئة كلمة المرور في التسجيل', 'تسجيل دخولIssues JWT + كوكيز', 'مسار Protected route verified', 'تسجيل دخول rate-limited', 'تدفق إعادة تعيين كلمة المرور']
+    criteriaAr: ['تجزئة كلمة المرور في التسجيل', 'تسجيل دخول Issues JWT + كوكيز', 'مسار Protected route verified', 'تسجيل دخول rate-limited', 'تدفق إعادة تعيين كلمة المرور']
   },
   {
     dayNumber: 106,
@@ -780,7 +780,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     lessonEn:
       'A CI pipeline runs on every push: install deps, run tests, build the image, and deploy. Use actions/checkout, setup-node, and your custom test/script steps. Configure secrets for credentials. Deploy to a platform (Render, Fly.io, Railway) via their CLI or API. Enable rollbacks on failure.',
     lessonAr:
-      'أنبوبة CI تعمل على كل push: dependencies,tests, image build, deploy. استخدم actions/checkout, setup-node, والخطواتustom test/script.Configure secrets for credentials. Deploy to a platform (Render, Fly.io, Railway) via their CLI or API. Enable rollbacks on failure.',
+      'أنبوبة CI تعمل على كل push: dependencies,tests, image build, deploy. استخدم actions/checkout, setup-node, والخطوات ustom test/script.Configure secrets for credentials. Deploy to a platform (Render, Fly.io, Railway) via their CLI or API. Enable rollbacks on failure.',
     tasks: [
       {
         en: 'Create a GitHub Actions workflow that runs tests on push',
@@ -872,7 +872,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     lessonEn:
       'Use multi-stage builds to keep the final image slim. Define services in docker-compose.yml: backend, frontend, and a postgres or redis volume. Network the services under a custom bridge network. Expose the frontend on port 80 and the backend on its API port.',
     lessonAr:
-      'استخدم Builds متعددة المراحل للحفاظ على image slim. عرف الخدمات في docker-compose.yml: backend, frontend, و postgres أو redis volume. شبكة الخدمات تحت شبكة جسر مخصصة. تعرضfrontend على المنفذ 80 و backend على منفذ API.',
+      'استخدم Builds متعددة المراحل للحفاظ على image slim. عرف الخدمات في docker-compose.yml: backend, frontend, و postgres أو redis volume. شبكة الخدمات تحت شبكة جسر مخصصة. تعرض frontend على المنفذ 80 و backend على منفذ API.',
     tasks: [
       {
         en: 'Write a multi-stage Dockerfile for the backend',
@@ -918,7 +918,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     lessonEn:
       'A review day. Take your backend work from days 97-110 and re-examine it. Look for: missing Dockerfiles or broken CI pipelines, logging that isn\'t structured or redacted, poorly named services in docker-compose, any route that writes user data without validation. Fix each issue and run your test suite.',
     lessonAr:
-      'يوم مراجعة. خذ مشاريع backend من الأيام 97-110 وأعاده构型 للبحث عن: missing Dockerfiles or broken CI pipelines, logging that isn\'t structured or redacted, poorly named services in docker-compose, any route that writes user data without validation. Fix each issue and run your test suite.',
+      'يوم مراجعة. خذ مشاريع backend من الأيام 97-110 وأعاده للبحث عن: missing Dockerfiles or broken CI pipelines, logging that isn\'t structured or redacted, poorly named services in docker-compose, any route that writes user data without validation. Fix each issue and run your test suite.',
     tasks: [
       {
         en: 'List the ten biggest mistakes in your backend work and fix each',
@@ -948,7 +948,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     challengeAr: 'Add a rollback step to your CI pipeline and verify it restores the previous version.',
     prerequisites: [110],
     criteriaEn: ['All Dockerfiles present', 'CI pipeline green', 'Structured logs in all services'],
-    criteriaAr: ['جميع Dockerfiles موجودة', 'تنباخ CI أخضر', 'سجِّلJSON structured in all services']
+    criteriaAr: ['جميع Dockerfiles موجودة', 'تنباخ CI أخضر', 'سجِّل JSON structured in all services']
   },
   {
     dayNumber: 112,
@@ -963,7 +963,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     lessonEn:
       'Caching improves performance by storing frequently accessed data closer to the client. Use Cache-Control headers to manage freshness, and ETag for conditional requests. Avoid caching sensitive data. A simple in-memory cache can reduce database load significantly.',
     lessonAr:
-      'تحسين الأداء عن طريق تخزين البيانات المستخدمة frequently closer to the client. استخدم Cache-Control headers لإدارة الانتعاش، وETag للطلبات الشرطية. تجنب تخزين البيانات الحساسة. Cache بسيط في الذاكرة يمكن أن يقلل حمل database significantly.',
+      'تحسين الأداء عن طريق تخزين البيانات المستخدمة frequently closer to the client. استخدم Cache-Control headers لإدارة الانتعاش، و ETag للطلبات الشرطية. تجنب تخزين البيانات الحساسة. Cache بسيط في الذاكرة يمكن أن يقلل حمل database significantly.',
     tasks: [
       {
         en: 'Set a Cache-Control header on a route to set max-age=3600',
@@ -1009,7 +1009,7 @@ export const PHASE_4_DAYS: CurriculumDay[] = [
     lessonEn:
       'Network requests can fail transiently. Use exponential backoff (1s, 2s, 4s, 8s) with a max retry count. Distinguish between client errors (4xx) and server errors (5xx) — never retry on 4xx. Use a library like p-retry or implement the pattern manually.',
     lessonAr:
-      'يمكن أن تفشل طلبات الشبكة بشكل مؤقت. استخدم экспоненциальный回退 مع حد أقصى لعدد المحاولات. 구분 بين أخطاء العميل (4xx) وأخطاء الخادم (5xx) — never retry on 4xx. Use a library like p-retry or implement the pattern manually.',
+      'يمكن أن تفشل طلبات الشبكة بشكل مؤقت. استخدم экспоненциальный مع حد أقصى لعدد المحاولات.  بين أخطاء العميل (4xx) وأخطاء الخادم (5xx) — never retry on 4xx. Use a library like p-retry or implement the pattern manually.',
     tasks: [
       {
         en: 'Implement a retry function with exponential backoff (max 3 attempts)',
@@ -1147,7 +1147,7 @@ deliverableEn: 'Express route with rate limiting and 429 Retry-After header.',
     lessonEn:
       'A review day. Take your backend work from days 97-115 and re-examine it. Look for: missing rate limiting configurations, unhandled async errors, cache headers missing or improperly set, any route that writes user data without validation. Fix each issue and run your test suite.',
     lessonAr:
-      'يوم مراجعة. خذ مشاريع backend من الأيام 97-115 وأعاده构型 للبحث عن: missing rate limiting configurations, unhandled async errors, cache headers missing or improperly set, any route that writes user data without validation. Fix each issue and run your test suite.',
+      'يوم مراجعة. خذ مشاريع backend من الأيام 97-115 وأعاده للبحث عن: missing rate limiting configurations, unhandled async errors, cache headers missing or improperly set, any route that writes user data without validation. Fix each issue and run your test suite.',
     tasks: [
       {
         en: 'List the fifteen biggest mistakes in your backend work and fix each',
@@ -1315,7 +1315,7 @@ deliverableEn: 'A Vitest test file covering auth API and WebSocket.',
     challengeAr: 'Write a WebSocket test that a broadcast message is received by all clients',
     prerequisites: [118],
     criteriaEn: ['supertest installed', 'WebSocket tests cover connect/send', 'beforeEach resets state'],
-    criteriaAr: ['supertest已安装', 'WebSocket tests cover connect/send', 'beforeEach resets state']
+    criteriaAr: ['supertest', 'WebSocket tests cover connect/send', 'beforeEach resets state']
   },
   {
     dayNumber: 120,
