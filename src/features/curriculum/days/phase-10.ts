@@ -1485,5 +1485,5 @@ deliverableAr: 'Prometheus configuration, Grafana dashboard, and alert configura
     challengeAr: 'Build and present the complete CI/CD pipeline.',
     prerequisites: [],
     criteriaEn: ['Can build a complete pipeline', 'Can present architecture and lessons'],
-    criteriaAr: ['Can build a complete pipeline', 'Can present architecture and lessons']
+    criteriaAr: ['Can build a complete pipeline', 'Can present architecture and lessons'],
   }]

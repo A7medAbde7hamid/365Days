@@ -1215,7 +1215,7 @@ deliverableAr: 'Privacy protection strategy and statement.',
     exerciseEn: 'Implement privacy protection and document the strategy.',
     exerciseAr: 'Implement privacy protection and document the strategy.',
     deliverableEn: 'PII redaction function, anonymization strategy, and privacy statement.',
-deliverableAr: 'PII redaction function', anonymization strategy, and privacy statement.',
+deliverableAr: 'PII redaction function, anonymization strategy, and privacy statement',
     resources: [
       { title: 'OpenAI Data Usage Policy', url: 'https://openai.com/policies/data-usage', kind: 'reference' }
     ],

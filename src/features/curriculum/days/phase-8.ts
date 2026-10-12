@@ -1630,9 +1630,9 @@ deliverableAr: 'Express app with rate limiting and authentication integrated.',
 
     ],
 
-    challengeEn: 'Practice the concepts learned in this day's lessons.',
+    challengeEn: 'Practice the concepts learned in this day\'s lessons.',
 
-    challengeAr: 'مارس المفاهيم التي learned في هذا اليوم's lessons.',
+    challengeAr: 'مارس المفاهيم التي learned في هذا اليوم\'s lessons.',
 
     prerequisites: [],
 
@@ -1772,7 +1772,7 @@ deliverableAr: 'Express app with rate limiting and authentication integrated.',
 
     lessonEn:
 
-      'Browser default stylesheets vary significantly across user agents. A normalized baseline removes inconsistencies while preserving useful defaults, providing a consistent starting point for your project's custom styles.',
+      'Browser default stylesheets vary significantly across user agents. A normalized baseline removes inconsistencies while preserving useful defaults, providing a consistent starting point for your project\'s custom styles.',
 
     lessonAr:
 
@@ -2386,9 +2386,9 @@ deliverableAr: 'Express app with rate limiting and authentication integrated.',
 
     ],
 
-    challengeEn: 'Style a scrollbar to match your design system's color palette.',
+    challengeEn: 'Style a scrollbar to match your design system\'s color palette.',
 
-    challengeAr: 'Style a scrollbar to match your design system's color palette.',
+    challengeAr: 'Style a scrollbar to match your design system\'s color palette.',
 
     prerequisites: [],
 
@@ -2636,7 +2636,7 @@ deliverableAr: 'Express app with rate limiting and authentication integrated.',
 
     lessonEn:
 
-      'Container queries enable component-based responsiveness by reacting to the parent container's size rather than the viewport. This is the future of modular, reusable UI components.',
+      'Container queries enable component-based responsiveness by reacting to the parent container\'s size rather than the viewport. This is the future of modular, reusable UI components.',
 
     lessonAr:
 
@@ -2710,7 +2710,7 @@ deliverableAr: 'Express app with rate limiting and authentication integrated.',
 
     ],
 
-    challengeEn: 'Implement a container query to change a component's layout at a specific breakpoint.',
+    challengeEn: 'Implement a container query to change a component\'s layout at a specific breakpoint.',
 
     challengeAr: 'Implement a container query to change a component layout at a specific breakpoint.',
 
