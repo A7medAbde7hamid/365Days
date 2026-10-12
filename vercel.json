@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "VITE_SUPABASE_URL": "https://gwpbmaxfzbcexbbuzjws.supabase.co",
+    "VITE_SUPABASE_ANON_KEY": "sb_publishable_p7huu57yad1BghKtjkxtig_BU-V6j37"
+  }
+}
