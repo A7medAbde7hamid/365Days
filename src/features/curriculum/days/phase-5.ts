@@ -39,7 +39,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     exerciseEn: 'Create a table, insert 3 rows, update one row\'s value, then delete one row. Script the whole sequence.',
     exerciseAr: 'Create a table, insert 3 rows, update one row\'s value, then delete one row. Script the whole sequence.',
     deliverableEn: 'A SQL script with SELECT, INSERT, UPDATE, and DELETE statements.',
-    deliverableAr: 'A SQL script with SELECT, INSERT, UPDATE, and DELETE statements.',
+    deliverableAr: 'A SQL script with SELECT, INSERT, UPDATE, and DELETE statements',,
     resources: [
       { title: 'MDN: SQL introduction', url: MDN + '/Learn/Web/Structured_queries/SQL_basic_syntax', kind: 'official' },
       { title: 'W3Schools SQL Tutorial', url: 'https://www.w3schools.com/sql/', kind: 'reference' }
@@ -131,7 +131,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     exerciseEn: 'Install PostgreSQL, connect via psql, create a database, and list its tables.',
     exerciseAr: 'Install PostgreSQL, connect via psql, create a database, and list its tables.',
     deliverableEn: 'PostgreSQL installed and a new database created.',
-    deliverableAr: 'PostgreSQL installed and a new database created.',
+    deliverableAr: 'PostgreSQL installed and a new database created',,
     resources: [
       { title: 'PostgreSQL Documentation', url: 'https://www.postgresql.org/docs/', kind: 'official' },
       { title: 'psql cheat sheet', url: 'https://cheatsheets.training.gq/psql/', kind: 'reference' }
@@ -177,7 +177,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     exerciseEn: 'Create the users table and run the seed script.',
     exerciseAr: 'Create the users table and run the seed script.',
     deliverableEn: 'A users table with constraints, index, and seed script.',
-    deliverableAr: 'A users table with constraints, index, and seed script.',
+    deliverableAr: 'A users table with constraints, index, and seed script',,
     resources: [
       { title: 'PostgreSQL Cheat Sheet', url: 'https://cheatsheets.training.gq/psql/', kind: 'reference' },
       { title: 'Index tutorial', url: 'https://www.postgresql.org/docs/current/indexes.html', kind: 'official' }
@@ -223,7 +223,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     exerciseEn: 'Add a missing NOT NULL constraint and an index to your users table.',
     exerciseAr: 'Add a missing NOT NULL constraint and an index to your users table.',
     deliverableEn: 'A cleaned-up schema with constraints and indexes.',
-    deliverableAr: 'A cleaned-up schema with constraints and indexes.',
+    deliverableAr: 'A cleaned-up schema with constraints and indexes',,
     resources: [
       { title: 'PostgreSQL Constraints', url: 'https://www.postgresql.org/docs/current/ddl-constraints.html', kind: 'official' }
     ],
@@ -264,7 +264,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     exerciseEn: 'Write a 3-step sign-up flow description with hashing.',
     exerciseAr: 'Write a 3-step sign-up flow description with hashing.',
     deliverableEn: 'A written description of the auth flow with hashing steps.',
-    deliverableAr: 'A written description of the auth flow with hashing steps.',
+    deliverableAr: 'A written description of the auth flow with hashing steps',,
     resources: [
       { title: 'OWASP Password Storage', url: 'https://owasp.org/www-community/Password_Storage', kind: 'official' },
       { title: 'Bcrypt npm package', url: 'https://www.npmjs.com/package/bcrypt', kind: 'reference' }
@@ -306,7 +306,7 @@ export const PHASE_5_DAYS: CurriculumDay[] = [
     exerciseEn: 'Create the sessions table and run the seed script with bcrypt hashing.',
     exerciseAr: 'Create the sessions table and run the seed script with bcrypt hashing.',
     deliverableEn: 'Auth schema with users and sessions tables, seeded with hashed passwords.',
-    deliverableAr: 'Auth schema with users and sessions tables, seeded with hashed passwords.',
+    deliverableAr: 'Auth schema with users and sessions tables, seeded with hashed passwords',,
     resources: [
       { title: 'Bcrypt npm package', url: 'https://www.npmjs.com/package/bcrypt', kind: 'reference' },
       { title: 'Supabase Auth overview', url: 'https://supabase.com/docs/guides/auth', kind: 'official' }

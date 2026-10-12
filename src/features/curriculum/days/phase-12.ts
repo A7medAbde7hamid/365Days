@@ -305,7 +305,7 @@ deliverableAr: 'Documentation for sample project.',
     exerciseEn: 'Produce comprehensive documentation for the capstone project.',
     exerciseAr: 'Produce comprehensive documentation for the capstone project.',
     deliverableEn: 'Comprehensive documentation: README, API docs, user guide, and architecture diagram.',
-deliverableAr: 'Documentation comprehensive: README', API docs, user guide, and architecture diagram.',
+deliverableAr: 'Documentation comprehensive: README, API docs, user guide, and architecture diagram',
     resources: []
   },
   {
@@ -533,7 +533,7 @@ deliverableAr: 'Freelance rates and contract scope.',
     exerciseEn: 'Set up freelance contracting with service offerings, rates, and a contract template.',
     exerciseAr: 'Set up freelance contracting with service offerings, rates, and a contract template.',
     deliverableEn: 'Service offerings, rates, and a contract template.',
-deliverableAr: 'Service offerings', rates, and contract template.',
+deliverableAr: 'Service offerings, rates, and contract template',
     resources: []
   },
   {

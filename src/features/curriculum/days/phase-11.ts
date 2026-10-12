@@ -1639,5 +1639,5 @@ deliverableAr: 'SSDLC implementation documented and verified.',
     challengeAr: 'Design and deliver a phishing simulation and report findings.',
     prerequisites: [],
     criteriaEn: ['Can design a phishing simulation', 'Can measure click-through rates'],
-    criteriaAr: ['Can design a phishing simulation', 'Can measure click-through rates']
+    criteriaAr: ['Can design a phishing simulation', 'Can measure click-through rates'],,
   }]

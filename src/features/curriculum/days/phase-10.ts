@@ -39,7 +39,7 @@ export const PHASE_10_DAYS: CurriculumDay[] = [
     exerciseEn: 'Set up a CI pipeline that runs linting, testing, and building on every push.',
     exerciseAr: 'Set up a CI pipeline that runs linting, testing, and building on every push.',
     deliverableEn: 'A CI pipeline configuration that runs linting, testing, and building.',
-deliverableAr: 'CI pipeline configuration that runs linting', testing, and building.',
+deliverableAr: 'CI pipeline configuration that runs linting, testing, and building',
     resources: [
       { title: 'GitHub Actions docs', url: 'https://docs.github.com/en/actions', kind: 'reference' }
     ],
@@ -219,7 +219,7 @@ deliverableAr: 'Terraform configuration file that creates a resource.',
     exerciseEn: 'Write Terraform configurations for a staging environment with database, web server, and load balancer.',
     exerciseAr: 'Write Terraform configurations for a staging environment with database, web server, and load balancer.',
     deliverableEn: 'Terraform configurations for a staging environment with database, web server, and load balancer.',
-deliverableAr: 'Terraform configurations for a staging environment with database', web server, and load balancer.',
+deliverableAr: 'Terraform configurations for a staging environment with database, web server, and load balancer',
     resources: [
       { title: 'Terraform docs', url: 'https://developer.hashicorp.com/terraform/docs', kind: 'reference' }
     ],
@@ -400,7 +400,7 @@ deliverableAr: 'Prometheus configuration and Grafana dashboard.',
     exerciseEn: 'Set up Prometheus and Grafana with metrics and alerts.',
     exerciseAr: 'Set up Prometheus and Grafana with metrics and alerts.',
     deliverableEn: 'Prometheus configuration, Grafana dashboard, and alert configuration.',
-deliverableAr: 'Prometheus configuration', Grafana dashboard, and alert configuration.',
+deliverableAr: 'Prometheus configuration, Grafana dashboard, and alert configuration',
     resources: [
       { title: 'Prometheus docs', url: 'https://prometheus.io/docs/', kind: 'reference' },
       { title: 'Grafana docs', url: 'https://grafana.com/docs/', kind: 'reference' }
