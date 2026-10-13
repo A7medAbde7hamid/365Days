@@ -70,10 +70,15 @@ export function LeaderboardPage() {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{t('leaderboard.title')}</h1>
-          {hidden && <p className="mt-1 text-sm text-muted">{t('leaderboard.optedOut')}</p>}
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+            <Trophy className="size-5" />
+          </span>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">{t('leaderboard.title')}</h1>
+            {hidden && <p className="mt-0.5 text-sm text-muted">{t('leaderboard.optedOut')}</p>}
+          </div>
         </div>
         <div className="flex gap-1 rounded-lg border border-border bg-surface p-1">
           {(['week', 'month', 'all'] as Period[]).map((value) => (
@@ -152,7 +157,12 @@ export function LeaderboardPage() {
                       )}
                     >
                       <div className="flex min-w-0 items-center gap-3">
-                        <span className="tabular w-6 shrink-0 text-sm font-semibold text-muted">
+                        <span
+                          className={cn(
+                            'tabular w-6 shrink-0 text-sm font-semibold',
+                            row.rank === 0 ? 'text-warning' : 'text-muted',
+                          )}
+                        >
                           {formatNumber(row.rank + 1)}
                         </span>
                         <span className="truncate text-sm font-medium" dir="auto">
@@ -225,8 +235,13 @@ export function AchievementsPage() {
 
   return (
     <div className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold tracking-tight">{t('achievements.title')}</h1>
+      <header className="flex items-center gap-3">
+        <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+          <Award className="size-5" />
+        </span>
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">{t('achievements.title')}</h1>
+        </div>
       </header>
 
       {error && <Alert variant="danger">{error}</Alert>}
