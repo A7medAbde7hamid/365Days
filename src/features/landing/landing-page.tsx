@@ -13,7 +13,12 @@ export function LandingPage() {
     <div className="flex min-h-svh flex-col bg-bg">
       <header className="border-b border-border bg-surface">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-4 py-4">
-          <span className="font-bold tracking-tight">{t('app.name')}</span>
+          <div className="flex items-center gap-2">
+            <span className="grid size-7 place-items-center rounded-md bg-accent-gradient text-xs font-bold text-white">
+              365
+            </span>
+            <span className="font-bold tracking-tight">{t('app.name')}</span>
+          </div>
           <div className="flex items-center gap-2">
             <LanguageToggle />
             <ThemeToggle />
@@ -40,12 +45,18 @@ export function LandingPage() {
       </header>
 
       <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 py-20 text-center">
-        <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">{t('app.name')}</h1>
+        <h1 className="text-accent-gradient max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
+          {t('app.name')}
+        </h1>
         <p className="mt-4 max-w-xl text-lg text-muted">{t('app.tagline')}</p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
-            className={cn(buttonVariants({ size: 'lg' }), !isConfigured && 'pointer-events-none opacity-50')}
+            className={cn(
+              buttonVariants({ size: 'lg' }),
+              'border-0 bg-accent-gradient text-white hover:opacity-90',
+              !isConfigured && 'pointer-events-none opacity-50',
+            )}
             to="/sign-up"
             aria-disabled={!isConfigured}
           >

@@ -7,7 +7,12 @@ export function AuthCard({ title, subtitle, children }: { title: string; subtitl
   return (
     <div className="flex min-h-svh flex-col bg-bg">
       <div className="flex items-center justify-between border-b border-border bg-surface px-4 py-3">
-        <span className="font-semibold tracking-tight">DevJourney 365</span>
+        <div className="flex items-center gap-2">
+          <span className="grid size-7 place-items-center rounded-md bg-accent-gradient text-xs font-bold text-white">
+            365
+          </span>
+          <span className="font-semibold tracking-tight">DevJourney 365</span>
+        </div>
         <div className="flex items-center gap-1">
           <LanguageToggle />
           <ThemeToggle />
