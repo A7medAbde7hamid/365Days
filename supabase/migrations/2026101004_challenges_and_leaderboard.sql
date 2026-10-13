@@ -17,15 +17,15 @@
 -- -----------------------------------------------------------------------------
 
 CREATE OR REPLACE FUNCTION public.create_group_challenge(
-  p_group_id     uuid,
-  p_title        text,
-  p_description  text DEFAULT NULL,
-  p_rules        text DEFAULT NULL,
+  p_group_id       uuid,
+  p_title          text,
   p_challenge_type text,
-  p_target_count integer,
-  p_starts_at    timestamptz DEFAULT now(),
-  p_ends_at      timestamptz DEFAULT now() + interval '7 days',
-  p_bonus_points integer DEFAULT 25
+  p_target_count   integer,
+  p_description    text DEFAULT NULL,
+  p_rules          text DEFAULT NULL,
+  p_starts_at      timestamptz DEFAULT now(),
+  p_ends_at        timestamptz DEFAULT now() + interval '7 days',
+  p_bonus_points   integer DEFAULT 25
 )
 RETURNS uuid
 LANGUAGE plpgsql
