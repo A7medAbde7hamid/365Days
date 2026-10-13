@@ -87,8 +87,13 @@ export function RoadmapPage({
       {filtered.map(({ phase, days }) => (
         <section key={phase.slug} className="space-y-3">
           <div className="flex items-center justify-between gap-2">
-            <h2 className="font-semibold">
-              {locale === 'ar' ? `المرحلة ${phase.position}: ${phase.titleAr}` : `${phase.titleEn}`}
+            <h2 className="flex items-center gap-2 font-semibold">
+              <span className="tabular grid size-7 shrink-0 place-items-center rounded-md bg-accent-gradient text-sm font-bold text-white">
+                {phase.position}
+              </span>
+              <span className="min-w-0">
+                {locale === 'ar' ? phase.titleAr : phase.titleEn}
+              </span>
             </h2>
             <Badge variant="outline">
               {days.length} / {phase.endDay - phase.startDay + 1}
