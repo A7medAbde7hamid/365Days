@@ -24,7 +24,7 @@ CREATE OR REPLACE FUNCTION public.create_group_challenge(
   p_challenge_type text,
   p_target_count integer,
   p_starts_at    timestamptz DEFAULT now(),
-  p_ends_at      timestamptz DEFAULT timestamptz 'now() + interval '7 days',
+  p_ends_at      timestamptz DEFAULT now() + interval '7 days',
   p_bonus_points integer DEFAULT 25
 )
 RETURNS uuid
