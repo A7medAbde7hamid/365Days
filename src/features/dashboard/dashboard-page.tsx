@@ -84,20 +84,55 @@ export function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold tracking-tight">
-          {t('dashboard.greeting')}
-          {firstName ? `, ${firstName}` : ''}
-        </h1>
-        <p className="mt-1 text-sm text-muted">{formatDate(today)}</p>
-      </header>
+      {/* Vibrant hero banner — consistent in both themes via an explicit gradient. */}
+      <section className="overflow-hidden rounded-lg shadow-md">
+        <div className="bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_55%,#db2777_120%)] p-5 text-white sm:p-6">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <p className="text-xs font-medium uppercase tracking-wider text-white/70">
+                {formatDate(today)}
+              </p>
+              <h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">
+                {t('dashboard.greeting')}
+                {firstName ? `, ${firstName}` : ''}
+              </h1>
+              {currentPhase && (
+                <p className="mt-1 text-sm text-white/80">
+                  {t('roadmap.phase')} {currentPhase.position} —{' '}
+                  {locale === 'ar' ? currentPhase.titleAr : currentPhase.titleEn}
+                </p>
+              )}
+            </div>
+            <div className="flex shrink-0 items-center gap-4">
+              <div className="text-start">
+                <p className="text-xs text-white/70">{t('dashboard.currentDay')}</p>
+                <p className="tabular text-3xl font-extrabold leading-none">
+                  {formatNumber(currentDay)}
+                  <span className="ms-1 text-base font-medium text-white/70">
+                    / {formatNumber(TOTAL_DAYS)}
+                  </span>
+                </p>
+              </div>
+              <Link
+                to={`/app/roadmap/${currentDayRecord?.dayNumber ?? currentDay}`}
+                className="inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 text-sm font-semibold text-indigo-700 shadow-sm transition-colors hover:bg-white/90"
+              >
+                <PlayCircle className="size-4" />
+                {t('dashboard.startLesson')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Card>
           <CardContent className="pt-5">
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted">{t('dashboard.currentDay')}</span>
-              <ListTodo className="size-4 text-subtle" />
+              <span className="grid size-9 place-items-center rounded-md bg-accent-soft text-accent">
+                <ListTodo className="size-4" />
+              </span>
             </div>
             <p className="tabular mt-1 text-2xl font-bold">
               {t('dashboard.dayOf', { n: formatNumber(currentDay) })}
@@ -115,7 +150,9 @@ export function DashboardPage() {
           <CardContent className="pt-5">
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted">{t('dashboard.currentStreak')}</span>
-              <Flame className="size-4 text-warning" />
+              <span className="grid size-9 place-items-center rounded-md bg-warning-soft text-warning">
+                <Flame className="size-4" />
+              </span>
             </div>
             {loading ? (
               <Skeleton className="mt-2 h-8 w-16" />
@@ -135,7 +172,9 @@ export function DashboardPage() {
           <CardContent className="pt-5">
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted">{t('dashboard.tasksDone')}</span>
-              <Gauge className="size-4 text-subtle" />
+              <span className="grid size-9 place-items-center rounded-md bg-success-soft text-success">
+                <Gauge className="size-4" />
+              </span>
             </div>
             {loading ? (
               <Skeleton className="mt-2 h-8 w-16" />
@@ -152,7 +191,9 @@ export function DashboardPage() {
           <CardContent className="pt-5">
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted">{t('dashboard.studyTime')}</span>
-              <Timer className="size-4 text-subtle" />
+              <span className="grid size-9 place-items-center rounded-md bg-info-soft text-info">
+                <Timer className="size-4" />
+              </span>
             </div>
             {loading ? (
               <Skeleton className="mt-2 h-8 w-24" />
