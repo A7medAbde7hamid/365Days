@@ -19,6 +19,10 @@ yarn-error.log*
 *.tsbuildinfo
 tmp/
 
+# Supabase CLI (local link/scratch state)
+supabase/.temp/
+supabase/.branches/
+
 # IDE
 .vscode/
 .idea/
