@@ -22,6 +22,7 @@
   --accent-hover: #4338ca;
   --accent-fg: #ffffff;
   --accent-soft: #eef2ff;
+  --accent-2: #7c3aed;
 
   --success: #059669;
   --success-soft: #ecfdf5;
@@ -32,13 +33,13 @@
   --info: #0369a1;
   --info-soft: #f0f9ff;
 
-  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
-  --shadow-md: 0 4px 12px -2px rgb(15 23 42 / 0.08);
-  --shadow-lg: 0 12px 32px -8px rgb(15 23 42 / 0.14);
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.06);
+  --shadow-md: 0 6px 20px -4px rgb(15 23 42 / 0.12);
+  --shadow-lg: 0 18px 40px -12px rgb(15 23 42 / 0.18);
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 0.875rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.125rem;
 
   --font-sans:
     'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -61,6 +62,7 @@
   --accent-hover: #a5b4fc;
   --accent-fg: #0b1120;
   --accent-soft: #1e2748;
+  --accent-2: #a78bfa;
 
   --success: #34d399;
   --success-soft: #10281f;
@@ -71,9 +73,9 @@
   --info: #38bdf8;
   --info-soft: #10222e;
 
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 12px 32px -8px rgb(0 0 0 / 0.5);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow-md: 0 6px 22px -6px rgb(0 0 0 / 0.55);
+  --shadow-lg: 0 20px 48px -16px rgb(0 0 0 / 0.6);
 }
 
 /* Expose tokens to Tailwind utilities (bg-surface, text-muted, ...) */
@@ -92,6 +94,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-fg: var(--accent-fg);
   --color-accent-soft: var(--accent-soft);
+  --color-accent-2: var(--accent-2);
 
   --color-success: var(--success);
   --color-success-soft: var(--success-soft);
@@ -169,4 +172,26 @@
 .tabular {
   font-variant-numeric: tabular-nums;
   font-feature-settings: 'tnum';
+}
+
+/* ---------------------------------------------------------------------------
+ * Utilities
+ * ------------------------------------------------------------------------ */
+@layer utilities {
+  /* Vibrant accent surfaces for dashboards / hero headers. */
+  .bg-accent-gradient {
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+  .text-accent-gradient {
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background-clip: text;
+    color: transparent;
+  }
+  /* Respect notches / rounded device corners on mobile. */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
 }

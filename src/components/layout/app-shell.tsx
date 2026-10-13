@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import {
   Award,
@@ -37,6 +37,23 @@ export function AppShell() {
   const { t, locale } = useLocale()
   const { signOut, profile, user } = useAuth()
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  // While the mobile drawer is open: lock body scroll and close on Escape.
+  useEffect(() => {
+    if (!mobileOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false)
+    }
+    const previous = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = previous
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [mobileOpen])
+
+  const closeMobile = () => setMobileOpen(false)
 
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? ''
 
@@ -85,7 +102,7 @@ export function AppShell() {
   return (
     <div className="min-h-svh bg-bg">
       {/* Mobile top bar */}
-      <header className="sticky top-0 z-40 flex items-center justify-between gap-2 border-b border-border bg-surface/90 px-4 py-3 backdrop-blur lg:hidden">
+      <header className="sticky top-0 z-40 flex items-center justify-between gap-2 border-b border-border bg-surface/90 px-4 py-3 pt-safe backdrop-blur lg:hidden">
         <Button
           variant="ghost"
           size="icon"
@@ -103,10 +120,29 @@ export function AppShell() {
         </div>
       </header>
 
+      {/* Mobile drawer (overlay) */}
       {mobileOpen && (
-        <div id="mobile-nav" className="border-b border-border bg-surface p-4 lg:hidden">
-          {nav}
-          <div className="mt-4">{account}</div>
+        <div id="mobile-nav" className="fixed inset-0 z-50 lg:hidden">
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={closeMobile}
+            aria-hidden="true"
+          />
+          <div className="absolute inset-y-0 start-0 flex w-72 max-w-[85%] flex-col gap-4 overflow-y-auto bg-surface p-4 pb-safe shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="text-lg font-bold tracking-tight">{t('app.name')}</span>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={closeMobile}
+                aria-label={t('nav.closeMenu')}
+              >
+                <X />
+              </Button>
+            </div>
+            {nav}
+            {account}
+          </div>
         </div>
       )}
 
