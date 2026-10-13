@@ -152,17 +152,26 @@ export function ChallengesPage({ groupId }: Props) {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{t('challenges.title')}</h1>
-          {groupId && (
-            <Link to="/app/groups" className="text-sm text-accent hover:underline">
-              {t('groups.title')}
-            </Link>
-          )}
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+            <Trophy className="size-5" />
+          </span>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">{t('challenges.title')}</h1>
+            {groupId && (
+              <Link to="/app/groups" className="text-sm text-accent hover:underline">
+                {t('groups.title')}
+              </Link>
+            )}
+          </div>
         </div>
         {groupId && (
-          <Button onClick={() => setCreating((v) => !v)} disabled={pending || !isConfigured}>
+          <Button
+            onClick={() => setCreating((v) => !v)}
+            disabled={pending || !isConfigured}
+            className="w-full sm:w-auto"
+          >
             <Plus />
             {t('challenges.create')}
           </Button>

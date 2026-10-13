@@ -164,8 +164,13 @@ export function ReviewsPage() {
 
   return (
     <div className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold tracking-tight">{t('reviews.weekly')}</h1>
+      <header className="flex items-center gap-3">
+        <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+          <CalendarDays className="size-5" />
+        </span>
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">{t('reviews.weekly')}</h1>
+        </div>
       </header>
 
       <div className="flex gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit">

@@ -100,14 +100,26 @@ export function GroupsPage() {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <h1 className="text-2xl font-bold tracking-tight">{t('groups.title')}</h1>
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+            <Users className="size-5" />
+          </span>
+          <h1 className="text-2xl font-bold tracking-tight">{t('groups.title')}</h1>
+        </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={() => setMode(mode === 'join' ? 'none' : 'join')}>
+          <Button
+            variant="outline"
+            onClick={() => setMode(mode === 'join' ? 'none' : 'join')}
+            className="flex-1 sm:flex-none"
+          >
             <LogIn />
             {t('groups.join')}
           </Button>
-          <Button onClick={() => setMode(mode === 'create' ? 'none' : 'create')}>
+          <Button
+            onClick={() => setMode(mode === 'create' ? 'none' : 'create')}
+            className="flex-1 sm:flex-none"
+          >
             <Plus />
             {t('groups.create')}
           </Button>
