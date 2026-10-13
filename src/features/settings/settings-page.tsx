@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { Settings as SettingsIcon } from 'lucide-react'
 import { useLocale } from '@/app/providers/locale-provider'
 import { useAuth } from '@/app/providers/auth-provider'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
@@ -70,6 +71,13 @@ export function SettingsPage() {
 
   return (
     <div className="space-y-6">
+      <header className="flex items-center gap-3">
+        <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+          <SettingsIcon className="size-5" />
+        </span>
+        <h1 className="text-2xl font-bold tracking-tight">{t('profile.settings')}</h1>
+      </header>
+
       {!isConfigured && (
         <Alert variant="warning">
           {t('setup.title')}

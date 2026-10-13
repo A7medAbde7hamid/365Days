@@ -163,15 +163,25 @@ export function GroupDetailPage() {
   return (
     <div className="space-y-6">
       <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{group.name}</h1>
-          {group.description && <p className="mt-1 text-sm text-muted">{group.description}</p>}
-          <p className="mt-2 text-xs text-subtle">
-            {t('groups.yourRole', { role: t(`groups.${myRole}`) })} ·{' '}
-            {t('groups.memberCount', { count: String(members.length) })}
-          </p>
+        <div className="flex items-center gap-3">
+          <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-lg font-bold uppercase text-white shadow-sm">
+            {group.name.slice(0, 1)}
+          </span>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">{group.name}</h1>
+            {group.description && <p className="mt-0.5 text-sm text-muted">{group.description}</p>}
+            <p className="mt-1 text-xs text-subtle">
+              {t('groups.yourRole', { role: t(`groups.${myRole}`) })} ·{' '}
+              {t('groups.memberCount', { count: String(members.length) })}
+            </p>
+          </div>
         </div>
-        <Button variant="outline" onClick={() => void handleLeave()} disabled={pending}>
+        <Button
+          variant="outline"
+          onClick={() => void handleLeave()}
+          disabled={pending}
+          className="w-full sm:w-auto"
+        >
           <LogOut />
           {t('groups.leave')}
         </Button>

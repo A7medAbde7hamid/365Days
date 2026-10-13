@@ -76,17 +76,26 @@ export function PortfolioPage() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold tracking-tight">
-          {profile?.display_name ?? profile?.username ?? t('projects.portfolio')}
-        </h1>
-        {profile?.username && (
-          <p className="mt-1 text-sm text-muted" dir="ltr">
-            @{profile.username}
-          </p>
-        )}
-        {profile?.bio && <p className="mt-3 max-w-2xl text-muted">{profile.bio}</p>}
-      </header>
+      <section className="overflow-hidden rounded-lg shadow-md">
+        <div className="bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_55%,#db2777_120%)] p-5 text-white sm:p-6">
+          <div className="flex items-center gap-4">
+            <span className="grid size-14 shrink-0 place-items-center rounded-full bg-white/15 text-xl font-bold uppercase">
+              {(profile?.display_name ?? profile?.username ?? '?').slice(0, 1)}
+            </span>
+            <div className="min-w-0">
+              <h1 className="truncate text-2xl font-bold tracking-tight sm:text-3xl">
+                {profile?.display_name ?? profile?.username ?? t('projects.portfolio')}
+              </h1>
+              {profile?.username && (
+                <p className="mt-0.5 text-sm text-white/80" dir="ltr">
+                  @{profile.username}
+                </p>
+              )}
+            </div>
+          </div>
+          {profile?.bio && <p className="mt-4 max-w-2xl text-white/90">{profile.bio}</p>}
+        </div>
+      </section>
 
       {error && (
         <p role="alert" className="rounded-md border border-danger/30 bg-danger-soft px-3 py-2 text-sm text-danger">
