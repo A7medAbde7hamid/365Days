@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, Check, ExternalLink, Star } from 'lucide-react'
 import { useLocale } from '@/app/providers/locale-provider'
-import { Badge, Skeleton } from '@/components/ui/primitives'
+import { Skeleton } from '@/components/ui/primitives'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { DebouncedTextarea, OfflineBanner, SyncIndicator } from '@/components/ui/day-inputs'
 import { Label } from '@/components/ui/input'
@@ -52,25 +52,32 @@ export function DayPage() {
     <article className="mx-auto max-w-3xl space-y-6">
       <OfflineBanner />
 
-      <header className="space-y-2">
-        <div className="flex flex-wrap items-center gap-2">
-          <Badge>
-            {t('roadmap.day')} {day.dayNumber} {t('roadmap.of365')}
-          </Badge>
-          {phase && (
-            <Badge variant="outline">
-              {t('roadmap.phase')} {phase.position} —{' '}
-              {locale === 'ar' ? phase.titleAr : phase.titleEn}
-            </Badge>
-          )}
-          <Badge variant="outline">
-            {formatNumber(day.estimatedMinutes)} {locale === 'ar' ? 'دقيقة' : 'min'}
-          </Badge>
-          {completed && <Badge variant="success">{t('roadmap.completed')}</Badge>}
+      {/* Vibrant day header */}
+      <section className="overflow-hidden rounded-lg shadow-md">
+        <div className="bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_55%,#db2777_120%)] p-5 text-white sm:p-6">
+          <div className="flex flex-wrap items-center gap-2 text-xs">
+            <span className="rounded-full bg-white/15 px-2.5 py-1 font-semibold">
+              {t('roadmap.day')} {day.dayNumber} {t('roadmap.of365')}
+            </span>
+            {phase && (
+              <span className="rounded-full bg-white/15 px-2.5 py-1">
+                {t('roadmap.phase')} {phase.position} —{' '}
+                {locale === 'ar' ? phase.titleAr : phase.titleEn}
+              </span>
+            )}
+            <span className="tabular rounded-full bg-white/15 px-2.5 py-1">
+              {formatNumber(day.estimatedMinutes)} {locale === 'ar' ? 'دقيقة' : 'min'}
+            </span>
+            {completed && (
+              <span className="rounded-full bg-success px-2.5 py-1 font-semibold text-white">
+                {t('roadmap.completed')}
+              </span>
+            )}
+          </div>
+          <h1 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">{l.title}</h1>
+          <p className="mt-1 text-sm text-white/80">{day.topic}</p>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight">{l.title}</h1>
-        <p className="text-sm text-muted">{day.topic}</p>
-      </header>
+      </section>
 
       {/* ---------------- Learning content ---------------- */}
       <Card>
