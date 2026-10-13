@@ -80,12 +80,17 @@ export function ProjectsPage() {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{t('projects.title')}</h1>
-          <p className="mt-1 text-sm text-muted">{t('roadmap.subtitle')}</p>
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-accent-gradient text-white shadow-sm">
+            <FolderGit2 className="size-5" />
+          </span>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">{t('projects.title')}</h1>
+            <p className="mt-0.5 text-sm text-muted">{t('roadmap.subtitle')}</p>
+          </div>
         </div>
-        <Button onClick={openCreate} disabled={!configured}>
+        <Button onClick={openCreate} disabled={!configured} className="w-full sm:w-auto">
           <Plus />
           {t('projects.new')}
         </Button>
