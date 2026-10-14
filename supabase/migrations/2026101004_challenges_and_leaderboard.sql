@@ -88,7 +88,7 @@ END;
 $$;
 
 GRANT EXECUTE ON FUNCTION public.create_group_challenge(
-  uuid, text, text, text, text, integer, timestamptz, timestamptz, integer
+  uuid, text, text, integer, text, text, timestamptz, timestamptz, integer
 ) TO authenticated;
 
 CREATE OR REPLACE FUNCTION public.join_challenge(p_challenge_id uuid)
@@ -175,9 +175,13 @@ STABLE
 SECURITY DEFINER
 SET search_path = public
 AS $$
--- Authorization: the caller must be the user themselves, or an owner/admin of
--- the group containing this challenge.
-IF NOT EXISTS (
+DECLARE
+  c        public.group_challenges%ROWTYPE;
+  v_result integer := 0;
+BEGIN
+  -- Authorization: the caller must be the user themselves, or an owner/admin of
+  -- the group containing this challenge.
+  IF NOT EXISTS (
     SELECT 1 FROM public.group_challenges gc
     JOIN public.study_group_members m ON m.group_id = gc.group_id
     WHERE gc.id = p_challenge_id
@@ -194,11 +198,6 @@ IF NOT EXISTS (
     END IF;
   END IF;
 
-  -- [rest of the function was already here, I need to preserve it]
-DECLARE
-  c        public.group_challenges%ROWTYPE;
-  v_result integer := 0;
-BEGIN
   SELECT * INTO c FROM public.group_challenges WHERE id = p_challenge_id;
   IF c.id IS NULL THEN
     RETURN 0;
