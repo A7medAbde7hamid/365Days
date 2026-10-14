@@ -1,9 +1,12 @@
 # Dependencies
 node_modules/
 
-# Environment variables
+# Environment variables — never commit real values.
+# Templates (.env.example, .env.production.example) stay tracked on purpose.
+.env
 .env.local
-.env. *
+.env.*.local
+.env.production
 
 # Production build
 /dist
