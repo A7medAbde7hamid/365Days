@@ -145,7 +145,7 @@ INSERT INTO public.curriculum_days
          'A notes file listing the observed requests, status codes and resource types.', 'ملف ملاحظات يسرد الطلبات ورموز الحالة وأنواع الموارد.',
          ARRAY['You can name the five layers between typing a URL and seeing pixels', 'You have read the response headers of at least three real pages']::text[], ARRAY['تستطيع تسمية الطبقات الخمس بين كتابة الرابط وظهور الصفحة', 'قرأت ترويسات الاستجابة لثلاث صفحات حقيقية على الأقل']::text[],
          'Compare the load waterfall of a fast site and a slow site and explain the difference in three sentences.', 'قارن شلال التحميل لموقع سريع وآخر بطيء واشرح الفرق في ثلاث جمل.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -169,7 +169,7 @@ INSERT INTO public.curriculum_days
          'A validated, semantic index.html file.', 'ملف index.html دلالي اجتاز التحقق.',
          ARRAY['Your page passes the HTML validator with no errors', 'There is exactly one <h1> and heading levels never skip']::text[], ARRAY['صفحتك تجتاز التحقق دون أخطاء', 'يوجد عنوان رئيسي واحد فقط ولا تقفز في المستويات']::text[],
          'Explain to a friend why <div> everywhere makes a page harder to use with a keyboard and screen reader.', 'اشرح لصديقك لماذا استخدام div في كل مكان يجعل الصفحة أصعب في الاستخدام بلوحة المفاتيح وقارئ الشاشة.',
-         ARRAY['1']::text[], 'lesson')
+          ARRAY[1]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -193,7 +193,7 @@ INSERT INTO public.curriculum_days
          'A three-file site with working relative navigation.', 'موقع من ثلاثة ملفات يعمل فيه التنقّل النسبي.',
          ARRAY['Every link has meaningful text', 'All relative links work when opened from the file system']::text[], ARRAY['كل رابط له نص ذو معنى', 'كل الروابط النسبية تعمل عند فتحها من الملفات']::text[],
          'Convert one list on an existing site from divs into a real <ul>/<ol> and measure how it changes keyboard navigation.', 'حوّل قائمة في موقع موجود من عناصر div إلى ul/ol حقيقية وقِس أثرها على التنقّل بلوحة المفاتيح.',
-         ARRAY['2']::text[], 'lesson')
+          ARRAY[2]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -217,7 +217,7 @@ INSERT INTO public.curriculum_days
          'An article page with correct media semantics and no layout shift.', 'صفحة مقالة بدلالات وسائط صحيحة دون قفز في التخطيط.',
          ARRAY['Decorative and informative images are correctly distinguished', 'No layout shift occurs as images load']::text[], ARRAY['التمييز بين الصور الزخرفية والمعلوماتية صحيح', 'لا يحدث قفز في التخطيط أثناء تحميل الصور']::text[],
          'Find a page with missing alt text and identify which images genuinely need it and which should be empty.', 'ابحث عن صفحة تفتقد نصوص alt وحدّد أي الصور تحتاج نصًا فعليًا وأيها يجب أن يكون النص فارغًا.',
-         ARRAY['3']::text[], 'lesson')
+          ARRAY[3]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -241,7 +241,7 @@ INSERT INTO public.curriculum_days
          'One semantic data table and one Grid-based layout.', 'جدول بيانات دلالي واحد وتخطيط واحد بـ Grid.',
          ARRAY['All header cells use <th> with correct scope', 'No table is used for layout']::text[], ARRAY['كل خلايا الترويسة تستخدم th مع scope صحيح', 'لا يوجد جدول مستخدم للتخطيط']::text[],
          NULL, NULL,
-         ARRAY['4']::text[], 'practice')
+          ARRAY[4]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -265,7 +265,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up page plus a written list of the mistakes fixed.', 'صفحة منظّفة مع قائمة مكتوبة بالأخطاء التي أصلحتها.',
          ARRAY['Every page validates', 'You can list specific fixes, not general intentions']::text[], ARRAY['كل الصفحات تجتاز التحقق', 'تستطيع ذكر إصلاحات محددة لا نوايا عامة']::text[],
          'Find an HTML anti-pattern you have not seen before and write a short post about it.', 'اكتشف نمطًا سيئًا في HTML لم تره من قبل واكتب نبذة قصيرة عنه.',
-         ARRAY['5']::text[], 'review')
+          ARRAY[5]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -289,7 +289,7 @@ INSERT INTO public.curriculum_days
          'A fully labelled, keyboard-operable form.', 'نموذج كامل التسميات يعمل بلوحة المفاتيح.',
          ARRAY['Every control has an associated label', 'The form is fully operable without a mouse']::text[], ARRAY['كل حقل مرتبط بتسمية', 'النموذج يعمل بالكامل دون فأرة']::text[],
          'Disable JavaScript and confirm the form still submits correctly with native browser validation.', 'عطّل JavaScript وتأكد أن النموذج يُرسل صحيحًا مع التحقق الأصلي من المتصفح.',
-         ARRAY['6']::text[], 'lesson')
+          ARRAY[6]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -313,7 +313,7 @@ INSERT INTO public.curriculum_days
          'A form that validates clearly and communicates errors without colour dependence.', 'نموذج يتحقق بوضوح ويوصل الأخطاء دون الاعتماد على اللون.',
          ARRAY['Errors are tied to their inputs programmatically', 'No error is signalled by colour alone']::text[], ARRAY['الأخطاء مرتبطة بحقولها برمجيًا', 'لا يُوصل أي خطأ باللون وحده']::text[],
          'Make the same form usable with a screen reader, narrating each error in sequence.', 'اجعل النموذج نفسه قابلًا للاستخدام بقارئ شاشة يقرأ كل خطأ بالتسلسل.',
-         ARRAY['7']::text[], 'lesson')
+          ARRAY[7]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -337,7 +337,7 @@ INSERT INTO public.curriculum_days
          'A validated semantic landing page with at least six sections.', 'صفحة هبوط دلالية مجتازة التحقق بستة أقسام على الأقل.',
          ARRAY['The page validates with zero errors', 'Every section is a landmark or a labelled section']::text[], ARRAY['الصفحة تجتاز التحقق دون أي خطأ', 'كل قسم عنصر دلالي أو قسم معنوّن']::text[],
          'Add a second page — pricing or about — and link the two with working relative navigation.', 'أضف صفحة ثانية — التسعير أو من نحن — واربط الصفحتين بتنقّل نسبي يعمل.',
-         ARRAY['8']::text[], 'project')
+          ARRAY[8]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -361,7 +361,7 @@ INSERT INTO public.curriculum_days
          'A specificity practice sheet with 20 predictions and your score.', 'ورقة تدريب على الأولوية بعشرين تخمينًا ودرجة اختبارك.',
          ARRAY['You score above 80% on the specificity predictions', 'You can explain any mismatch you got wrong']::text[], ARRAY['تتحقق نتيجة تتجاوز ٨٠٪ في اختبارات الأولوية', 'تستطيع شرح أي حالة أخطأت فيها']::text[],
          'Write a selector that beats #id without !important. Then find out why you probably should not ship it.', 'اكتب محدّدًا يتفوّق على #id دون !important، ثم بيّن لماذا لا ينبغي نشره غالبًا.',
-         ARRAY['9']::text[], 'lesson')
+          ARRAY[9]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -385,7 +385,7 @@ INSERT INTO public.curriculum_days
          'A spacing exercise with screenshots before and after.', 'تمرين مسافات مع لقطات شاشة قبل وبعد.',
          ARRAY['border-box is set globally', 'No horizontal scrollbar appears at any width']::text[], ARRAY['border-box مضبوط عالميًا', 'لا يظهر شريط تمرير أفقي عند أي عرض']::text[],
          'Build a layout where a card is exactly one-third of the container with a visible border and no overflow.', 'ابنِ تخطيطًا تكون فيه البطاقة بالضبط ثلث الحاوية مع حد ظاهر ودون أي تجاوز.',
-         ARRAY['10']::text[], 'lesson')
+          ARRAY[10]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -409,7 +409,7 @@ INSERT INTO public.curriculum_days
          'A typographically sound article page plus your written rationale.', 'صفحة مقالة سليمة طباعيًا مع شرح كتابي لاختياراتك.',
          ARRAY['All sizes use rem or another relative unit', 'Body text meets 4.5:1 contrast']::text[], ARRAY['كل الأحجام تستخدم rem أو وحدة نسبية', 'نص المحتوى يحقق تباين 4.5:1']::text[],
          'Make your article readable at 200% zoom with no lost content and no horizontal scrolling.', 'اجعل مقالتك مقروءة عند تكبير ٢٠٠٪ دون فقدان محتوى أو تمرير أفقي.',
-         ARRAY['11']::text[], 'lesson')
+          ARRAY[11]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -433,7 +433,7 @@ INSERT INTO public.curriculum_days
          'A tokenised stylesheet with working light and dark themes.', 'ملف أنماط قائم على الرموز بثيمَي فاتح وداكن يعملان.',
          ARRAY['No hard-coded colour or spacing values remain in component rules', 'Theme switching needs no JavaScript']::text[], ARRAY['لا توجد قيم ألوان أو مسافات مكتوبة يدويًا في قواعد المكوّنات', 'تبديل الثيم لا يحتاج JavaScript']::text[],
          'Add a third high-contrast theme and prove the whole site still works with it.', 'أضف ثيمًا ثالثًا عالي التباين وأثبت أن الموقع كله ما زال يعمل معه.',
-         ARRAY['12']::text[], 'lesson')
+          ARRAY[12]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -457,7 +457,7 @@ INSERT INTO public.curriculum_days
          'A written self-assessment and a list of topics to revisit.', 'تقييم ذاتي مكتوب وقائمة مواضيع تحتاج مراجعة.',
          ARRAY['You can explain the cascade from memory', 'You have identified at least two weak areas']::text[], ARRAY['تستطيع شرح التسلسل من الذاكرة', 'حددت نقطتي ضعف على الأقل']::text[],
          'Teach the box model to someone else in under three minutes.', 'اشرح نموذج الصندوق لشخص آخر في أقل من ثلاث دقائق.',
-         ARRAY['13']::text[], 'review')
+          ARRAY[13]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -481,7 +481,7 @@ INSERT INTO public.curriculum_days
          'Five flexbox layouts demonstrating different alignment and wrapping behaviours.', 'خمسة تخطيطات Flexbox تُظهر سلوكيات محاذاة التفاف مختلفة.',
          ARRAY['Main and cross axis are correctly identified in your explanation', 'No margin hacks remain']::text[], ARRAY['تحدّد المحورين الرئيسي والعرضي بشكل صحيح في شرحك', 'لم تبقَ أي حيل هوامش']::text[],
          'Build a layout that works from 320px to 2560px using flexbox alone.', 'ابنِ تخطيطًا يعمل من 320px إلى 2560px باستخدام Flexbox فقط.',
-         ARRAY['14']::text[], 'lesson')
+          ARRAY[14]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -505,7 +505,7 @@ INSERT INTO public.curriculum_days
          'A responsive page layout built with named grid areas.', 'تخطيط صفحة متجاوب مبني بمناطق Grid مسماة.',
          ARRAY['Your layout reflows to one column on mobile', 'You can name the use case where Grid beats Flexbox']::text[], ARRAY['تخطيطك يعود لعمود واحد على الجوال', 'تستطيع تسمية الحالة التي يتفوّق فيها Grid على Flexbox']::text[],
          'Build an image gallery using grid areas with one item spanning the full width.', 'ابنِ معرض صور باستخدام مناطق Grid مع عنصر يمتد بكامل العرض.',
-         ARRAY['15']::text[], 'lesson')
+          ARRAY[15]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -529,7 +529,7 @@ INSERT INTO public.curriculum_days
          'Four positioning demonstrations with written explanations.', 'أربعة أمثلة تحديد مع شرح مكتوب لكل منها.',
          ARRAY['Every absolute element has an intentional positioned ancestor', 'Overlays appear above all page content']::text[], ARRAY['كل عنصر absolutely له سلف محدد الموضع بقصد', 'الطبقات تظهر فوق كل المحتوى']::text[],
          'Build a sticky sidebar that becomes a normal block on mobile.', 'ابنِ شريطًا جانبيًا لاصقًا يتحول إلى كتلة عادية على الجوال.',
-         ARRAY['16']::text[], 'lesson')
+          ARRAY[16]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -553,7 +553,7 @@ INSERT INTO public.curriculum_days
          'A responsive blog homepage with no layout breakage at any width.', 'صفحة مدوّنة متجاوبة دون أي كسر في التخطيط عند أي عرض.',
          ARRAY['No horizontal scrollbar at 320px width', 'Grid handles page regions; Flexbox handles inner layout']::text[], ARRAY['لا شريط تمرير أفقي عند عرض 320px', 'Grid لمناطق الصفحة و Flexbox للتخطيط الداخلي']::text[],
          'Make the sidebar collapse below the content on mobile without duplicating any markup.', 'اجعل الشريط الجانبي ينزل تحت المحتوى على الجوال دون تكرار أي وسوم.',
-         ARRAY['17']::text[], 'project')
+          ARRAY[17]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -577,7 +577,7 @@ INSERT INTO public.curriculum_days
          'A mobile-first project with at most two breakpoints and fluid type.', 'مشروع يبدأ من الجوال بنقطتي توقف كحد أقصى ونظام خطوط سائل.',
          ARRAY['Base styles are the mobile layout', 'Animations respect prefers-reduced-motion']::text[], ARRAY['الأنماط الأساسية هي تخطيط الجوال', 'الحركات تحترم prefers-reduced-motion']::text[],
          'Make one component work unchanged at 200px and at 800px using only container queries.', 'اجعل مكوّنًا واحدًا يعمل دون تعديل عند 200px وعند 800px باستخدام استعلامات الحاوية فقط.',
-         ARRAY['18']::text[], 'lesson')
+          ARRAY[18]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -601,7 +601,7 @@ INSERT INTO public.curriculum_days
          'A hero section using picture, srcset and layered backgrounds.', 'قسم رئيسي يستخدم picture و srcset وخلفيات متعددة الطبقات.',
          ARRAY['The mobile and desktop crops both look deliberate', 'No meaningful text is baked into an image']::text[], ARRAY['قصتا الجوال وسطح المكتب تبدوان مقصودتين', 'لا نص ذو معنى مدمج داخل صورة']::text[],
          'Measure the bandwidth saved by responsive images on your hero section.', 'قِس حجم البيانات التي وفّرتها الصور المتجاوبة في القسم الرئيسي.',
-         ARRAY['19']::text[], 'lesson')
+          ARRAY[19]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -625,7 +625,7 @@ INSERT INTO public.curriculum_days
          'Three tasteful animations, all reduced-motion safe.', 'ثلاث حركات ذات ذوق، جميعها آمنة مع تقليل الحركة.',
          ARRAY['Only transform and opacity are animated', 'Reduced-motion users see no animation']::text[], ARRAY['يتم تحريك transform و opacity فقط', 'مستخدمو تقليل الحركة لا يرون أي حركة']::text[],
          'Measure frame rate during your heaviest animation and explain the result.', 'قِس معدل الإطارات أثناء أثقل حركة واشرح النتيجة.',
-         ARRAY['20']::text[], 'lesson')
+          ARRAY[20]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -649,7 +649,7 @@ INSERT INTO public.curriculum_days
          'A layered, BEM-structured stylesheet plus a style guide.', 'ملف أنماط مُهيكل بالطبقات و BEM مع دليل أنماط.',
          ARRAY['No !important remains', 'Layer order alone determines precedence']::text[], ARRAY['لم تبقَ أي !important', 'ترتيب الطبقات وحده يحدد الأولوية']::text[],
          'Add a third layer without renaming a single existing class.', 'أضف طبقة ثالثة دون إعادة تسمية أي صنف موجود.',
-         ARRAY['21']::text[], 'lesson')
+          ARRAY[21]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -673,7 +673,7 @@ INSERT INTO public.curriculum_days
          'An accessibility audit report with fixes applied.', 'تقرير تدقيق إتاحة مع تطبيق الإصلاحات.',
          ARRAY['Zero keyboard traps', 'All body text passes contrast']::text[], ARRAY['لا توجد مصائد للوحة المفاتيح', 'كل نص المحتوى يجتاز فحص التباين']::text[],
          'Navigate your entire project using only the keyboard and record every point where you get lost.', 'تنقّل في مشروعك بالكامل بلوحة المفاتيح فقط وسجّل كل نقطة تضيع فيها.',
-         ARRAY['22']::text[], 'lesson')
+          ARRAY[22]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -697,7 +697,7 @@ INSERT INTO public.curriculum_days
          'A project with per-page metadata, Open Graph tags, sitemap and structured data.', 'مشروع ببيانات وصفية لكل صفحة ووسوم Open Graph وخريطة موقع وبيانات مهيكلة.',
          ARRAY['Every page has a unique title and description', 'Structured data validates']::text[], ARRAY['كل صفحة لها عنوان ووصف فريدان', 'البيانات المهيكلة تجتاز التحقق']::text[],
          'Write meta descriptions for five pages that a human would actually want to click.', 'اكتب أوصافًا meta لخمس صفحات يتمنى المستخدم النقر عليها فعلًا.',
-         ARRAY['23']::text[], 'lesson')
+          ARRAY[23]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -721,7 +721,7 @@ INSERT INTO public.curriculum_days
          'Five bugs fixed with a written diagnosis for each.', 'خمسة أخطاء أُصلحت مع تشخيص مكتوب لكل منها.',
          ARRAY['Each fix has a written hypothesis that was confirmed', 'You used overlays rather than guessing']::text[], ARRAY['لكل إصلاح فرضية مكتوبة تم تأكيدها', 'استخدمت الطبقات بدل التخمين']::text[],
          'Solve one bug purely from the cascade panel without touching the HTML.', 'حل خلل واحدًا من لوحة التسلسل فقط دون لمس HTML.',
-         ARRAY['24']::text[], 'practice')
+          ARRAY[24]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -745,7 +745,7 @@ INSERT INTO public.curriculum_days
          'A before/after performance comparison with the changes you made.', 'مقارنة أداء قبل وبعد مع التغييرات التي أجريتها.',
          ARRAY['Visual output is unchanged', 'CSS transfer size dropped measurably']::text[], ARRAY['المخرجات البصرية دون تغيير', 'انخفض حجم CSS بشكل ملموس']::text[],
          'Identify one layout-thrashing bug in a JavaScript animation and fix it.', 'حدّد خلل اهتزاز تخطيط واحدًا في حركة JavaScript وأصلحه.',
-         ARRAY['25']::text[], 'lesson')
+          ARRAY[25]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -769,7 +769,7 @@ INSERT INTO public.curriculum_days
          'A confidence map of Phase 1 topics and a rebuilt landing page.', 'خريطة ثقة بمواضيع المرحلة الأولى وصفحة هبوط معادة البناء.',
          ARRAY['Every topic has an honest confidence score', 'You rebuilt a page without reference']::text[], ARRAY['كل موضوع له درجة ثقة صادقة', 'أعدت بناء صفحة دون مرجع']::text[],
          'Teach one Phase 1 topic you rated lowest to someone else.', 'اشرح لموضوع واحد صنّفته الأدنى لشخص آخر.',
-         ARRAY['26']::text[], 'review')
+          ARRAY[26]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -793,7 +793,7 @@ INSERT INTO public.curriculum_days
          'A complete four-page responsive website.', 'موقع متكامل من أربع صفحات متجاوب.',
          ARRAY['At least four pages, all genuinely useful', 'No layout breakage from 320px to 1440px', 'Zero accessibility errors']::text[], ARRAY['أربع صفحات على الأقل، كلها مفيدة فعلًا', 'لا كسر في التخطيط من 320px إلى 1440px', 'صفر أخطاء إتاحة']::text[],
          'Get a Lighthouse accessibility score above 95 on every page.', 'احصل على تقييم إتاحة فوق ٩٥ في Lighthouse لكل صفحة.',
-         ARRAY['27']::text[], 'project')
+          ARRAY[27]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -817,7 +817,7 @@ INSERT INTO public.curriculum_days
          'An improved site plus a list of applied improvements.', 'موقع محسّن مع قائمة التحسينات المطبّقة.',
          ARRAY['All touch targets are at least 44px', 'Every improvement has a recorded outcome']::text[], ARRAY['كل أهداف اللمس 44px على الأقل', 'لكل تحسين نتيجة مسجّلة']::text[],
          'Get feedback from someone outside web development and act on it.', 'احصل على ملاحظات من شخص خارج مجال تطوير الويب وتصرّف بناءً عليها.',
-         ARRAY['28']::text[], 'practice')
+          ARRAY[28]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -841,7 +841,7 @@ INSERT INTO public.curriculum_days
          'A live HTTPS URL, a repository, and a written retrospective.', 'رابط مباشر عبر HTTPS، ومستودع، وتأمل مكتوب.',
          ARRAY['The live site works over HTTPS on mobile', 'The README lets a stranger run it locally']::text[], ARRAY['الموقع المنشور يعمل عبر HTTPS على الجوال', 'README يتيح لشخص غريب تشغيله محليًا']::text[],
          'Ask someone to clone your repo and get it running, then fix whatever blocked them.', 'اطلب من شخص نسخ مستودعك وتشغيله، ثم أصلح ما عوّقه.',
-         ARRAY['29']::text[], 'review')
+          ARRAY[29]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -865,7 +865,7 @@ INSERT INTO public.curriculum_days
          'A page plus a written explanation of execution order and main-thread blocking.', 'صفحة مع شرح مكتوب لترتيب التنفيذ وحجب الخيط الرئيسي.',
          ARRAY['You can explain the main-thread blocking problem concretely', 'You can reproduce a null-reference error and explain it']::text[], ARRAY['تستطيع شرح مشكلة حجب الخيط الرئيسي بأمثلة ملموسة', 'تستطيع إعادة إنتاج خطأ مرجع فارغ وشرحه']::text[],
          'Measure how long a synchronous loop of 10 million iterations blocks the page, using the console timestamp.', 'قِس كم تحجب حلقة متزامنة بعشرة ملايين دورة الصفحة، باستخدام الطابع الزمني في الطرفية.',
-         ARRAY['30']::text[], 'lesson')
+          ARRAY[30]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -889,7 +889,7 @@ INSERT INTO public.curriculum_days
          'A comparison of the three declaration keywords with observed behaviour.', 'مقارنة بين كلمات التصريح الثلاث مع السلوك الملاحظ.',
          ARRAY['No var remains in your refactored code', 'You can demonstrate all three failure modes']::text[], ARRAY['لم يبقَ أي var في الكود المعاد هيكلته', 'تستطيع بيان أنماط الفشل الثلاثة']::text[],
          'Find a real case where var is correct and justify it.', 'ابحث عن حالة يكون فيها var هو الخيار الصحيح وبيّن السبب.',
-         ARRAY['31']::text[], 'lesson')
+          ARRAY[31]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -913,7 +913,7 @@ INSERT INTO public.curriculum_days
          'A describeValue(value) function with five test cases.', 'دالة describeValue(value) مع خمس حالات اختبار.',
          ARRAY['null is detected correctly in your helper', 'You explain the precision limit with a concrete example']::text[], ARRAY['يُكتشف null بشكل صحيح في دالتك المساعدة', 'تشرح حدّ الدقة بمثال ملموس']::text[],
          'Implement your own isNaN without using Number.isNaN and prove they agree on a test set.', 'نفّذ دالة isNaN خاصة بك دون Number.isNaN وأثبت تطابقها على مجموعة اختبارات.',
-         ARRAY['32']::text[], 'lesson')
+          ARRAY[32]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -937,7 +937,7 @@ INSERT INTO public.curriculum_days
          'A coercion prediction sheet and a normalisation function with tests.', 'ورقة تنبّؤات بالتحويل ودالة تطبيع مع اختبارات.',
          ARRAY['You score above 90% on the coercion predictions', 'Your normaliser rejects invalid input explicitly']::text[], ARRAY['تتجاوز ٩٠٪ في اختبارات التنبؤ بالتحويل', 'دالة التطبيع ترفض المدخلات غير الصريحة بدقّة']::text[],
          'Predict what ["1", "2", "3"].reduce((a, b) => a + b) returns, then explain why.', 'خمّن ما تعيده ‎["1","2","3"].reduce((a,b) => a+b)‎ ثم اشرح السبب.',
-         ARRAY['33']::text[], 'lesson')
+          ARRAY[33]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -961,7 +961,7 @@ INSERT INTO public.curriculum_days
          'A tested clamp and grade calculator, plus a precedence cheat sheet.', 'دالة clamp وحاسبة درجات مختبَرة، مع ورقة مرجعية للأولوية.',
          ARRAY['No || is used where ?? is correct in your code', 'clamp handles min greater than max sensibly']::text[], ARRAY['لا يُستخدم ‎||‎ في الموضع الصحيح مع ‎??‎ في كودك', 'دالة clamp تتعامل بذكاء مع min أكبر من max']::text[],
          'Rewrite a nested ternary chain as something readable, and defend the change.', 'أعد كتابة سلسلة شروط ثلاثية متداخلة إلى صيغة مقروءة، ودافع عن التغيير.',
-         ARRAY['34']::text[], 'lesson')
+          ARRAY[34]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -985,7 +985,7 @@ INSERT INTO public.curriculum_days
          'A truthiness reference table and a multi-field validator.', 'جدول مرجعي لقيم الصدق ودالة تحقق من عدة حقول.',
          ARRAY['Empty array and empty string are handled intentionally, not by accident', 'The validator reports all errors, not just the first']::text[], ARRAY['المصفوفة والنص الفارغان يُعالَجان بقصد لا صدفة', 'دالة التحقق تُبلّغ عن كل الأخطاء لا أولها فقط']::text[],
          'Write a validation helper that treats an empty array or string as empty, and document why that is a policy decision.', 'اكتب دالة تحقق تعامل المصفوفة أو النص الفارغ كفراغ، ووثّق لماذا قرار سياستي.',
-         ARRAY['35']::text[], 'lesson')
+          ARRAY[35]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1009,7 +1009,7 @@ INSERT INTO public.curriculum_days
          'A fizzbuzz implementation plus a range-based variant.', 'تنفيذ fizzbuzz مع نسخة أخرى قائمة على النطاقات.',
          ARRAY['You can state each loop’s exact range without running it', 'Nested loops are removed by restructuring']::text[], ARRAY['تحدّد نطاق كل حلقة بدقّة دون تشغيلها', 'الحلقات المتداخلة أُزيلت بإعادة هيكلة']::text[],
          'Write a loop-free fizzbuzz using array methods and recursion, then compare readability.', 'اكتب fizzbuzz دون حلقات باستخدام توابع المصفوفات والتكرار، ثم قارن القراءة.',
-         ARRAY['36']::text[], 'lesson')
+          ARRAY[36]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1033,7 +1033,7 @@ INSERT INTO public.curriculum_days
          'A utility module where every function form is justified.', 'وحدة مساعدة يُبرَّر فيها اختيار صيغة كل دالة.',
          ARRAY['this behaviour is correct in every function you wrote', 'The block-body return bug is avoided']::text[], ARRAY['سلوك this صحيح في كل دالة كتبتها', 'تم تجنّب خطأ return في جسم الأقواس']::text[],
          'Convert a class method to an arrow property and explain the lifetime difference.', 'حوّل تابع كائن إلى خاصية سهمية واشرح فرق العمر الافتراضي.',
-         ARRAY['37']::text[], 'lesson')
+          ARRAY[37]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1057,7 +1057,7 @@ INSERT INTO public.curriculum_days
          'A working closure-based rate limiter with an explanation.', 'محدّد معدّل يعمل بالإغلاقات مع شرح.',
          ARRAY['Your rate limiter actually blocks excess calls', 'You can trace the scope chain of your closure']::text[], ARRAY['محدّد المعدل يمنع الاستدعاءات الزائدة فعليًا', 'تستطيع تتبّع سلسلة النطاق في إغلاقك']::text[],
          'Explain why a closure in a loop over 1000 items is a memory problem and how to avoid it.', 'اشرح لماذا يكون الإغلاق داخل حلقة على ألف عنصر مشكلة ذاكرية وكيف تتجنّبها.',
-         ARRAY['38']::text[], 'lesson')
+          ARRAY[38]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1081,7 +1081,7 @@ INSERT INTO public.curriculum_days
          'A written self-assessment and a list of two topics to revisit.', 'تقييم ذاتي مكتوب وقائمة بموضوعين تحتاج مراجعة.',
          ARRAY['You can explain closure from memory', 'You have two concrete topics to revisit']::text[], ARRAY['تستطيع شرح الإغلاق من الذاكرة', 'لديك موضوعان محدّدان للمراجعة']::text[],
          'Solve a beginner JavaScript problem set you have never seen before and note what felt hard.', 'حل مجموعة مسائل JavaScript للمبتدئين لم ترها من قبل ودوّن ما بدا صعبًا.',
-         ARRAY['39']::text[], 'review')
+          ARRAY[39]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1105,7 +1105,7 @@ INSERT INTO public.curriculum_days
          'A non-mutating array utility set with tests.', 'مجموعة دوال مصفوفات غير مُعدِّلة مع اختبارات.',
          ARRAY['No function of yours mutates an argument silently', 'You can name all ten common methods as mutating or pure']::text[], ARRAY['لا دالة من دوالك تُعدّل مُدخلًا بصمت', 'تستطيع تصنيف العشر توابع الشائعة']::text[],
          'Measure shift performance on a 100,000-element array and explain the result.', 'قِس أداء shift على مصفوفة من مئة ألف عنصر واشرح النتيجة.',
-         ARRAY['40']::text[], 'lesson')
+          ARRAY[40]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1129,7 +1129,7 @@ INSERT INTO public.curriculum_days
          'A four-stage pipeline over a realistic dataset, with each stage testable alone.', 'خط معالجة من أربع مراحل على بيانات واقعية، كل مرحلة قابلة للاختبار بمفردها.',
          ARRAY['Every reduce passes an initial value', 'Your pipeline stages are independently testable']::text[], ARRAY['كل reduce يمرّر قيمة ابتدائية', 'مراحل خط المعالجة قابلة للاختبار بمفردها']::text[],
          'Reimplement reduce using only reduce, then using forEach, and compare readability.', 'أعد تنفيذ reduce باستخدام reduce فقط، ثم باستخدام forEach، وقارن القراءة.',
-         ARRAY['41']::text[], 'lesson')
+          ARRAY[41]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1153,7 +1153,7 @@ INSERT INTO public.curriculum_days
          'A tested sorting utility plus a small benchmark result.', 'دالة ترتيب مختبَرة مع نتيجة قياس أداء بسيطة.',
          ARRAY['No sort call in your code lacks a comparator', 'You can state your benchmark numbers honestly']::text[], ARRAY['لا استدعاء sort في كودك بلا دالة مقارنة', 'تستطيع ذكر أرقام القياس بصدق']::text[],
          'Sort a large array and explain why the default comparator is not only wrong but sometimes slow.', 'رتّب مصفوفة كبيرة واشرح لماذا دالة المقارنة الافتراضية ليست خاطئة فقط بل بطيئة أحيانًا.',
-         ARRAY['42']::text[], 'lesson')
+          ARRAY[42]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1177,7 +1177,7 @@ INSERT INTO public.curriculum_days
          'A deepClone implementation with tests proving it does not share references.', 'تنفيذ deepClone مع اختبارات تثبت عدم  المراجع.',
          ARRAY['Your deepClone handles arrays inside objects', 'The reference-sharing test actually fails against a shallow copy']::text[], ARRAY['deepClone تعالج المصفوفات داخل الكائنات', 'اختبار مشاركة المراجع يفشل فعلًا مع النسخ الضحل']::text[],
          'Explain what structuredClone does that your deepClone does not, and when each is right.', 'اشرح ما تفعله structuredClone التي لا تفعله deepClone، ومتى يكون كلٌّ منهما صحيحًا.',
-         ARRAY['43']::text[], 'lesson')
+          ARRAY[43]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1201,7 +1201,7 @@ INSERT INTO public.curriculum_days
          'A defensive API-response normaliser with defaults for every field.', 'دالة تطبيع دفاعية لاستجابة API بقيمة افتراضية لكل حقل.',
          ARRAY['Your normaliser never throws on malformed input', 'You use rest to strip at least one sensitive field']::text[], ARRAY['دالة التطبيع لا ترمي أبدًا مع مدخلات مشوّهة', 'تستخدم الباقي لحذف حقل حساس واحد على الأقل']::text[],
          'Remove all optional chaining from your normaliser by validating at the boundary instead, and compare.', 'أزل السلسلة الاختيارية من دالة التطبيع بالتحقق عند الحدود بدلًا منها، وقارن.',
-         ARRAY['44']::text[], 'lesson')
+          ARRAY[44]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1225,7 +1225,7 @@ INSERT INTO public.curriculum_days
          'A benchmarked Map index with recorded numbers.', 'فهرس Map مع أرقام قياس مسجّلة.',
          ARRAY['Your benchmark numbers are real, not estimated', 'You can name a case where an array beats a Map']::text[], ARRAY['أرقام القياس حقيقية وليست تقديرية', 'تستطيع تسمية حالة تتفوّق فيها المصفوفة على Map']::text[],
          'Refactor a real project file and measure the improvement honestly, including if there is none.', 'أعد هيكلة ملف في مشروع حقيقي وقِس التحسّن بصدق، بما في ذلك إن لم يكن هناك تحسّن.',
-         ARRAY['45']::text[], 'review')
+          ARRAY[45]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1249,7 +1249,7 @@ INSERT INTO public.curriculum_days
          'A lazy generator over real data with a memory comparison.', 'مولّد كسول على بيانات حقيقية مع مقارنة في الذاكرة.',
          ARRAY['Your generator is lazy, not eager', 'You can show a memory or time difference']::text[], ARRAY['مولّدك كسول لا فوري', 'تستطيع بيان فرق في الذاكرة أو الوقت']::text[],
          'Build an infinite generator that yields prime numbers, and verify the first twenty.', 'ابنِ مولّدًا لا نهائيًا يعطي الأعداد الأولية، وتحقّق من أول عشرين.',
-         ARRAY['46']::text[], 'lesson')
+          ARRAY[46]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1273,7 +1273,7 @@ INSERT INTO public.curriculum_days
          'A modular project with named exports only.', 'مشروع معياري بتصديرات مسمّاة فقط.',
          ARRAY['No default exports remain', 'No module leaks variables to the global scope']::text[], ARRAY['لم تبقَ أي تصدير افتراضي', 'لا وحدة تتسرب متغيّراتها إلى النطاق العام']::text[],
          'Break a circular import deliberately and explain what breaks and why.', 'اكسر استيرادًا دائريًا عمدًا واشرح ما ينكسر ولماذا.',
-         ARRAY['47']::text[], 'lesson')
+          ARRAY[47]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1297,7 +1297,7 @@ INSERT INTO public.curriculum_days
          'A retry utility with custom errors and a written debugging trace.', 'دالة إعادة محاولة بأخطاء مخصّصة وتتبّع تصحيح مكتوب.',
          ARRAY['No empty catch blocks remain in your code', 'Your retry distinguishes transient from permanent failures']::text[], ARRAY['لم تبقَ كتل catch فارغة في كودك', 'دالة إعادة المحاولة تميّز الأعطال العابرة من الدائمة']::text[],
          'Instrument a real bug from detection to fix and write up the timeline.', 'تتبّع خللًا حقيقيًا من الاكتشاف إلى الإصلاح واكتب جدولًا زمنيًا.',
-         ARRAY['48']::text[], 'review')
+          ARRAY[48]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1321,7 +1321,7 @@ INSERT INTO public.curriculum_days
          'A data-driven todo list with no listener duplication.', 'قائمة مهام مبنية على البيانات دون تكرار معالجات.',
          ARRAY['No user input ever passes through innerHTML', 'Adding an item does not multiply event listeners']::text[], ARRAY['لا يمرّ أي إدخال مستخدم عبر innerHTML', 'إضافة عنصر لا تضاعف معالجات الأحداث']::text[],
          'Render a thousand list items and measure the difference between fragmented and unfragmented insertion.', 'اعرض ألف عنصر قائمة وقِس الفرق بين الإضافة بالجزء المجزّأ وبدونه.',
-         ARRAY['49']::text[], 'lesson')
+          ARRAY[49]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1345,7 +1345,7 @@ INSERT INTO public.curriculum_days
          'A delegated, debounced, keyboard-operable list component.', 'مكوّن قائمة بتفويض وتخفيف تأخير ويعمل بلوحة المفاتيح.',
          ARRAY['Listeners are attached once via delegation, not per item', 'Every action is reachable by keyboard']::text[], ARRAY['المعالجات مرتبطة مرة واحدة بالتفويض لا لكل عنصر', 'كل إجراء يمكن الوصول إليه بلوحة المفاتيح']::text[],
          'Make a drag-and-drop reorder fully operable with the keyboard alone.', 'اجعل السحب والإفلات لإعادة الترتيب يعمل بالكامل بلوحة المفاتيح وحدها.',
-         ARRAY['50']::text[], 'lesson')
+          ARRAY[50]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1369,7 +1369,7 @@ INSERT INTO public.curriculum_days
          'A tested log parser plus a regex cheat sheet.', 'محلّل سجلات مختبَر مع ورقة مرجعية للتعبيرات النمطية.',
          ARRAY['Your parser handles malformed lines without throwing', 'No catastrophic backtracking remains']::text[], ARRAY['المحلّل يتعامل مع الأسطر المشوّهة دون رمي', 'لم يبقَ أي ارتجاع كارثي']::text[],
          'Write a regex that validates a real-world format, then measure its cost on 100,000 strings.', 'اكتب تعبيرًا يتحقق من صيغة واقعية، ثم قِس كلفته على مئة ألف نص.',
-         ARRAY['51']::text[], 'lesson')
+          ARRAY[51]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1393,7 +1393,7 @@ INSERT INTO public.curriculum_days
          'A storage layer with namespacing, versioning, migration and validation.', 'طبقة تخزين بمساحة أسماء وإصدارات وترحيل وتحقّق.',
          ARRAY['Corrupted data never crashes the app', 'You can state clearly what you do and do not store locally']::text[], ARRAY['البيانات التالفة لا تُسقط التطبيق أبدًا', 'تستطيع بيان ما تحفظه محليًا وما لا تحفظه بوضوح']::text[],
          'Instrument your storage layer to report how full it is and warn before quota errors.', 'جهّز طبقة التخزين لتبلّغ عن امتلائها وتحذّر قبل أخطاء الحصة.',
-         ARRAY['52']::text[], 'lesson')
+          ARRAY[52]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1417,7 +1417,7 @@ INSERT INTO public.curriculum_days
          'A modular, persistent, accessible vanilla JavaScript application.', 'تطبيق JavaScript خالص معياري ومحفوظ وميسّر الوصول.',
          ARRAY['State lives in one place and drives rendering', 'No user input is injected as HTML', 'All states handled']::text[], ARRAY['الحالة في مكان واحد تقود العرض', 'لا يُحقن أي إدخال كـ HTML', 'كل الحالات معالجة']::text[],
          'Add a feature that requires no new event listeners, proving your architecture is clean.', 'أضف ميزة لا تحتاج أي معالجات جديدة، مما يثبت نظافة معماريتك.',
-         ARRAY['53']::text[], 'project')
+          ARRAY[53]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1441,7 +1441,7 @@ INSERT INTO public.curriculum_days
          'Ten solved problems with complexity notes and recorded times.', 'عشر مسائل محلولة مع ملاحظات التعقيد وأزمنة مسجّلة.',
          ARRAY['You state complexity before coding and check it after', 'Every solution is explained aloud']::text[], ARRAY['تذكر التعقيد قبل البرمجة وتتحقق منه بعدها', 'كل حل مشروح شفهيًا']::text[],
          'Find a problem where an O(n²) solution genuinely beats an O(n log n) one at realistic input sizes.', 'ابحث عن مسألة يتفوّق فيها حل O(n²) فعلًا على O(n log n) عند أحجام إدخال واقعية.',
-         ARRAY['54']::text[], 'practice')
+          ARRAY[54]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1465,7 +1465,7 @@ INSERT INTO public.curriculum_days
          'A tested mini-library with a comparison write-up.', 'مكتبة مصغّرة مختبَرة مع تقرير مقارنة.',
          ARRAY['Every function has tests including edge cases', 'You wrote down real differences, not just "it worked"']::text[], ARRAY['كل دالة لها اختبارات تشمل الحالات الحدّية', 'دوّنت فروقًا حقيقية لا مجرد "نجح"']::text[],
          'Find an input where your implementation disagrees with the real library and decide which is correct.', 'ابحث عن مُدخل يختلف فيه تنفيذك عن المكتبة الأصلية وقرّر أيّهما الصحيح.',
-         ARRAY['55']::text[], 'practice')
+          ARRAY[55]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1489,7 +1489,7 @@ INSERT INTO public.curriculum_days
          'A batched loader with partial-result rendering and timing measurements.', 'محمّل بالدفعات مع عرض نتائج جزئية وقياسات زمنية.',
          ARRAY['Your loader never exceeds the concurrency limit', 'You can state the timing difference between sequential and concurrent']::text[], ARRAY['المحمّل لا يتجاوز حدّ التزامن أبدًا', 'تستطيع بيان فرق الزمن بين التسلسل والتزامن']::text[],
          'Write a timeout wrapper that rejects any operation taking longer than N milliseconds.', 'اكتب غلاف مهلة يرفض أي عملية تتجاوز N ملي ثانية.',
-         ARRAY['56']::text[], 'lesson')
+          ARRAY[56]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1513,7 +1513,7 @@ INSERT INTO public.curriculum_days
          'A written list of async root causes found and fixed.', 'قائمة مكتوبة بالأسباب الجذرية التي وجدتها وأصلحتها.',
          ARRAY['Every async path has error handling', 'The race condition test actually fails before your fix']::text[], ARRAY['كل مسار غير متزامن فيه معالجة أخطاء', 'اختبار السباق يفشل فعلًا قبل إصلاحك']::text[],
          'Reproduce the classic stale-response bug and fix it so the latest request always wins.', 'أعد إنتاج خلل الاستجابة القديمة وأصلحه بحيث يفوز آخر طلب دائمًا.',
-         ARRAY['57']::text[], 'practice')
+          ARRAY[57]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1537,7 +1537,7 @@ INSERT INTO public.curriculum_days
          'A phase scorecard, a rebuilt exercise and a one-page summary.', 'بطاقة تقييم للمرحلة وتمرين معاد البناء وملخص من صفحة.',
          ARRAY['Every topic has an honest score', 'You rebuilt something without reference']::text[], ARRAY['كل موضوع له درجة صادقة', 'أعدت بناء شيء دون مرجع']::text[],
          'Teach the event loop until someone else can answer the ordering questions correctly.', 'علّم حلقة الأحداث حتى يجيب شخص آخر على أسئلة الترتيب بشكل صحيح.',
-         ARRAY['58']::text[], 'review')
+          ARRAY[58]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1561,7 +1561,7 @@ INSERT INTO public.curriculum_days
          'A live application, a public repository and a written retrospective.', 'تطبيق منشور ومستودع عام وتأمل مكتوب.',
          ARRAY['The deployed app loads with no console errors', 'Your retrospective names specific topics']::text[], ARRAY['التطبيق المنشور يُحمَّل دون أخطاء طرفية', 'تأملك يذكر مواضيع محدّدة']::text[],
          'Ask for one piece of critical feedback and implement it before the phase closes.', 'اطلب ملاحظة نقدية واحدة ونفّذها قبل إغلاق المرحلة.',
-         ARRAY['59']::text[], 'review')
+          ARRAY[59]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1585,7 +1585,7 @@ INSERT INTO public.curriculum_days
          'A written self-assessment and a configured Git identity.', 'تقييم ذاتي مكتوب وهوية Git مضبوطة.',
          ARRAY['You have an honest score, not a flattering one', 'git config user.name and user.email are set']::text[], ARRAY['لديك درجة صادقة لا مُجاملة', 'ضُبط git config user.name و user.email']::text[],
          'Explain to someone why a JavaScript file with top-level await behaves differently when loaded as a module.', 'اشرح لشخص لماذا يختلف سلوك ملف يحتوي await على المستوى الأعلى حسب ما إذا حُمِّل كوحدة.',
-         ARRAY['60']::text[], 'review')
+          ARRAY[60]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1609,7 +1609,7 @@ INSERT INTO public.curriculum_days
          'Five written predictions with your score and the explanation for each.', 'خمسة تنبؤات مكتوبة مع درجتك وشرح كل واحد.',
          ARRAY['You predict all five orderings correctly', 'You can explain the rule without referring to notes']::text[], ARRAY['تتنبّأ بالترتيب الخمسة كلها بشكل صحيح', 'تشرح القاعدة دون الرجوع إلى الملاحظات']::text[],
          'Write a program that never freezes the UI yet processes items forever, and explain the technique.', 'اكتب برنامجًا لا يجمّد الواجهة أبدًا ويعالج عناصر إلى ما لا نهاية، واشرح التقنية.',
-         ARRAY['61']::text[], 'lesson')
+          ARRAY[61]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1633,7 +1633,7 @@ INSERT INTO public.curriculum_days
          'A promisified helper with documented behaviour on success and failure.', 'مساعد قائم على الوعود موثّق السلوك عند النجاح والفشل.',
          ARRAY['You can state the three states and the settle-once rule', 'Your wrapper handles both success and error paths']::text[], ARRAY['تستطيع الحالات الثلاث وقاعدة الاستقرارة الواحدة', 'غلافك يتعامل مع مساري النجاح والخطأ']::text[],
          'Implement Promise.allSettled yourself using only Promise and async iteration.', 'نفّذ Promise.allSettled بنفسك باستخدام Promise والتكرار غير المتزامن فقط.',
-         ARRAY['62']::text[], 'lesson')
+          ARRAY[62]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1657,7 +1657,7 @@ INSERT INTO public.curriculum_days
          'A utility using allSettled with per-item status reporting and a test case.', 'أداة تستخدم allSettled مع بلاغ عن حالة كل عنصر وحالة اختبار.',
          ARRAY['You can name the right combinator for five given situations', 'Your utility never loses a partial result silently']::text[], ARRAY['تستطيع تسمية التوابع المناسب لخمس مواقف', 'أداتك لا تُفقد نتيجة جزئية بصمت']::text[],
          'Build a request helper with per-request timeout and total-failure fallback, then measure it.', 'ابنِ مساعد طلبات بمهلة لكل طلب وبديل عند الفشل الكلي، ثم قِسه.',
-         ARRAY['63']::text[], 'lesson')
+          ARRAY[63]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1681,7 +1681,7 @@ INSERT INTO public.curriculum_days
          'A paged loader with a concurrency limit and a total record count.', 'محمّل صفحات بحدّ تزامن محدود وعدّاد سجلات إجمالي.',
          ARRAY['Your loader never exceeds the concurrency limit', 'You can explain the backpressure problem concretely']::text[], ARRAY['محمّلك لا يتجاوز حدّ التزامن أبدًا', 'تستطيع شرح مشكلة ضغط التراكم بأمثلة ملموسة']::text[],
          'Stream a large file line by line without ever holding it fully in memory.', 'بثّ ملفًا كبيرًا سطرًا بسطر دون احتوائه كاملًا في الذاكرة أبدًا.',
-         ARRAY['64']::text[], 'lesson')
+          ARRAY[64]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1705,7 +1705,7 @@ INSERT INTO public.curriculum_days
          'A validation module with tests for the malformed cases.', 'وحدة تحقق مع اختبارات للحالات المشوّهة.',
          ARRAY['Your validator rejects every malformed fixture you write', 'UI code never inspects raw response shapes']::text[], ARRAY['مُحقّققك يرفض كل الحالات المشوّهة التي تكتبها', 'شيفرة الواجهة لا تفحص أشكال الاستجابة الخام']::text[],
          'Find a real public API that returns inconsistent types for the same field and handle both.', 'ابحث عن واجهة برمجة عامة تعيد أنواعًا غير متسقة للحقل نفسه وعالج الحالتين.',
-         ARRAY['65']::text[], 'lesson')
+          ARRAY[65]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1729,7 +1729,7 @@ INSERT INTO public.curriculum_days
          'An error layer with a documented taxonomy and no swallowed context.', 'طبقة أخطاء بتصنيف موثّق ودون ابتلاع أي سياق.',
          ARRAY['No catch block is empty or context-free', 'Retryable and fatal failures are handled differently']::text[], ARRAY['لا كتلة catch فارغة أو بلا سياق', 'الإخفاقات القابلة لإعادة المحاولة والقاتلة تُعالجان بشكل مختلف']::text[],
          'Simulate a network failure on every request in your app and verify the UI degrades honestly.', 'حاكِ فشل الشبكة في كل طلب في تطبيقك وتحقّق من تدهور الواجهة بصدق.',
-         ARRAY['66']::text[], 'lesson')
+          ARRAY[66]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1753,7 +1753,7 @@ INSERT INTO public.curriculum_days
          'A documented status-code handling table.', 'جدول موثّق لمعالجة رموز الحالة.',
          ARRAY['You handle 4xx and 5xx differently in code', 'You can read any request in devtools without help']::text[], ARRAY['تعالج 4xx و 5xx بشكل مختلف في الشيفرة', 'تقرأ أي طلب في أدوات المطور دون مساعدة']::text[],
          'Find an endpoint that returns 200 with an error body, and decide how your client should react.', 'ابحث عن نقطة تُعيد 200 مع محتوى خطأ، وقرّر كيف يتفاعل عميلك.',
-         ARRAY['67']::text[], 'lesson')
+          ARRAY[67]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1777,7 +1777,7 @@ INSERT INTO public.curriculum_days
          'A reusable request helper plus a test of its error path.', 'مساعد طلبات قابل لإعادة الاستخدام مع اختبار لمسار الخطأ.',
          ARRAY['Every call site goes through one helper', 'A 404 produces a useful message, not an undefined body']::text[], ARRAY['كل موقع استدعاء يمرّ عبر مساعد واحد', 'خطأ 404 ينتج رسالة مفيدة لا جسمًا غير معرّف']::text[],
          'Make a helper that retries idempotent requests on 5xx and network errors, with backoff.', 'اكتب مساعدًا يعيد محاولة الطلبات Idempotent عند 5xx وأخطاء الشبكة، مع تراجع تدريجي.',
-         ARRAY['68']::text[], 'lesson')
+          ARRAY[68]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1801,7 +1801,7 @@ INSERT INTO public.curriculum_days
          'A CORS troubleshooting guide for your future use.', 'دليل لاستكشاف أخطاء CORS لاستخدامك المستقبلي.',
          ARRAY['You can diagnose a CORS error without guessing', 'You never "fix" CORS by disabling the browser check']::text[], ARRAY['تشخّص خطأ CORS دون تخمين', 'لا تعالج CORS بتعطيل فحص المتصفح']::text[],
          'Make your fetch helper work with an authenticated cross-origin API without weakening security.', 'اجعل مساعد fetch يعمل مع واجهة مصادَق عليها عبر مصدر آخر دون إضعاف الأمان.',
-         ARRAY['69']::text[], 'lesson')
+          ARRAY[69]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1825,7 +1825,7 @@ INSERT INTO public.curriculum_days
          'A working app with a note on the API’s limits and licence.', 'تطبيق يعمل مع ملاحظة عن حدود الواجهة وترخيصها.',
          ARRAY['Every UI state is reachable and handled', 'You know the rate limit and the licence']::text[], ARRAY['كل حالات الواجهة قابلة للوصول ومعالجة', 'تعرف حدّ المعدّل والترخيص']::text[],
          'Handle rate limiting gracefully: back off, respect Retry-After, and show the user why.', 'تعامل مع تحديد المعدّل باحترام: تراجع، وطبّق Retry-After، وأظهر للمستخدم السبب.',
-         ARRAY['70']::text[], 'lesson')
+          ARRAY[70]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1849,7 +1849,7 @@ INSERT INTO public.curriculum_days
          'A complete API specification document.', 'مواصفة واجهة برمجة كاملة.',
          ARRAY['Every URL is a noun and no nesting exceeds two levels', 'Your error shape is as specified as your success shape']::text[], ARRAY['كل رابط اسم وليس فعلًا والتداخل لا يتجاوز مستويين', 'شكل الخطأ موثّق بقدر شكل النجاح']::text[],
          'Design an endpoint that supports filtering, sorting and pagination together without ambiguity.', 'صمّم نقطة تدعم التصفية والترتيب والترقيم معًا دون التباس.',
-         ARRAY['71']::text[], 'practice')
+          ARRAY[71]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1873,7 +1873,7 @@ INSERT INTO public.curriculum_days
          'A repository with a clean, readable history.', 'مستودع بتاريخ نظيف ومقروء.',
          ARRAY['Your history has no "fix" or "wip" commits', 'You can explain what the staging area is for']::text[], ARRAY['تاريخك خالٍ من commits مثل fix أو wip', 'تستطيع شرح الغرض من منطقة التجهيز']::text[],
          'Rewrite a messy history with an interactive rebase so every commit is meaningful.', 'أعد كتابة تاريخ فوضوي بـ interactive rebase حتى يصبح كل commit ذو معنى.',
-         ARRAY['72']::text[], 'lesson')
+          ARRAY[72]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1897,7 +1897,7 @@ INSERT INTO public.curriculum_days
          'A feature branch merged cleanly with tests passing.', 'فرع ميزة مدموج بنجاح مع نجاح الاختبارات.',
          ARRAY['You never resolve a conflict by taking a whole side blindly', 'Tests pass after every resolution']::text[], ARRAY['لا تحلّ تعارضًا بأخذ طرف كامل عشوائيًا', 'الاختبارات تنجح بعد كل حل']::text[],
          'Resolve a conflict where the correct answer is to keep both changes in a different form.', 'حلّ تعارضًا تكون إجابته الصحيحة الاحتفاظ بالتغييرين بصيغة أخرى.',
-         ARRAY['73']::text[], 'lesson')
+          ARRAY[73]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1921,7 +1921,7 @@ INSERT INTO public.curriculum_days
          'A published repository with at least one reviewed pull request.', 'مستودع منشور فيه طلب سحب واحد على الأقل تمت مراجعته.',
          ARRAY['Your PR description explains why and how it was tested', 'You left a review that helps rather than nitpicks']::text[], ARRAY['وصف طلب السحب يشرح السبب وكيف اختُبر', 'تركت مراجعة تساعد لا ملاحظات شكلية']::text[],
          'Review a beginner’s pull request generously and leave at least two genuinely useful comments.', 'راجع طلب سحب لمبتدئ بكرم واترك ملاحظتين مفيدتين فعلًا على الأقل.',
-         ARRAY['74']::text[], 'lesson')
+          ARRAY[74]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1945,7 +1945,7 @@ INSERT INTO public.curriculum_days
          'A repository with a passing CI workflow and a status badge.', 'مستودع فيه سير عمل CI ناجح وشارة حالة.',
          ARRAY['CI runs on pull requests as well as pushes', 'You have proven it catches a real failure']::text[], ARRAY['CI يعمل عند طلبات السحب والدفع معًا', 'أثبتت أنه يلتقط فشلًا حقيقيًا']::text[],
          'Add a step that fails the build when any file contains a leftover debugger statement.', 'أضف خطوة تُفشل البناء عند وجود statements تصحيح متبقية في أي ملف.',
-         ARRAY['75']::text[], 'lesson')
+          ARRAY[75]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1969,7 +1969,7 @@ INSERT INTO public.curriculum_days
          'A written performance report with before/after measurements for one fix.', 'تقرير أداء مكتوب مع قياسات قبل/بعد لإصلاح واحد.',
          ARRAY['You can name the longest task on a real page', 'You fixed one performance problem and measured it']::text[], ARRAY['تستطيع تسمية أطول مهمة في صفحة حقيقية', 'أصلحت مشكلة أداء واحدة وقست أثرها']::text[],
          'Diagnose a memory leak in a real app and show the retained objects with the memory panel.', 'شخّص تسريب ذاكرة في تطبيق حقيقي وأظهر الكائنات المحتجزة بلوحة الذاكرة.',
-         ARRAY['76']::text[], 'lesson')
+          ARRAY[76]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -1993,7 +1993,7 @@ INSERT INTO public.curriculum_days
          'A refactored module with no restating comments.', 'وحدة معاد هيكلتها دون تعليقات مكرّرة.',
          ARRAY['No function needs a comment to be understood', 'No function has more than one reason to change']::text[], ARRAY['لا دالة تحتاج تعليقًا لفهمها', 'لا دالة لها أكثر من سبب واحد للتغيير']::text[],
          'Delete a file’s worth of comments and see whether anyone struggles to read it.', 'احذف تعليقات ملف كامل وانظر هل يتعثر أحد في قراءته.',
-         ARRAY['77']::text[], 'practice')
+          ARRAY[77]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2017,7 +2017,7 @@ INSERT INTO public.curriculum_days
          'A refactored file with the same behaviour and passing tests.', 'ملف معاد هيكلته بنفس السلوك ونجاح الاختبارات.',
          ARRAY['Behaviour is unchanged, proven by tests', 'Each refactor step was small and reversible']::text[], ARRAY['السلوك دون تغيير، والاختبارات هي الدليل', 'كل خطوة إعادة هيكلة كانت صغيرة وقابلة للتراجع']::text[],
          'Take a smell you are tempted to remove and argue both sides before deciding.', 'خذ رائحة تفضّل إزالتها وناقش الطرفين قبل أن تقرّر.',
-         ARRAY['78']::text[], 'lesson')
+          ARRAY[78]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2041,7 +2041,7 @@ INSERT INTO public.curriculum_days
          'A test suite where every test maps to a named risk.', 'مجموعة اختبارات كل اختبار فيها مرتبط بخطر مسمّى.',
          ARRAY['Refactoring your code does not break the suite', 'You have a failing test proving a fixed bug']::text[], ARRAY['إعادة هيكلة شيفرتك لا تكسر المجموعة', 'لديك اختبار فاشل يثبت خللًا أُصلح']::text[],
          'Achieve meaningful confidence with ten tests instead of a hundred trivial ones.', 'حقق اطمئنانًا حقيقيًا بعشرة اختبارات بدل مئة اختبار سطحي.',
-         ARRAY['79']::text[], 'practice')
+          ARRAY[79]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2065,7 +2065,7 @@ INSERT INTO public.curriculum_days
          'A tested request helper with at least five cases.', 'مساعد طلبات مختبَر بخمسة حالات على الأقل.',
          ARRAY['Every async test actually waits', 'Your tests fail when the implementation is broken']::text[], ARRAY['كل اختبار غير متزامن ينتظر فعلًا', 'اختباراتك تفشل عند كسر التنفيذ']::text[],
          'Write a test that fails when you break the implementation, and confirm it does.', 'اكتب اختبارًا يفشل عندما تكسر التنفيذ، وتأكد من حدوث ذلك.',
-         ARRAY['80']::text[], 'lesson')
+          ARRAY[80]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2089,7 +2089,7 @@ INSERT INTO public.curriculum_days
          'A test suite where no test mocks something it could use directly.', 'مجموعة اختبارات لا تحاكي فيها أي شيء كان يمكن استخدامه مباشرة.',
          ARRAY['No test mocks a pure function', 'You verified each test can fail']::text[], ARRAY['لا اختبار يحاكي دالة خالصة', 'تحققت أن كل اختبار يمكن أن يفشل']::text[],
          'Write an integration test against the real filesystem using a temp directory.', 'اكتب اختبار تكامل على نظام الملفات الحقيقي باستخدام مجلد مؤقت.',
-         ARRAY['81']::text[], 'practice')
+          ARRAY[81]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2113,7 +2113,7 @@ INSERT INTO public.curriculum_days
          'A deployed API-powered application with a README and tests.', 'تطبيق منشور يعتمد على واجهة برمجة مع README واختبارات.',
          ARRAY['All four states are reachable in the running app', 'Someone else can run it from the README']::text[], ARRAY['كل الحالات الأربع قابلة للوصول في التطبيق العامل', 'يستطيع شخص آخر تشغيله من README']::text[],
          'Make the app usable on a slow connection and with the API completely down.', 'اجعل التطبيق صالحًا للاستخدام على اتصال بطيء ومع تعطّل الواجهة تمامًا.',
-         ARRAY['82']::text[], 'project')
+          ARRAY[82]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2137,7 +2137,7 @@ INSERT INTO public.curriculum_days
          'A test suite wired into CI that you have proven catches regressions.', 'مجموعة اختبارات مرتبطة بـ CI وقد أثبت أنها تلتقط الانحدارات.',
          ARRAY['CI runs your tests on every push', 'You proved the suite catches a regression']::text[], ARRAY['CI يشغّل اختباراتك عند كل دفع', 'أثبتت أن المجموعة تلتقط الانحدار']::text[],
          'Add a test that fails on a bug you have not yet found.', 'أضف اختبارًا يفشل على خلل لم تكتشفه بعد.',
-         ARRAY['83']::text[], 'practice')
+          ARRAY[83]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2161,7 +2161,7 @@ INSERT INTO public.curriculum_days
          'Three fixes, each with a regression test and a written investigation.', 'ثلاثة إصلاحات، كل منها باختبار انحدار وتحقيق مكتوب.',
          ARRAY['Every fix has a regression test', 'You always reproduced before fixing']::text[], ARRAY['لكل إصلاح اختبار انحدار', 'كنت دائمًا تعيد الإنتاج قبل الإصلاح']::text[],
          'Fix a bug that only reproduces under a specific timing condition, and write down why.', 'أصلح خللًا لا يحدث إلا تحت ظرف زمني محدد، واكتب لماذا.',
-         ARRAY['84']::text[], 'practice')
+          ARRAY[84]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2185,7 +2185,7 @@ INSERT INTO public.curriculum_days
          'A before/after performance report with a CI budget.', 'تقرير أداء قبل/بعد مع ميزانية في CI.',
          ARRAY['You can attribute each improvement to a specific change', 'The budget actually fails CI when exceeded']::text[], ARRAY['تستطيع عزو كل تحسين لتغيير محدد', 'الميزانية تُفشل فعلًا CI عند تجاوزها']::text[],
          'Set a bundle budget that would fail the build, and verify that it does.', 'اضبط ميزانية حزمة تُفشل البناء، وتحقّق من حدوث ذلك.',
-         ARRAY['85']::text[], 'practice')
+          ARRAY[85]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2209,7 +2209,7 @@ INSERT INTO public.curriculum_days
          'A scorecard, three more resolved conflicts, and a project review.', 'بطاقة تقييم وثلاثة تعارضات محلولة ومراجعة للمشروع.',
          ARRAY['You can teach the event loop from memory', 'You resolved conflicts in the last fortnight']::text[], ARRAY['تستطيع تعليم حلقة الأحداث من الذاكرة', 'حللت تعارضات خلال النصف شهر الماضي']::text[],
          'Get someone who has never used Git through their first merge conflict.', 'أوصِل شخصًا لم يستخدم Git من قبل عبر أول تعارض دمج له.',
-         ARRAY['86']::text[], 'review')
+          ARRAY[86]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2233,7 +2233,7 @@ INSERT INTO public.curriculum_days
          'A live project, a public repository, a working README, and a written retrospective.', 'مشروع منشور ومستودع عام و README يعمل وتأمل مكتوب.',
          ARRAY['Someone could set up the project from your README alone', 'Your live URL works on mobile']::text[], ARRAY['يستطيع شخص إعداد المشروع من README وحده', 'رابطك المباشر يعمل على الجوال']::text[],
          'Get the project in front of three people and collect structured feedback from each.', 'اعرض المشروع على ثلاثة أشخاص واجمع منهم ملاحظات منظّمة.',
-         ARRAY['87']::text[], 'review')
+          ARRAY[87]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2257,7 +2257,7 @@ INSERT INTO public.curriculum_days
          'A portfolio-grade repository with a live link and a strong README.', 'مستودع بمستوى المعرض برابط مباشر و README قوي.',
          ARRAY['A non-developer understands the project in two minutes', 'The repository has no secrets and no dead files']::text[], ARRAY['يفهم غير المطوّر المشروع في دقيقتين', 'لا أسرار ولا ملفات ميتة في المستودع']::text[],
          'Ask a developer to critique your README and apply their top three suggestions.', 'اطلب من مطوّر نقد README وطبّق أفضل ثلاث اقتراحات.',
-         ARRAY['88']::text[], 'practice')
+          ARRAY[88]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2281,7 +2281,7 @@ INSERT INTO public.curriculum_days
          'A written retrospective, a working local server, and a question for Phase 4.', 'تأمل مكتوب وخادم محلي يعمل وسؤال للمرحلة الرابعة.',
          ARRAY['You can state one concrete change in how you work', 'You have a server running locally']::text[], ARRAY['تستطيع ذكر تغيير محدد في طريقة عملك', 'لديك خادم يعمل محليًا']::text[],
          'Write a one-paragraph summary you could paste into an interview answer.', 'اكتب فقرة واحدة يمكنك لصقها في إجابة مقابلة.',
-         ARRAY['89']::text[], 'review')
+          ARRAY[89]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2305,7 +2305,7 @@ INSERT INTO public.curriculum_days
          'Two files: a module and a script that imports and uses it.', 'Two files: a module and a script that imports and uses it.',
          ARRAY['Module file uses module.exports', 'Importing script runs without errors']::text[], ARRAY['Module file uses module.exports', 'Importing script runs without errors']::text[],
          'Create a module that exports an HTTP server on port 3000 and returns Hello on the root path.', 'Create a module that exports an HTTP server on port 3000 and returns Hello on the root path.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2329,7 +2329,7 @@ INSERT INTO public.curriculum_days
          'A text file listing the status codes you observed and what they mean.', 'A text file listing the status codes you observed and what they mean.',
          ARRAY['Can distinguish GET from POST', 'Can explain what a 404 status code means']::text[], ARRAY['Can distinguish GET from POST', 'Can explain what a 404 status code means']::text[],
          'Write a brief client-side note comparing GET vs POST for submitting a form.', 'Write a brief client-side note comparing GET vs POST for submitting a form.',
-         ARRAY['91']::text[], 'lesson')
+          ARRAY[91]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2353,7 +2353,7 @@ INSERT INTO public.curriculum_days
          'A running Express server with at least two routes.', 'A running Express server with at least two routes.',
          ARRAY['Server starts without crashing', 'Two routes are registered']::text[], ARRAY['Server starts without crashing', 'Two routes are registered']::text[],
          'Add a route that logs the request method and URL, then responds with "received".', 'Add a route that logs the request method and URL, then responds with "received".',
-         ARRAY['92']::text[], 'practice')
+          ARRAY[92]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2377,7 +2377,7 @@ INSERT INTO public.curriculum_days
          'A functional API with CRUD endpoints and an in-memory store.', 'A functional API with CRUD endpoints and an in-memory store.',
          ARRAY['All four CRUD routes respond with JSON', 'Status codes are appropriate (200, 201, 404, etc.)']::text[], ARRAY['All four CRUD routes respond with JSON', 'Status codes are appropriate (200, 201, 404, etc.)']::text[],
          'Add a PATCH /items/:id route that partially updates an item.', 'Add a PATCH /items/:id route that partially updates an item.',
-         ARRAY['93']::text[], 'project')
+          ARRAY[93]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2401,7 +2401,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up API plus a written list of mistakes fixed.', 'A cleaned-up API plus a written list of mistakes fixed.',
          ARRAY['Every route has a try-catch', '404 responds with JSON error']::text[], ARRAY['Every route has a try-catch', '404 responds with JSON error']::text[],
          'Add a route that gracefully handles a non-existent resource (404 with a JSON error body).', 'Add a route that gracefully handles a non-existent resource (404 with a JSON error body).',
-         ARRAY['94']::text[], 'review')
+          ARRAY[94]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2425,7 +2425,7 @@ INSERT INTO public.curriculum_days
          'A script with async/await that fetches two URLs and logs both results.', 'A script with async/await that fetches two URLs and logs both results.',
          ARRAY['Function uses async/await syntax', 'try/catch around each await']::text[], ARRAY['Function uses async/await syntax', 'try/catch around each await']::text[],
          'Write a function that awaits three promises sequentially and logs each result.', 'Write a function that awaits three promises sequentially and logs each result.',
-         ARRAY['92']::text[], 'lesson')
+          ARRAY[92]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2449,7 +2449,7 @@ INSERT INTO public.curriculum_days
          'A script that decodes a JWT and prints its sections.', 'A script that decodes a JWT and prints its sections.',
          ARRAY['Can explain Basic/Digest/JWT auth', 'Can decode a JWT']::text[], ARRAY['Can explain Basic/Digest/JWT auth', 'Can decode a JWT']::text[],
          'Create a JWT with a subject and expiration, then verify it with a secret.', 'Create a JWT with a subject and expiration, then verify it with a secret.',
-         ARRAY['91']::text[], 'lesson')
+          ARRAY[91]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2473,7 +2473,7 @@ INSERT INTO public.curriculum_days
          'A server that sets a cookie with all security flags.', 'A server that sets a cookie with all security flags.',
          ARRAY['Cookie has HttpOnly flag', 'Cookie has Secure flag', 'SameSite is set']::text[], ARRAY['Cookie has HttpOnly flag', 'Cookie has Secure flag', 'SameSite is set']::text[],
          'Set a cookie with HttpOnly; confirm it cannot be read from JavaScript.', 'Set a cookie with HttpOnly; confirm it cannot be read from JavaScript.',
-         ARRAY['97']::text[], 'lesson')
+          ARRAY[97]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2497,7 +2497,7 @@ INSERT INTO public.curriculum_days
          'An Express route that rate-limits and validates its input.', 'An Express route that rate-limits and validates its input.',
          ARRAY['Rate limiting active', 'Invalid email rejected', 'Body size check active']::text[], ARRAY['Rate limiting active', 'Invalid email rejected', 'Body size check active']::text[],
          'Configure rate limiting to block an IP after 10 failed attempts.', 'Configure rate limiting to block an IP after 10 failed attempts.',
-         ARRAY['98']::text[], 'practice')
+          ARRAY[98]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2521,7 +2521,7 @@ INSERT INTO public.curriculum_days
          'An Express API with registration, login, JWT auth, cookies, and rate limiting.', 'An Express API with registration, login, JWT auth, cookies, and rate limiting.',
          ARRAY['Registration validates email and password', 'Login issues JWT + cookie', 'Protected route returns user data', 'Login is rate-limited']::text[], ARRAY['Registration validates email and password', 'Login issues JWT + cookie', 'Protected route returns user data', 'Login is rate-limited']::text[],
          'Add a refresh-token flow using a separate cookie and revocation list.', 'Add a refresh-token flow using a separate cookie and revocation list.',
-         ARRAY['97', '99']::text[], 'project')
+          ARRAY[97, 99]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2545,7 +2545,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up auth API plus a written list of security fixes.', 'A cleaned-up auth API plus a written list of security fixes.',
          ARRAY['Try-catch around all async routes', 'JWT secret from env', 'All cookies have security flags']::text[], ARRAY['Try-catch around all async routes', 'JWT secret from env', 'All cookies have security flags']::text[],
          'Add rotation for your JWT secret without invalidating existing tokens.', 'Add rotation for your JWT secret without invalidating existing tokens.',
-         ARRAY['100']::text[], 'review')
+          ARRAY[100]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2569,7 +2569,7 @@ INSERT INTO public.curriculum_days
          'A custom error class and an Express error-handling middleware.', 'A custom error class and an Express error-handling middleware.',
          ARRAY['Custom error class with status', 'Logger correlates request ID', 'Redacts passwords from logs']::text[], ARRAY['فئة خطأ مخصصة تحتوي على الحالة', 'مسجل يرتبط بـ request ID', 'يحذف كلمات المرور من السجلات']::text[],
          'Create an error class that maps HTTP status codes to error types', 'Create an error class that maps HTTP status codes to error types',
-         ARRAY['91']::text[], 'lesson')
+          ARRAY[91]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2593,7 +2593,7 @@ INSERT INTO public.curriculum_days
          'An Express route available at both /v1 and /v2 with deprecation headers for v1.', 'An Express route available at both /v1 and /v2 with deprecation headers for v1.',
          ARRAY['v1 and v2 routes both functional', 'Link header present on v1', 'Deprecation message in body']::text[], ARRAY['v1 و v2 routes both functional', 'Link header موجود على v1', 'رسالة deprecation في الجسم']::text[],
          'Add a Link header with deprecation for a v1 endpoint and verify with curl', 'Add a Link header with deprecation for a v1 endpoint and verify with curl',
-         ARRAY['91']::text[], 'lesson')
+          ARRAY[91]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2617,7 +2617,7 @@ INSERT INTO public.curriculum_days
          'A Vitest test file that covers the auth API endpoints.', 'A Vitest test file that covers the auth API endpoints.',
          ARRAY['supertest installed', 'Test covers register/login/protected', 'Database reset with beforeEach']::text[], ARRAY['supertest', 'Test covers register/login/protected', 'Database reset with beforeEach']::text[],
          'Write an integration test that a deprecated v1 endpoint returns 410 Gone', 'Write an integration test that a deprecated v1 endpoint returns 410 Gone',
-         ARRAY['102']::text[], 'practice')
+          ARRAY[102]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2641,7 +2641,7 @@ INSERT INTO public.curriculum_days
          'An Express API with complete auth: register, login, JWT cookies, refresh tokens, rate limiting, password reset.', 'An Express API with complete auth: register, login, JWT cookies, refresh tokens, rate limiting, password reset.',
          ARRAY['Register hashes password', 'Login issues JWT + two cookies', 'Protected route verified', 'Rate-limited login', 'Password reset flow']::text[], ARRAY['تجزئة كلمة المرور في التسجيل', 'تسجيل دخول Issues JWT + كوكيز', 'مسار Protected route verified', 'تسجيل دخول rate-limited', 'تدفق إعادة تعيين كلمة المرور']::text[],
          'Add refresh token revocation on logout and verify old tokens are rejected', 'Add refresh token revocation on logout and verify old tokens are rejected',
-         ARRAY['101', '103']::text[], 'project')
+          ARRAY[101, 103]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2665,7 +2665,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up auth system plus a written list of security fixes.', 'A cleaned-up auth system plus a written list of security fixes.',
          ARRAY['Try-catch around all async routes', 'JWT secret from env', 'All cookies have security flags', 'Rate limiting active']::text[], ARRAY['Try-catch around all async routes', 'JWT secret from env', 'All cookies have security flags', 'Rate limiting active']::text[],
          'Add rotation for your JWT secret without invalidating existing tokens.', 'Add rotation for your JWT secret without invalidating existing tokens.',
-         ARRAY['105']::text[], 'review')
+          ARRAY[105]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2689,7 +2689,7 @@ INSERT INTO public.curriculum_days
          'A Dockerfile and a running container accessible via localhost.', 'A Dockerfile and a running container accessible via localhost.',
          ARRAY['Dockerfile creates working container', 'Container responds on mapped port', 'Named volume persists data']::text[], ARRAY['Dockerfile creates working container', 'Container responds on mapped port', 'Named volume persists data']::text[],
          'Reduce the image size by removing unnecessary layers', 'Reduce the image size by removing unnecessary layers',
-         ARRAY['91']::text[], 'lesson')
+          ARRAY[91]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2713,7 +2713,7 @@ INSERT INTO public.curriculum_days
          'A .github/workflows CI file that tests and deploys your app.', 'A .github/workflows CI file that tests and deploys your app.',
          ARRAY['Workflow runs on push', 'Tests pass', 'Image builds successfully']::text[], ARRAY['تنفيذ التشغيل على كل push', 'الاختبارات تنجح', 'الصورة تُبنى successfully']::text[],
          'Add a pipeline step that runs a security scan on the Docker image', 'Add a pipeline step that runs a security scan on the Docker image',
-         ARRAY['107']::text[], 'lesson')
+          ARRAY[107]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2737,7 +2737,7 @@ INSERT INTO public.curriculum_days
          'An Express app that logs JSON and exposes Prometheus-compatible metrics.', 'Express app that logs JSON and exposes Prometheus-compatible metrics.',
          ARRAY['Logger outputs JSON', '/metrics endpoint works', 'Prometheus can scrape it']::text[], ARRAY['السِّجِّل يصدر JSON', 'ينتهي التشغيل /metrics', 'يمكن لـ Prometheus جلبه']::text[],
          'Add a gauge that tracks the app uptime in seconds', 'Add a gauge that tracks the app uptime in seconds',
-         ARRAY['108']::text[], 'practice')
+          ARRAY[108]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2761,7 +2761,7 @@ INSERT INTO public.curriculum_days
          'docker-compose.yml and Dockerfiles for backend and frontend', 'docker-compose.yml and Dockerfiles for backend and frontend.',
          ARRAY['Backend Dockerfile multi-stage', 'Frontend Dockerfile works', 'docker-compose up runs both', 'Healthchecks pass']::text[], ARRAY['Dockerfile backend multi-stage', 'Dockerfile frontend تعمل', 'docker-compose up runs both', 'healthchecks pass']::text[],
          'Add a healthcheck to each service in docker-compose.yml', 'Add a healthcheck to each service in docker-compose.yml',
-         ARRAY['107', '109']::text[], 'project')
+          ARRAY[107, 109]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2785,7 +2785,7 @@ INSERT INTO public.curriculum_days
          'A consolidated backend portfolio with Docker, CI, and observability.', 'A consolidated backend portfolio with Docker, CI, and observability.',
          ARRAY['All Dockerfiles present', 'CI pipeline green', 'Structured logs in all services']::text[], ARRAY['جميع Dockerfiles موجودة', 'تنباخ CI أخضر', 'سجِّل JSON structured in all services']::text[],
          'Add a rollback step to your CI pipeline and verify it restores the previous version.', 'Add a rollback step to your CI pipeline and verify it restores the previous version.',
-         ARRAY['110']::text[], 'review')
+          ARRAY[110]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2809,7 +2809,7 @@ INSERT INTO public.curriculum_days
          'An Express route with Cache-Control and ETag headers.', 'Express route with Cache-Control and ETag headers.',
          ARRAY['Cache-Control header set', 'ETag generated', 'Passwords not cached']::text[], ARRAY['Header Cache-Control set', 'ETag Generated', 'passwords not cached']::text[],
          'Configure a cache that invalidates on data update', 'Configure a cache that invalidates on data update',
-         ARRAY['107']::text[], 'lesson')
+          ARRAY[107]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2833,7 +2833,7 @@ INSERT INTO public.curriculum_days
          'A retry utility function and a test script that uses it.', 'A retry utility function and a test script that uses it.',
          ARRAY['Function retries with exponential backoff', 'Max 3 attempts', 'Logs each attempt']::text[], ARRAY['Function retries with exponential backoff', 'Max 3 attempts', 'Logs each attempt']::text[],
          'Implement a retry that gives up after 5 failed attempts with jitter', 'Implement a retry that gives up after 5 failed attempts with jitter',
-         ARRAY['112']::text[], 'lesson')
+          ARRAY[112]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2857,7 +2857,7 @@ INSERT INTO public.curriculum_days
          'An Express route available at /v1 and /v2 with distinct response schemas.', 'Express route available at /v1 and /v2 with distinct response schemas.',
          ARRAY['v1 and v2 routes functional', 'v3 deprecation header', 'Distinct response shapes']::text[], ARRAY['v1 و v2 routes functional', 'Header deprecation v2', 'أشكال response distinct']::text[],
          'Add a v3 route that deprecates v2 with a Link header', 'Add a v3 route that deprecates v2 with a Link header',
-         ARRAY['113']::text[], 'practice')
+          ARRAY[113]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2881,7 +2881,7 @@ INSERT INTO public.curriculum_days
          'Express route with rate limiting and 429 Retry-After header.', 'Express route with rate limiting and 429 Retry-After header.',
          ARRAY['Sliding window active', 'Token bucket with cap', '429 response on limit', 'IP + user combined']::text[], ARRAY['sliding window active', 'Token bucket with cap', '429 response on limit', 'IP + user combined']::text[],
          'Configure token bucket that allows 10 burst requests then refills at 5/min', 'Configure token bucket that allows 10 burst requests then refills at 5/min',
-         ARRAY['114']::text[], 'project')
+          ARRAY[114]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2905,7 +2905,7 @@ INSERT INTO public.curriculum_days
          'A consolidated backend portfolio with rate limiting, caching, and error handling.', 'Consolidated backend portfolio with rate limiting, caching, and error handling.',
          ARRAY['Rate limiting active', 'Try-catch around all async routes', 'Cache headers on all services']::text[], ARRAY['Rate limiting active', 'Try-catch around all async routes', 'Cache headers on all services']::text[],
          'Add a rollback and cache invalidation step to your CI pipeline.', 'Add a rollback and cache invalidation step to your CI pipeline.',
-         ARRAY['115']::text[], 'review')
+          ARRAY[115]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2929,7 +2929,7 @@ INSERT INTO public.curriculum_days
          'A GraphQL schema with User type and a working query.', 'GraphQL schema with User type and a working query.',
          ARRAY['User type defined', 'Query fetches user by ID', 'Mutation creates user', 'Depth limiting active']::text[], ARRAY['User type defined', 'Query fetches user by ID', 'Mutation creates user', 'Depth limiting active']::text[],
          'Add a nested query that fetches a user and their posts in one request', 'Add a nested query that fetches a user and their posts in one request',
-         ARRAY['116']::text[], 'lesson')
+          ARRAY[116]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2953,7 +2953,7 @@ INSERT INTO public.curriculum_days
          'A WebSocket server that broadcasts messages.', 'WebSocket server that broadcasts messages.',
          ARRAY['Server accepts connections', 'Broadcast works', 'Targeted send works']::text[], ARRAY['Server accepts connections', 'Broadcast يعمل', 'إرسال مستهدف يعمل']::text[],
          'Implement a chat room where clients can join and receive messages from others', 'Implement a chat room where clients can join and receive messages from others',
-         ARRAY['117']::text[], 'lesson')
+          ARRAY[117]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -2977,7 +2977,7 @@ INSERT INTO public.curriculum_days
          'A Vitest test file covering auth API and WebSocket.', 'Vitest test file covering auth API and WebSocket.',
          ARRAY['supertest installed', 'WebSocket tests cover connect/send', 'beforeEach resets state']::text[], ARRAY['supertest', 'WebSocket tests cover connect/send', 'beforeEach resets state']::text[],
          'Write a WebSocket test that a broadcast message is received by all clients', 'Write a WebSocket test that a broadcast message is received by all clients',
-         ARRAY['118']::text[], 'practice')
+          ARRAY[118]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3001,7 +3001,7 @@ INSERT INTO public.curriculum_days
          'A complete backend API with auth, rate limiting, caching, WebSockets, and integration tests.', 'Complete backend API with auth, rate limiting, caching, WebSockets, and integration tests.',
          ARRAY['Auth operational', 'Rate limiting active', 'Cache headers present', 'WebSocket chat functional', 'Integration tests passing']::text[], ARRAY['Operational auth', 'Rate limiting active', 'Headers present', 'WebSocket chat functional', 'Integration tests passing']::text[],
          'Add private rooms to the WebSocket chat with per-room messaging', 'Add private rooms to the WebSocket chat with per-room messaging',
-         ARRAY['117', '118', '119']::text[], 'project')
+          ARRAY[117, 118, 119]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3025,7 +3025,7 @@ INSERT INTO public.curriculum_days
          'A SQL script with SELECT, INSERT, UPDATE, and DELETE statements.', 'A SQL script with SELECT, INSERT, UPDATE, and DELETE statements',
          ARRAY['Can write a SELECT with WHERE clause', 'Can write an INSERT statement']::text[], ARRAY['Can write a SELECT with WHERE clause', 'Can write an INSERT statement']::text[],
          'Write a query that joins two tables and returns columns from both.', 'Write a query that joins two tables and returns columns from both.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3049,7 +3049,7 @@ INSERT INTO public.curriculum_days
          'Normalized schema (3NF) and ER diagram.', 'Normalized schema (3NF) and ER diagram.',
          ARRAY['Can define primary and foreign keys', 'Can explain 3NF']::text[], ARRAY['Can define primary and foreign keys', 'Can explain 3NF']::text[],
          'Design a database schema for a library system with books, members, and loans.', 'Design a database schema for a library system with books, members, and loans.',
-         ARRAY['121']::text[], 'lesson')
+          ARRAY[121]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3073,7 +3073,7 @@ INSERT INTO public.curriculum_days
          'PostgreSQL installed and a new database created.', 'PostgreSQL installed and a new database created',
          ARRAY['PostgreSQL installed', 'Can connect via psql']::text[], ARRAY['PostgreSQL installed', 'Can connect via psql']::text[],
          'Create a table with columns and insert 5 rows via psql.', 'Create a table with columns and insert 5 rows via psql.',
-         ARRAY['122']::text[], 'practice')
+          ARRAY[122]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3097,7 +3097,7 @@ INSERT INTO public.curriculum_days
          'A users table with constraints, index, and seed script.', 'A users table with constraints, index, and seed script',
          ARRAY['Table created with primary key', 'Unique constraint on email', 'Index on email']::text[], ARRAY['Table created with primary key', 'Unique constraint on email', 'Index on email']::text[],
          'Add a check constraint ensuring the email contains an @ sign.', 'Add a check constraint ensuring the email contains an @ sign.',
-         ARRAY['123']::text[], 'project')
+          ARRAY[123]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3121,7 +3121,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up schema with constraints and indexes.', 'A cleaned-up schema with constraints and indexes',
          ARRAY['All required columns have NOT NULL', 'Index on foreign key column']::text[], ARRAY['All required columns have NOT NULL', 'Index on foreign key column']::text[],
          'Add a unique index that also enforces case-insensitive email.', 'Add a unique index that also enforces case-insensitive email.',
-         ARRAY['124']::text[], 'review')
+          ARRAY[124]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3145,7 +3145,7 @@ INSERT INTO public.curriculum_days
          'A written description of the auth flow with hashing steps.', 'A written description of the auth flow with hashing steps',
          ARRAY['Can distinguish auth from authorization', 'Can list auth flow steps']::text[], ARRAY['Can distinguish auth from authorization', 'Can list auth flow steps']::text[],
          'Describe how you would securely implement password reset.', 'Describe how you would securely implement password reset.',
-         ARRAY['125']::text[], 'lesson')
+          ARRAY[125]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3169,7 +3169,7 @@ INSERT INTO public.curriculum_days
          'Auth schema with users and sessions tables, seeded with hashed passwords.', 'Auth schema with users and sessions tables, seeded with hashed passwords',
          ARRAY['Users table has password_hash column', 'Sessions table created', 'Seed script uses bcrypt']::text[], ARRAY['Users table has password_hash column', 'Sessions table created', 'Seed script uses bcrypt']::text[],
          'Add a refresh token column to the sessions table.', 'Add a refresh token column to the sessions table.',
-         ARRAY['126']::text[], 'project')
+          ARRAY[126]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3193,7 +3193,7 @@ INSERT INTO public.curriculum_days
          'A MongoDB collection with insert, find, update, and delete operations.', 'Collection MongoDB مع عمليات insert, find, update, and delete.',
          ARRAY['Can connect to MongoDB', 'Can CRUD a document', 'Can use $lookup']::text[], ARRAY['يمكن الاتصال بـ MongoDB', 'يمكن CRUD وثيقة', 'يمكن استخدام $lookup']::text[],
          'Write a query that aggregates data from two collections using $lookup', 'Write a query that aggregates data from two collections using $lookup',
-         ARRAY['127']::text[], 'lesson')
+          ARRAY[127]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3217,7 +3217,7 @@ INSERT INTO public.curriculum_days
          'A migration file that adds and removes a column.', 'Migration file that adds and removes a column.',
          ARRAY['Migration up adds column', 'Migration down removes column', 'Run and rollback work']::text[], ARRAY['Migration up adds column', 'Migration down removes column', 'Run and rollback work']::text[],
          'Write a migration that adds a foreign key with a cascade on delete', 'Write a migration that adds a foreign key with a cascade on delete',
-         ARRAY['128']::text[], 'lesson')
+          ARRAY[128]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3241,7 +3241,7 @@ INSERT INTO public.curriculum_days
          'Redis running with key-value operations and TTL.', 'Redis running with key-value operations and TTL.',
          ARRAY['Redis installed', 'SET/GET/TTL working', 'Pub/Sub broadcasting']::text[], ARRAY['Redis', 'SET/GET/TTL working', 'Pub/Sub broadcasting']::text[],
          'Set up a Pub/Sub system that broadcasts a message to all subscribers', 'Set up a Pub/Sub system that broadcasts a message to all subscribers',
-         ARRAY['129']::text[], 'practice')
+          ARRAY[129]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3265,7 +3265,7 @@ INSERT INTO public.curriculum_days
          'A PostgreSQL table with full-text search capability.', 'PostgreSQL table مع capability البحث النصي الكامل.',
          ARRAY['pg_trgm extension enabled', 'Trigram index created', 'Full-text query works']::text[], ARRAY['pg_trgm extension enabled', 'Trigram index created', 'Full-text query works']::text[],
          'Rank results by combining tsvector ranking and trigram similarity', 'Rank results by combining tsvector ranking and trigram similarity',
-         ARRAY['130']::text[], 'project')
+          ARRAY[130]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3289,7 +3289,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up database schema with indexes and complete migrations.', 'Cleaned-up database schema with indexes and complete migrations.',
          ARRAY['Indexes on foreign keys', 'Optimized query', 'All migrations have down functions']::text[], ARRAY['Indexes on foreign keys', 'Optimized query', 'All migrations have down functions']::text[],
          'Add a partial index that only indexes active records', 'Add a partial index that only indexes active records',
-         ARRAY['131']::text[], 'review')
+          ARRAY[131]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3313,7 +3313,7 @@ INSERT INTO public.curriculum_days
          'A users table with RLS enabled and audit logging configured.', 'users table with RLS enabled and audit logging configured.',
          ARRAY['RLS enabled on users table', 'Parameterized query works', 'Audit logging active']::text[], ARRAY['RLS enabled on users table', 'Parameterized query works', 'Audit logging active']::text[],
          'Create an RLS policy that allows users to only their own row', 'Create an RLS policy that allows users to only their own row',
-         ARRAY['132']::text[], 'lesson')
+          ARRAY[132]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3337,7 +3337,7 @@ INSERT INTO public.curriculum_days
          'Express middleware with per-endpoint rate limits and Redis counters.', 'Express middleware with per-endpoint rate limits and Redis counters.',
          ARRAY['Different limits per endpoint', 'Redis-backed counters', '429 with Retry-After']::text[], ARRAY['Different limits per endpoint', 'Redis-backed counters', '429 with Retry-After']::text[],
          'Configure a burst-allowed limit that resets after inactivity', 'Configure a burst-allowed limit that resets after inactivity',
-         ARRAY['133']::text[], 'lesson')
+          ARRAY[133]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3361,7 +3361,7 @@ INSERT INTO public.curriculum_days
          'Database monitoring configuration with slow query logs and connection metrics.', 'Database monitoring configuration with slow query logs and connection metrics.',
          ARRAY['Slow query logging enabled', 'pg_stat_activity queryable', 'Alert at 80%']::text[], ARRAY['Slow query logging enabled', 'pg_stat_activity queryable', 'Alert at 80%']::text[],
          'Set up a alert when the connection pool reaches 90% usage', 'Set up a alert when the connection pool reaches 90% usage',
-         ARRAY['134']::text[], 'project')
+          ARRAY[134]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3385,7 +3385,7 @@ INSERT INTO public.curriculum_days
          'A tested backup and recovery procedure.', 'Tested backup and recovery procedure.',
          ARRAY['Backup scheduled', 'Point-in-time recovery tested', 'Data integrity verified']::text[], ARRAY['Backup scheduled', 'Point-in-time recovery tested', 'Data integrity verified']::text[],
          'Restore a backup to a different server and verify the data matches', 'Restore a backup to a different server and verify the data matches',
-         ARRAY['135']::text[], 'lesson')
+          ARRAY[135]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3409,7 +3409,7 @@ INSERT INTO public.curriculum_days
          'pgBouncer configured with connection pooling and verified reuse.', 'pgBouncer configured with connection pooling and verified reuse.',
          ARRAY['pgBouncer installed', 'Connections reused', 'Switch to session pooling']::text[], ARRAY['pgBouncer installed', 'Connections reused', 'Switch to session pooling']::text[],
          'Configure load balancing across two pgBouncer instances', 'Configure load balancing across two pgBouncer instances',
-         ARRAY['136']::text[], 'lesson')
+          ARRAY[136]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3433,7 +3433,7 @@ INSERT INTO public.curriculum_days
          'A working migration CLI tool with up/down/dry-run.', 'A working migration CLI tool with up/down/dry-run.',
          ARRAY['CLI tool with up/down/dry-run', 'Migrations applied to test DB', 'Seed runs after up']::text[], ARRAY['CLI tool with up/down/dry-run', 'Migrations applied to test DB', 'Seed runs after up']::text[],
          'Add a seed step that runs after each migration up', 'Add a seed step that runs after each migration up',
-         ARRAY['137']::text[], 'project')
+          ARRAY[137]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3457,7 +3457,7 @@ INSERT INTO public.curriculum_days
          'A cleaned-up database schema with indexes and verified backups.', 'Cleaned-up database schema with indexes and verified backups.',
          ARRAY['Indexes on foreign keys', 'Optimized query', 'Backup verified']::text[], ARRAY['Indexes on foreign keys', 'Optimized query', 'Backup verified']::text[],
          'Add a partial index that only indexes active records', 'Add a partial index that only indexes active records',
-         ARRAY['138']::text[], 'review')
+          ARRAY[138]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3481,7 +3481,7 @@ INSERT INTO public.curriculum_days
          'A PostGIS table with points and distance queries.', 'A PostGIS table with points and distance queries.',
          ARRAY['PostGIS enabled', 'POINT column created', 'Bounding box query works', 'Distance calculated']::text[], ARRAY['PostGIS enabled', 'POINT column created', 'Bounding box query works', 'Distance calculated']::text[],
          'Find all points within 5km of a given location', 'Find all points within 5km of a given location',
-         ARRAY['139']::text[], 'lesson')
+          ARRAY[139]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3505,7 +3505,7 @@ INSERT INTO public.curriculum_days
          'A sharding strategy document and a routing function.', 'Strategy document and a routing function.',
          ARRAY['Shard key design documented', 'Routing function works', 'Cross-shard limitations noted']::text[], ARRAY['Shard key design documented', 'Routing function works', 'Cross-shard limitations noted']::text[],
          'Implement a function that adds a new shard and rebalances existing data', 'Implement a function that adds a new shard and rebalances existing data',
-         ARRAY['140']::text[], 'lesson')
+          ARRAY[140]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3529,7 +3529,7 @@ INSERT INTO public.curriculum_days
          'A hardened PostgreSQL server configuration.', 'Hardened PostgreSQL server configuration.',
          ARRAY['Remote connections disabled', 'Password policy set', 'Test accounts removed', 'Audit logging enabled']::text[], ARRAY['Remote connections disabled', 'Password policy set', 'Test accounts removed', 'Audit logging enabled']::text[],
          'Set up automatic audit log review and alert on suspicious activity', 'Set up automatic audit log review and alert on suspicious activity',
-         ARRAY['141']::text[], 'project')
+          ARRAY[141]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3553,7 +3553,7 @@ INSERT INTO public.curriculum_days
          'A fully documented and hardened database setup.', 'Fully documented and hardened database setup.',
          ARRAY['Security hardening applied', 'One query optimized', 'Sharding docs added']::text[], ARRAY['Security hardening applied', 'One query optimized', 'Sharding docs added']::text[],
          'Set up a automated daily health check script for your database', 'Set up a automated daily health check script for your database',
-         ARRAY['142']::text[], 'review')
+          ARRAY[142]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3577,7 +3577,7 @@ INSERT INTO public.curriculum_days
          'A chosen database service with an migrated schema and SSL configured.', 'Chosen database service with an migrated schema and SSL configured.',
          ARRAY['Services compared', 'Supabase project set up', 'Schema migrated', 'SSL configured']::text[], ARRAY['Services compared', 'Supabase project set up', 'Schema migrated', 'SSL configured']::text[],
          'Set up read replicas in the chosen cloud database service', 'Set up read replicas in the chosen cloud database service',
-         ARRAY['143']::text[], 'lesson')
+          ARRAY[143]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3601,7 +3601,7 @@ INSERT INTO public.curriculum_days
          'An API specification document with examples.', 'API specification document with examples.',
          ARRAY['Consistent resource naming', 'Pagination implemented', 'Filtering works', 'API documented']::text[], ARRAY['Resource naming consistent', 'Pagination implemented', 'Filtering works', 'API documented']::text[],
          'Add sortable fields with a ?sort parameter', 'Add sortable fields with a ?sort parameter',
-         ARRAY['144']::text[], 'lesson')
+          ARRAY[144]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3625,7 +3625,7 @@ INSERT INTO public.curriculum_days
          'A production database with RLS, backups, monitoring, pooling, and SSL.', 'Production database with RLS backups monitoring and pooling and SSL',
          ARRAY['RLS policies on all tables', 'Backups tested', 'Pooling active', 'SSL enforced']::text[], ARRAY['RLS policies on all tables', 'Backups tested', 'Pooling active', 'SSL enforced']::text[],
          'Set up read replicas and verify failover behavior', 'Set up read replicas and verify failover behavior',
-         ARRAY['145']::text[], 'project')
+          ARRAY[145]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3649,7 +3649,7 @@ INSERT INTO public.curriculum_days
          'A consolidated database setup for production.', 'Consolidated database setup for production.',
          ARRAY['Production setup complete', 'One query optimized', 'Monitoring alerts configured']::text[], ARRAY['Production setup complete', 'One query optimized', 'Monitoring alerts configured']::text[],
          'Set up a monthly database health review process', 'Set up a monthly database health review process',
-         ARRAY['146']::text[], 'review')
+          ARRAY[146]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3673,7 +3673,7 @@ INSERT INTO public.curriculum_days
          'Connection pooling module with timeout and error handling.', 'Connection pooling module with timeout and error handling.',
          ARRAY['Connection timeout set', 'try/finally returns client', 'Error handlers return 503']::text[], ARRAY['Connection timeout set', 'try/finally returns client', 'Error handlers return 503']::text[],
          'Implement graceful shutdown that closes all database connections', 'Implement graceful shutdown that closes all database connections',
-         ARRAY['147']::text[], 'lesson')
+          ARRAY[147]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3697,7 +3697,7 @@ INSERT INTO public.curriculum_days
          'A production-ready database application with all Phase 5 features.', 'A production-ready database application with all Phase 5 features.',
          ARRAY['RLS on all tables', 'Backups configured', 'Monitoring active', 'Pooling integrated']::text[], ARRAY['RLS on all tables', 'Backups configured', 'Monitoring active', 'Pooling integrated']::text[],
          'Add automated health check endpoint that verifies database connectivity', 'Add automated health check endpoint that verifies database connectivity',
-         ARRAY['148']::text[], 'project')
+          ARRAY[148]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3721,7 +3721,7 @@ INSERT INTO public.curriculum_days
          'A written Phase 5 summary and Phase 6 focus plan.', 'Written Phase 5 summary and Phase 6 focus plan.',
          ARRAY['Summary covers 30 key concepts', 'Three Phase 6 focus areas identified', 'Learnings shared']::text[], ARRAY['Summary covers 30 key concepts', 'Three Phase 6 focus areas identified', 'Learnings shared']::text[],
          'Present a 5-minute summary of Phase 5 learnings to your team', 'Present a 5-minute summary of Phase 5 learnings to your team',
-         ARRAY['149']::text[], 'review')
+          ARRAY[149]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3745,7 +3745,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Components.', 'ناتج مكتوب قصير يوضّح Components.',
          ARRAY['Can explain Components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Components work with one improvement and document the result.', 'وسّع عملك في Components بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3769,7 +3769,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating hooks.', 'ناتج مكتوب قصير يوضّح hooks.',
          ARRAY['Can explain hooks', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح hooks', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your hooks work with one improvement and document the result.', 'وسّع عملك في hooks بتحسين واحد ووثّق النتيجة.',
-         ARRAY['151']::text[], 'lesson')
+          ARRAY[151]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3793,7 +3793,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating routing.', 'ناتج مكتوب قصير يوضّح routing.',
          ARRAY['Can explain routing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح routing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your routing work with one improvement and document the result.', 'وسّع عملك في routing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['152']::text[], 'practice')
+          ARRAY[152]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3817,7 +3817,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating forms.', 'ناتج مكتوب قصير يوضّح forms.',
          ARRAY['Can explain forms', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح forms', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your forms work with one improvement and document the result.', 'وسّع عملك في forms بتحسين واحد ووثّق النتيجة.',
-         ARRAY['153']::text[], 'lesson')
+          ARRAY[153]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3841,7 +3841,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating loading/error states.', 'ناتج مكتوب قصير يوضّح loading/error states.',
          ARRAY['Can explain loading/error states', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح loading/error states', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your loading/error states work with one improvement and document the result.', 'وسّع عملك في loading/error states بتحسين واحد ووثّق النتيجة.',
-         ARRAY['154']::text[], 'project')
+          ARRAY[154]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3865,7 +3865,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Components.', 'ناتج مكتوب قصير يوضّح Components.',
          ARRAY['Can explain Components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Components work with one improvement and document the result.', 'وسّع عملك في Components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['155']::text[], 'practice')
+          ARRAY[155]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3889,7 +3889,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating hooks.', 'ناتج مكتوب قصير يوضّح hooks.',
          ARRAY['Can explain hooks', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح hooks', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your hooks work with one improvement and document the result.', 'وسّع عملك في hooks بتحسين واحد ووثّق النتيجة.',
-         ARRAY['156']::text[], 'lesson')
+          ARRAY[156]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3913,7 +3913,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating routing.', 'ناتج مكتوب قصير يوضّح routing.',
          ARRAY['Can explain routing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح routing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your routing work with one improvement and document the result.', 'وسّع عملك في routing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['157']::text[], 'lesson')
+          ARRAY[157]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3937,7 +3937,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating forms.', 'ناتج مكتوب قصير يوضّح forms.',
          ARRAY['Can explain forms', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح forms', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your forms work with one improvement and document the result.', 'وسّع عملك في forms بتحسين واحد ووثّق النتيجة.',
-         ARRAY['158']::text[], 'practice')
+          ARRAY[158]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3961,7 +3961,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating loading/error states.', 'ناتج مكتوب قصير يوضّح loading/error states.',
          ARRAY['Can explain loading/error states', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح loading/error states', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your loading/error states work with one improvement and document the result.', 'وسّع عملك في loading/error states بتحسين واحد ووثّق النتيجة.',
-         ARRAY['159']::text[], 'review')
+          ARRAY[159]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -3985,7 +3985,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Components.', 'ناتج مكتوب قصير يوضّح Components.',
          ARRAY['Can explain Components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Components work with one improvement and document the result.', 'وسّع عملك في Components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['160']::text[], 'lesson')
+          ARRAY[160]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4009,7 +4009,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating hooks.', 'ناتج مكتوب قصير يوضّح hooks.',
          ARRAY['Can explain hooks', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح hooks', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your hooks work with one improvement and document the result.', 'وسّع عملك في hooks بتحسين واحد ووثّق النتيجة.',
-         ARRAY['161']::text[], 'practice')
+          ARRAY[161]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4033,7 +4033,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating routing.', 'ناتج مكتوب قصير يوضّح routing.',
          ARRAY['Can explain routing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح routing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your routing work with one improvement and document the result.', 'وسّع عملك في routing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['162']::text[], 'lesson')
+          ARRAY[162]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4057,7 +4057,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating forms.', 'ناتج مكتوب قصير يوضّح forms.',
          ARRAY['Can explain forms', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح forms', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your forms work with one improvement and document the result.', 'وسّع عملك في forms بتحسين واحد ووثّق النتيجة.',
-         ARRAY['163']::text[], 'lesson')
+          ARRAY[163]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4081,7 +4081,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating loading/error states.', 'ناتج مكتوب قصير يوضّح loading/error states.',
          ARRAY['Can explain loading/error states', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح loading/error states', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your loading/error states work with one improvement and document the result.', 'وسّع عملك في loading/error states بتحسين واحد ووثّق النتيجة.',
-         ARRAY['164']::text[], 'project')
+          ARRAY[164]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4105,7 +4105,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Components.', 'ناتج مكتوب قصير يوضّح Components.',
          ARRAY['Can explain Components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Components work with one improvement and document the result.', 'وسّع عملك في Components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['165']::text[], 'lesson')
+          ARRAY[165]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4129,7 +4129,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating hooks.', 'ناتج مكتوب قصير يوضّح hooks.',
          ARRAY['Can explain hooks', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح hooks', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your hooks work with one improvement and document the result.', 'وسّع عملك في hooks بتحسين واحد ووثّق النتيجة.',
-         ARRAY['166']::text[], 'lesson')
+          ARRAY[166]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4153,7 +4153,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating routing.', 'ناتج مكتوب قصير يوضّح routing.',
          ARRAY['Can explain routing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح routing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your routing work with one improvement and document the result.', 'وسّع عملك في routing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['167']::text[], 'practice')
+          ARRAY[167]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4177,7 +4177,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating forms.', 'ناتج مكتوب قصير يوضّح forms.',
          ARRAY['Can explain forms', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح forms', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your forms work with one improvement and document the result.', 'وسّع عملك في forms بتحسين واحد ووثّق النتيجة.',
-         ARRAY['168']::text[], 'lesson')
+          ARRAY[168]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4201,7 +4201,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating loading/error states.', 'ناتج مكتوب قصير يوضّح loading/error states.',
          ARRAY['Can explain loading/error states', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح loading/error states', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your loading/error states work with one improvement and document the result.', 'وسّع عملك في loading/error states بتحسين واحد ووثّق النتيجة.',
-         ARRAY['169']::text[], 'review')
+          ARRAY[169]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4225,7 +4225,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Components.', 'ناتج مكتوب قصير يوضّح Components.',
          ARRAY['Can explain Components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Components work with one improvement and document the result.', 'وسّع عملك في Components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['170']::text[], 'practice')
+          ARRAY[170]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4249,7 +4249,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating hooks.', 'ناتج مكتوب قصير يوضّح hooks.',
          ARRAY['Can explain hooks', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح hooks', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your hooks work with one improvement and document the result.', 'وسّع عملك في hooks بتحسين واحد ووثّق النتيجة.',
-         ARRAY['171']::text[], 'lesson')
+          ARRAY[171]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4273,7 +4273,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating routing.', 'ناتج مكتوب قصير يوضّح routing.',
          ARRAY['Can explain routing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح routing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your routing work with one improvement and document the result.', 'وسّع عملك في routing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['172']::text[], 'lesson')
+          ARRAY[172]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4297,7 +4297,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating forms.', 'ناتج مكتوب قصير يوضّح forms.',
          ARRAY['Can explain forms', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح forms', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your forms work with one improvement and document the result.', 'وسّع عملك في forms بتحسين واحد ووثّق النتيجة.',
-         ARRAY['173']::text[], 'practice')
+          ARRAY[173]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4321,7 +4321,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating loading/error states.', 'ناتج مكتوب قصير يوضّح loading/error states.',
          ARRAY['Can explain loading/error states', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح loading/error states', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your loading/error states work with one improvement and document the result.', 'وسّع عملك في loading/error states بتحسين واحد ووثّق النتيجة.',
-         ARRAY['174']::text[], 'project')
+          ARRAY[174]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4345,7 +4345,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Components.', 'ناتج مكتوب قصير يوضّح Components.',
          ARRAY['Can explain Components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Components work with one improvement and document the result.', 'وسّع عملك في Components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['175']::text[], 'lesson')
+          ARRAY[175]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4369,7 +4369,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating hooks.', 'ناتج مكتوب قصير يوضّح hooks.',
          ARRAY['Can explain hooks', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح hooks', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your hooks work with one improvement and document the result.', 'وسّع عملك في hooks بتحسين واحد ووثّق النتيجة.',
-         ARRAY['176']::text[], 'practice')
+          ARRAY[176]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4393,7 +4393,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating routing.', 'ناتج مكتوب قصير يوضّح routing.',
          ARRAY['Can explain routing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح routing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your routing work with one improvement and document the result.', 'وسّع عملك في routing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['177']::text[], 'lesson')
+          ARRAY[177]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4417,7 +4417,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating forms.', 'ناتج مكتوب قصير يوضّح forms.',
          ARRAY['Can explain forms', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح forms', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your forms work with one improvement and document the result.', 'وسّع عملك في forms بتحسين واحد ووثّق النتيجة.',
-         ARRAY['178']::text[], 'lesson')
+          ARRAY[178]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4441,7 +4441,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating loading/error states.', 'ناتج مكتوب قصير يوضّح loading/error states.',
          ARRAY['Can explain loading/error states', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح loading/error states', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your loading/error states work with one improvement and document the result.', 'وسّع عملك في loading/error states بتحسين واحد ووثّق النتيجة.',
-         ARRAY['179']::text[], 'review')
+          ARRAY[179]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4465,7 +4465,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating App Router.', 'ناتج مكتوب قصير يوضّح App Router.',
          ARRAY['Can explain App Router', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح App Router', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your App Router work with one improvement and document the result.', 'وسّع عملك في App Router بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4489,7 +4489,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating server/client components.', 'ناتج مكتوب قصير يوضّح server/client components.',
          ARRAY['Can explain server/client components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح server/client components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your server/client components work with one improvement and document the result.', 'وسّع عملك في server/client components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['181']::text[], 'lesson')
+          ARRAY[181]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4513,7 +4513,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating data fetching.', 'ناتج مكتوب قصير يوضّح data fetching.',
          ARRAY['Can explain data fetching', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح data fetching', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your data fetching work with one improvement and document the result.', 'وسّع عملك في data fetching بتحسين واحد ووثّق النتيجة.',
-         ARRAY['182']::text[], 'practice')
+          ARRAY[182]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4537,7 +4537,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['183']::text[], 'lesson')
+          ARRAY[183]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4561,7 +4561,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating deployment.', 'ناتج مكتوب قصير يوضّح deployment.',
          ARRAY['Can explain deployment', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح deployment', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your deployment work with one improvement and document the result.', 'وسّع عملك في deployment بتحسين واحد ووثّق النتيجة.',
-         ARRAY['184']::text[], 'project')
+          ARRAY[184]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4585,7 +4585,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating App Router.', 'ناتج مكتوب قصير يوضّح App Router.',
          ARRAY['Can explain App Router', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح App Router', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your App Router work with one improvement and document the result.', 'وسّع عملك في App Router بتحسين واحد ووثّق النتيجة.',
-         ARRAY['185']::text[], 'practice')
+          ARRAY[185]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4609,7 +4609,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating server/client components.', 'ناتج مكتوب قصير يوضّح server/client components.',
          ARRAY['Can explain server/client components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح server/client components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your server/client components work with one improvement and document the result.', 'وسّع عملك في server/client components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['186']::text[], 'lesson')
+          ARRAY[186]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4633,7 +4633,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating data fetching.', 'ناتج مكتوب قصير يوضّح data fetching.',
          ARRAY['Can explain data fetching', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح data fetching', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your data fetching work with one improvement and document the result.', 'وسّع عملك في data fetching بتحسين واحد ووثّق النتيجة.',
-         ARRAY['187']::text[], 'lesson')
+          ARRAY[187]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4657,7 +4657,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['188']::text[], 'practice')
+          ARRAY[188]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4681,7 +4681,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating deployment.', 'ناتج مكتوب قصير يوضّح deployment.',
          ARRAY['Can explain deployment', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح deployment', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your deployment work with one improvement and document the result.', 'وسّع عملك في deployment بتحسين واحد ووثّق النتيجة.',
-         ARRAY['189']::text[], 'review')
+          ARRAY[189]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4705,7 +4705,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating App Router.', 'ناتج مكتوب قصير يوضّح App Router.',
          ARRAY['Can explain App Router', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح App Router', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your App Router work with one improvement and document the result.', 'وسّع عملك في App Router بتحسين واحد ووثّق النتيجة.',
-         ARRAY['190']::text[], 'lesson')
+          ARRAY[190]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4729,7 +4729,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating server/client components.', 'ناتج مكتوب قصير يوضّح server/client components.',
          ARRAY['Can explain server/client components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح server/client components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your server/client components work with one improvement and document the result.', 'وسّع عملك في server/client components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['191']::text[], 'practice')
+          ARRAY[191]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4753,7 +4753,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating data fetching.', 'ناتج مكتوب قصير يوضّح data fetching.',
          ARRAY['Can explain data fetching', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح data fetching', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your data fetching work with one improvement and document the result.', 'وسّع عملك في data fetching بتحسين واحد ووثّق النتيجة.',
-         ARRAY['192']::text[], 'lesson')
+          ARRAY[192]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4777,7 +4777,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['193']::text[], 'lesson')
+          ARRAY[193]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4801,7 +4801,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating deployment.', 'ناتج مكتوب قصير يوضّح deployment.',
          ARRAY['Can explain deployment', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح deployment', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your deployment work with one improvement and document the result.', 'وسّع عملك في deployment بتحسين واحد ووثّق النتيجة.',
-         ARRAY['194']::text[], 'project')
+          ARRAY[194]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4825,7 +4825,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating App Router.', 'ناتج مكتوب قصير يوضّح App Router.',
          ARRAY['Can explain App Router', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح App Router', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your App Router work with one improvement and document the result.', 'وسّع عملك في App Router بتحسين واحد ووثّق النتيجة.',
-         ARRAY['195']::text[], 'lesson')
+          ARRAY[195]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4849,7 +4849,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating server/client components.', 'ناتج مكتوب قصير يوضّح server/client components.',
          ARRAY['Can explain server/client components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح server/client components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your server/client components work with one improvement and document the result.', 'وسّع عملك في server/client components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['196']::text[], 'lesson')
+          ARRAY[196]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4873,7 +4873,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating data fetching.', 'ناتج مكتوب قصير يوضّح data fetching.',
          ARRAY['Can explain data fetching', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح data fetching', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your data fetching work with one improvement and document the result.', 'وسّع عملك في data fetching بتحسين واحد ووثّق النتيجة.',
-         ARRAY['197']::text[], 'practice')
+          ARRAY[197]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4897,7 +4897,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['198']::text[], 'lesson')
+          ARRAY[198]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4921,7 +4921,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating deployment.', 'ناتج مكتوب قصير يوضّح deployment.',
          ARRAY['Can explain deployment', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح deployment', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your deployment work with one improvement and document the result.', 'وسّع عملك في deployment بتحسين واحد ووثّق النتيجة.',
-         ARRAY['199']::text[], 'review')
+          ARRAY[199]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4945,7 +4945,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating App Router.', 'ناتج مكتوب قصير يوضّح App Router.',
          ARRAY['Can explain App Router', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح App Router', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your App Router work with one improvement and document the result.', 'وسّع عملك في App Router بتحسين واحد ووثّق النتيجة.',
-         ARRAY['200']::text[], 'practice')
+          ARRAY[200]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4969,7 +4969,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating server/client components.', 'ناتج مكتوب قصير يوضّح server/client components.',
          ARRAY['Can explain server/client components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح server/client components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your server/client components work with one improvement and document the result.', 'وسّع عملك في server/client components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['201']::text[], 'lesson')
+          ARRAY[201]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -4993,7 +4993,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating data fetching.', 'ناتج مكتوب قصير يوضّح data fetching.',
          ARRAY['Can explain data fetching', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح data fetching', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your data fetching work with one improvement and document the result.', 'وسّع عملك في data fetching بتحسين واحد ووثّق النتيجة.',
-         ARRAY['202']::text[], 'lesson')
+          ARRAY[202]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5017,7 +5017,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['203']::text[], 'practice')
+          ARRAY[203]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5041,7 +5041,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating deployment.', 'ناتج مكتوب قصير يوضّح deployment.',
          ARRAY['Can explain deployment', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح deployment', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your deployment work with one improvement and document the result.', 'وسّع عملك في deployment بتحسين واحد ووثّق النتيجة.',
-         ARRAY['204']::text[], 'project')
+          ARRAY[204]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5065,7 +5065,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating App Router.', 'ناتج مكتوب قصير يوضّح App Router.',
          ARRAY['Can explain App Router', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح App Router', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your App Router work with one improvement and document the result.', 'وسّع عملك في App Router بتحسين واحد ووثّق النتيجة.',
-         ARRAY['205']::text[], 'lesson')
+          ARRAY[205]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5089,7 +5089,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating server/client components.', 'ناتج مكتوب قصير يوضّح server/client components.',
          ARRAY['Can explain server/client components', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح server/client components', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your server/client components work with one improvement and document the result.', 'وسّع عملك في server/client components بتحسين واحد ووثّق النتيجة.',
-         ARRAY['206']::text[], 'practice')
+          ARRAY[206]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5113,7 +5113,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating data fetching.', 'ناتج مكتوب قصير يوضّح data fetching.',
          ARRAY['Can explain data fetching', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح data fetching', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your data fetching work with one improvement and document the result.', 'وسّع عملك في data fetching بتحسين واحد ووثّق النتيجة.',
-         ARRAY['207']::text[], 'lesson')
+          ARRAY[207]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5137,7 +5137,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['208']::text[], 'lesson')
+          ARRAY[208]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5161,7 +5161,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating deployment.', 'ناتج مكتوب قصير يوضّح deployment.',
          ARRAY['Can explain deployment', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح deployment', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your deployment work with one improvement and document the result.', 'وسّع عملك في deployment بتحسين واحد ووثّق النتيجة.',
-         ARRAY['209']::text[], 'review')
+          ARRAY[209]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5185,7 +5185,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Types.', 'ناتج مكتوب قصير يوضّح Types.',
          ARRAY['Can explain Types', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Types', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Types work with one improvement and document the result.', 'وسّع عملك في Types بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5209,7 +5209,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating generics.', 'ناتج مكتوب قصير يوضّح generics.',
          ARRAY['Can explain generics', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح generics', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your generics work with one improvement and document the result.', 'وسّع عملك في generics بتحسين واحد ووثّق النتيجة.',
-         ARRAY['211']::text[], 'lesson')
+          ARRAY[211]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5233,7 +5233,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Vitest.', 'ناتج مكتوب قصير يوضّح Vitest.',
          ARRAY['Can explain Vitest', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Vitest', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Vitest work with one improvement and document the result.', 'وسّع عملك في Vitest بتحسين واحد ووثّق النتيجة.',
-         ARRAY['212']::text[], 'practice')
+          ARRAY[212]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5257,7 +5257,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Playwright.', 'ناتج مكتوب قصير يوضّح Playwright.',
          ARRAY['Can explain Playwright', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Playwright', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Playwright work with one improvement and document the result.', 'وسّع عملك في Playwright بتحسين واحد ووثّق النتيجة.',
-         ARRAY['213']::text[], 'lesson')
+          ARRAY[213]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5281,7 +5281,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating common web vulnerabilities.', 'ناتج مكتوب قصير يوضّح common web vulnerabilities.',
          ARRAY['Can explain common web vulnerabilities', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح common web vulnerabilities', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your common web vulnerabilities work with one improvement and document the result.', 'وسّع عملك في common web vulnerabilities بتحسين واحد ووثّق النتيجة.',
-         ARRAY['214']::text[], 'project')
+          ARRAY[214]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5305,7 +5305,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Types.', 'ناتج مكتوب قصير يوضّح Types.',
          ARRAY['Can explain Types', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Types', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Types work with one improvement and document the result.', 'وسّع عملك في Types بتحسين واحد ووثّق النتيجة.',
-         ARRAY['215']::text[], 'practice')
+          ARRAY[215]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5329,7 +5329,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating generics.', 'ناتج مكتوب قصير يوضّح generics.',
          ARRAY['Can explain generics', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح generics', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your generics work with one improvement and document the result.', 'وسّع عملك في generics بتحسين واحد ووثّق النتيجة.',
-         ARRAY['216']::text[], 'lesson')
+          ARRAY[216]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5353,7 +5353,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Vitest.', 'ناتج مكتوب قصير يوضّح Vitest.',
          ARRAY['Can explain Vitest', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Vitest', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Vitest work with one improvement and document the result.', 'وسّع عملك في Vitest بتحسين واحد ووثّق النتيجة.',
-         ARRAY['217']::text[], 'lesson')
+          ARRAY[217]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5377,7 +5377,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Playwright.', 'ناتج مكتوب قصير يوضّح Playwright.',
          ARRAY['Can explain Playwright', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Playwright', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Playwright work with one improvement and document the result.', 'وسّع عملك في Playwright بتحسين واحد ووثّق النتيجة.',
-         ARRAY['218']::text[], 'practice')
+          ARRAY[218]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5401,7 +5401,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating common web vulnerabilities.', 'ناتج مكتوب قصير يوضّح common web vulnerabilities.',
          ARRAY['Can explain common web vulnerabilities', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح common web vulnerabilities', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your common web vulnerabilities work with one improvement and document the result.', 'وسّع عملك في common web vulnerabilities بتحسين واحد ووثّق النتيجة.',
-         ARRAY['219']::text[], 'review')
+          ARRAY[219]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5425,7 +5425,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Types.', 'ناتج مكتوب قصير يوضّح Types.',
          ARRAY['Can explain Types', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Types', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Types work with one improvement and document the result.', 'وسّع عملك في Types بتحسين واحد ووثّق النتيجة.',
-         ARRAY['220']::text[], 'lesson')
+          ARRAY[220]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5449,7 +5449,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating generics.', 'ناتج مكتوب قصير يوضّح generics.',
          ARRAY['Can explain generics', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح generics', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your generics work with one improvement and document the result.', 'وسّع عملك في generics بتحسين واحد ووثّق النتيجة.',
-         ARRAY['221']::text[], 'practice')
+          ARRAY[221]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5473,7 +5473,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Vitest.', 'ناتج مكتوب قصير يوضّح Vitest.',
          ARRAY['Can explain Vitest', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Vitest', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Vitest work with one improvement and document the result.', 'وسّع عملك في Vitest بتحسين واحد ووثّق النتيجة.',
-         ARRAY['222']::text[], 'lesson')
+          ARRAY[222]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5497,7 +5497,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Playwright.', 'ناتج مكتوب قصير يوضّح Playwright.',
          ARRAY['Can explain Playwright', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Playwright', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Playwright work with one improvement and document the result.', 'وسّع عملك في Playwright بتحسين واحد ووثّق النتيجة.',
-         ARRAY['223']::text[], 'lesson')
+          ARRAY[223]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5521,7 +5521,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating common web vulnerabilities.', 'ناتج مكتوب قصير يوضّح common web vulnerabilities.',
          ARRAY['Can explain common web vulnerabilities', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح common web vulnerabilities', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your common web vulnerabilities work with one improvement and document the result.', 'وسّع عملك في common web vulnerabilities بتحسين واحد ووثّق النتيجة.',
-         ARRAY['224']::text[], 'project')
+          ARRAY[224]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5545,7 +5545,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Types.', 'ناتج مكتوب قصير يوضّح Types.',
          ARRAY['Can explain Types', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Types', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Types work with one improvement and document the result.', 'وسّع عملك في Types بتحسين واحد ووثّق النتيجة.',
-         ARRAY['225']::text[], 'lesson')
+          ARRAY[225]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5569,7 +5569,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating generics.', 'ناتج مكتوب قصير يوضّح generics.',
          ARRAY['Can explain generics', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح generics', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your generics work with one improvement and document the result.', 'وسّع عملك في generics بتحسين واحد ووثّق النتيجة.',
-         ARRAY['226']::text[], 'lesson')
+          ARRAY[226]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5593,7 +5593,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Vitest.', 'ناتج مكتوب قصير يوضّح Vitest.',
          ARRAY['Can explain Vitest', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Vitest', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Vitest work with one improvement and document the result.', 'وسّع عملك في Vitest بتحسين واحد ووثّق النتيجة.',
-         ARRAY['227']::text[], 'practice')
+          ARRAY[227]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5617,7 +5617,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Playwright.', 'ناتج مكتوب قصير يوضّح Playwright.',
          ARRAY['Can explain Playwright', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Playwright', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Playwright work with one improvement and document the result.', 'وسّع عملك في Playwright بتحسين واحد ووثّق النتيجة.',
-         ARRAY['228']::text[], 'lesson')
+          ARRAY[228]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5641,7 +5641,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating common web vulnerabilities.', 'ناتج مكتوب قصير يوضّح common web vulnerabilities.',
          ARRAY['Can explain common web vulnerabilities', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح common web vulnerabilities', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your common web vulnerabilities work with one improvement and document the result.', 'وسّع عملك في common web vulnerabilities بتحسين واحد ووثّق النتيجة.',
-         ARRAY['229']::text[], 'review')
+          ARRAY[229]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5665,7 +5665,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Types.', 'ناتج مكتوب قصير يوضّح Types.',
          ARRAY['Can explain Types', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Types', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Types work with one improvement and document the result.', 'وسّع عملك في Types بتحسين واحد ووثّق النتيجة.',
-         ARRAY['230']::text[], 'practice')
+          ARRAY[230]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5689,7 +5689,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating generics.', 'ناتج مكتوب قصير يوضّح generics.',
          ARRAY['Can explain generics', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح generics', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your generics work with one improvement and document the result.', 'وسّع عملك في generics بتحسين واحد ووثّق النتيجة.',
-         ARRAY['231']::text[], 'lesson')
+          ARRAY[231]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5713,7 +5713,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Vitest.', 'ناتج مكتوب قصير يوضّح Vitest.',
          ARRAY['Can explain Vitest', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Vitest', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Vitest work with one improvement and document the result.', 'وسّع عملك في Vitest بتحسين واحد ووثّق النتيجة.',
-         ARRAY['232']::text[], 'lesson')
+          ARRAY[232]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5737,7 +5737,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Playwright.', 'ناتج مكتوب قصير يوضّح Playwright.',
          ARRAY['Can explain Playwright', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Playwright', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Playwright work with one improvement and document the result.', 'وسّع عملك في Playwright بتحسين واحد ووثّق النتيجة.',
-         ARRAY['233']::text[], 'practice')
+          ARRAY[233]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5761,7 +5761,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating common web vulnerabilities.', 'ناتج مكتوب قصير يوضّح common web vulnerabilities.',
          ARRAY['Can explain common web vulnerabilities', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح common web vulnerabilities', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your common web vulnerabilities work with one improvement and document the result.', 'وسّع عملك في common web vulnerabilities بتحسين واحد ووثّق النتيجة.',
-         ARRAY['234']::text[], 'project')
+          ARRAY[234]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5785,7 +5785,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Types.', 'ناتج مكتوب قصير يوضّح Types.',
          ARRAY['Can explain Types', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Types', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Types work with one improvement and document the result.', 'وسّع عملك في Types بتحسين واحد ووثّق النتيجة.',
-         ARRAY['235']::text[], 'lesson')
+          ARRAY[235]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5809,7 +5809,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating generics.', 'ناتج مكتوب قصير يوضّح generics.',
          ARRAY['Can explain generics', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح generics', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your generics work with one improvement and document the result.', 'وسّع عملك في generics بتحسين واحد ووثّق النتيجة.',
-         ARRAY['236']::text[], 'practice')
+          ARRAY[236]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5833,7 +5833,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Vitest.', 'ناتج مكتوب قصير يوضّح Vitest.',
          ARRAY['Can explain Vitest', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Vitest', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Vitest work with one improvement and document the result.', 'وسّع عملك في Vitest بتحسين واحد ووثّق النتيجة.',
-         ARRAY['237']::text[], 'lesson')
+          ARRAY[237]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5857,7 +5857,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Playwright.', 'ناتج مكتوب قصير يوضّح Playwright.',
          ARRAY['Can explain Playwright', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Playwright', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Playwright work with one improvement and document the result.', 'وسّع عملك في Playwright بتحسين واحد ووثّق النتيجة.',
-         ARRAY['238']::text[], 'lesson')
+          ARRAY[238]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5881,7 +5881,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating common web vulnerabilities.', 'ناتج مكتوب قصير يوضّح common web vulnerabilities.',
          ARRAY['Can explain common web vulnerabilities', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح common web vulnerabilities', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your common web vulnerabilities work with one improvement and document the result.', 'وسّع عملك في common web vulnerabilities بتحسين واحد ووثّق النتيجة.',
-         ARRAY['239']::text[], 'review')
+          ARRAY[239]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5905,7 +5905,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Prompt design.', 'ناتج مكتوب قصير يوضّح Prompt design.',
          ARRAY['Can explain Prompt design', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Prompt design', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Prompt design work with one improvement and document the result.', 'وسّع عملك في Prompt design بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5929,7 +5929,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating structured outputs.', 'ناتج مكتوب قصير يوضّح structured outputs.',
          ARRAY['Can explain structured outputs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح structured outputs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your structured outputs work with one improvement and document the result.', 'وسّع عملك في structured outputs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['241']::text[], 'lesson')
+          ARRAY[241]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5953,7 +5953,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating embeddings.', 'ناتج مكتوب قصير يوضّح embeddings.',
          ARRAY['Can explain embeddings', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح embeddings', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your embeddings work with one improvement and document the result.', 'وسّع عملك في embeddings بتحسين واحد ووثّق النتيجة.',
-         ARRAY['242']::text[], 'practice')
+          ARRAY[242]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -5977,7 +5977,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating RAG.', 'ناتج مكتوب قصير يوضّح RAG.',
          ARRAY['Can explain RAG', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح RAG', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your RAG work with one improvement and document the result.', 'وسّع عملك في RAG بتحسين واحد ووثّق النتيجة.',
-         ARRAY['243']::text[], 'lesson')
+          ARRAY[243]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6001,7 +6001,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating cost/privacy.', 'ناتج مكتوب قصير يوضّح cost/privacy.',
          ARRAY['Can explain cost/privacy', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح cost/privacy', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your cost/privacy work with one improvement and document the result.', 'وسّع عملك في cost/privacy بتحسين واحد ووثّق النتيجة.',
-         ARRAY['244']::text[], 'project')
+          ARRAY[244]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6025,7 +6025,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Prompt design.', 'ناتج مكتوب قصير يوضّح Prompt design.',
          ARRAY['Can explain Prompt design', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Prompt design', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Prompt design work with one improvement and document the result.', 'وسّع عملك في Prompt design بتحسين واحد ووثّق النتيجة.',
-         ARRAY['245']::text[], 'practice')
+          ARRAY[245]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6049,7 +6049,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating structured outputs.', 'ناتج مكتوب قصير يوضّح structured outputs.',
          ARRAY['Can explain structured outputs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح structured outputs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your structured outputs work with one improvement and document the result.', 'وسّع عملك في structured outputs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['246']::text[], 'lesson')
+          ARRAY[246]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6073,7 +6073,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating embeddings.', 'ناتج مكتوب قصير يوضّح embeddings.',
          ARRAY['Can explain embeddings', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح embeddings', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your embeddings work with one improvement and document the result.', 'وسّع عملك في embeddings بتحسين واحد ووثّق النتيجة.',
-         ARRAY['247']::text[], 'lesson')
+          ARRAY[247]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6097,7 +6097,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating RAG.', 'ناتج مكتوب قصير يوضّح RAG.',
          ARRAY['Can explain RAG', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح RAG', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your RAG work with one improvement and document the result.', 'وسّع عملك في RAG بتحسين واحد ووثّق النتيجة.',
-         ARRAY['248']::text[], 'practice')
+          ARRAY[248]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6121,7 +6121,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating cost/privacy.', 'ناتج مكتوب قصير يوضّح cost/privacy.',
          ARRAY['Can explain cost/privacy', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح cost/privacy', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your cost/privacy work with one improvement and document the result.', 'وسّع عملك في cost/privacy بتحسين واحد ووثّق النتيجة.',
-         ARRAY['249']::text[], 'review')
+          ARRAY[249]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6145,7 +6145,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Prompt design.', 'ناتج مكتوب قصير يوضّح Prompt design.',
          ARRAY['Can explain Prompt design', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Prompt design', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Prompt design work with one improvement and document the result.', 'وسّع عملك في Prompt design بتحسين واحد ووثّق النتيجة.',
-         ARRAY['250']::text[], 'lesson')
+          ARRAY[250]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6169,7 +6169,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating structured outputs.', 'ناتج مكتوب قصير يوضّح structured outputs.',
          ARRAY['Can explain structured outputs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح structured outputs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your structured outputs work with one improvement and document the result.', 'وسّع عملك في structured outputs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['251']::text[], 'practice')
+          ARRAY[251]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6193,7 +6193,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating embeddings.', 'ناتج مكتوب قصير يوضّح embeddings.',
          ARRAY['Can explain embeddings', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح embeddings', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your embeddings work with one improvement and document the result.', 'وسّع عملك في embeddings بتحسين واحد ووثّق النتيجة.',
-         ARRAY['252']::text[], 'lesson')
+          ARRAY[252]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6217,7 +6217,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating RAG.', 'ناتج مكتوب قصير يوضّح RAG.',
          ARRAY['Can explain RAG', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح RAG', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your RAG work with one improvement and document the result.', 'وسّع عملك في RAG بتحسين واحد ووثّق النتيجة.',
-         ARRAY['253']::text[], 'lesson')
+          ARRAY[253]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6241,7 +6241,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating cost/privacy.', 'ناتج مكتوب قصير يوضّح cost/privacy.',
          ARRAY['Can explain cost/privacy', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح cost/privacy', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your cost/privacy work with one improvement and document the result.', 'وسّع عملك في cost/privacy بتحسين واحد ووثّق النتيجة.',
-         ARRAY['254']::text[], 'project')
+          ARRAY[254]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6265,7 +6265,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Prompt design.', 'ناتج مكتوب قصير يوضّح Prompt design.',
          ARRAY['Can explain Prompt design', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Prompt design', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Prompt design work with one improvement and document the result.', 'وسّع عملك في Prompt design بتحسين واحد ووثّق النتيجة.',
-         ARRAY['255']::text[], 'lesson')
+          ARRAY[255]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6289,7 +6289,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating structured outputs.', 'ناتج مكتوب قصير يوضّح structured outputs.',
          ARRAY['Can explain structured outputs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح structured outputs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your structured outputs work with one improvement and document the result.', 'وسّع عملك في structured outputs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['256']::text[], 'lesson')
+          ARRAY[256]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6313,7 +6313,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating embeddings.', 'ناتج مكتوب قصير يوضّح embeddings.',
          ARRAY['Can explain embeddings', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح embeddings', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your embeddings work with one improvement and document the result.', 'وسّع عملك في embeddings بتحسين واحد ووثّق النتيجة.',
-         ARRAY['257']::text[], 'practice')
+          ARRAY[257]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6337,7 +6337,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating RAG.', 'ناتج مكتوب قصير يوضّح RAG.',
          ARRAY['Can explain RAG', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح RAG', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your RAG work with one improvement and document the result.', 'وسّع عملك في RAG بتحسين واحد ووثّق النتيجة.',
-         ARRAY['258']::text[], 'lesson')
+          ARRAY[258]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6361,7 +6361,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating cost/privacy.', 'ناتج مكتوب قصير يوضّح cost/privacy.',
          ARRAY['Can explain cost/privacy', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح cost/privacy', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your cost/privacy work with one improvement and document the result.', 'وسّع عملك في cost/privacy بتحسين واحد ووثّق النتيجة.',
-         ARRAY['259']::text[], 'review')
+          ARRAY[259]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6385,7 +6385,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Prompt design.', 'ناتج مكتوب قصير يوضّح Prompt design.',
          ARRAY['Can explain Prompt design', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Prompt design', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Prompt design work with one improvement and document the result.', 'وسّع عملك في Prompt design بتحسين واحد ووثّق النتيجة.',
-         ARRAY['260']::text[], 'practice')
+          ARRAY[260]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6409,7 +6409,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating structured outputs.', 'ناتج مكتوب قصير يوضّح structured outputs.',
          ARRAY['Can explain structured outputs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح structured outputs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your structured outputs work with one improvement and document the result.', 'وسّع عملك في structured outputs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['261']::text[], 'lesson')
+          ARRAY[261]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6433,7 +6433,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating embeddings.', 'ناتج مكتوب قصير يوضّح embeddings.',
          ARRAY['Can explain embeddings', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح embeddings', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your embeddings work with one improvement and document the result.', 'وسّع عملك في embeddings بتحسين واحد ووثّق النتيجة.',
-         ARRAY['262']::text[], 'lesson')
+          ARRAY[262]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6457,7 +6457,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating RAG.', 'ناتج مكتوب قصير يوضّح RAG.',
          ARRAY['Can explain RAG', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح RAG', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your RAG work with one improvement and document the result.', 'وسّع عملك في RAG بتحسين واحد ووثّق النتيجة.',
-         ARRAY['263']::text[], 'practice')
+          ARRAY[263]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6481,7 +6481,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating cost/privacy.', 'ناتج مكتوب قصير يوضّح cost/privacy.',
          ARRAY['Can explain cost/privacy', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح cost/privacy', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your cost/privacy work with one improvement and document the result.', 'وسّع عملك في cost/privacy بتحسين واحد ووثّق النتيجة.',
-         ARRAY['264']::text[], 'project')
+          ARRAY[264]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6505,7 +6505,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Prompt design.', 'ناتج مكتوب قصير يوضّح Prompt design.',
          ARRAY['Can explain Prompt design', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Prompt design', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Prompt design work with one improvement and document the result.', 'وسّع عملك في Prompt design بتحسين واحد ووثّق النتيجة.',
-         ARRAY['265']::text[], 'lesson')
+          ARRAY[265]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6529,7 +6529,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating structured outputs.', 'ناتج مكتوب قصير يوضّح structured outputs.',
          ARRAY['Can explain structured outputs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح structured outputs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your structured outputs work with one improvement and document the result.', 'وسّع عملك في structured outputs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['266']::text[], 'practice')
+          ARRAY[266]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6553,7 +6553,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating embeddings.', 'ناتج مكتوب قصير يوضّح embeddings.',
          ARRAY['Can explain embeddings', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح embeddings', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your embeddings work with one improvement and document the result.', 'وسّع عملك في embeddings بتحسين واحد ووثّق النتيجة.',
-         ARRAY['267']::text[], 'lesson')
+          ARRAY[267]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6577,7 +6577,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating RAG.', 'ناتج مكتوب قصير يوضّح RAG.',
          ARRAY['Can explain RAG', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح RAG', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your RAG work with one improvement and document the result.', 'وسّع عملك في RAG بتحسين واحد ووثّق النتيجة.',
-         ARRAY['268']::text[], 'lesson')
+          ARRAY[268]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6601,7 +6601,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating cost/privacy.', 'ناتج مكتوب قصير يوضّح cost/privacy.',
          ARRAY['Can explain cost/privacy', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح cost/privacy', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your cost/privacy work with one improvement and document the result.', 'وسّع عملك في cost/privacy بتحسين واحد ووثّق النتيجة.',
-         ARRAY['269']::text[], 'review')
+          ARRAY[269]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6625,7 +6625,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Scope.', 'ناتج مكتوب قصير يوضّح Scope.',
          ARRAY['Can explain Scope', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Scope work with one improvement and document the result.', 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6649,7 +6649,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating requirements.', 'ناتج مكتوب قصير يوضّح requirements.',
          ARRAY['Can explain requirements', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your requirements work with one improvement and document the result.', 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
-         ARRAY['271']::text[], 'lesson')
+          ARRAY[271]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6673,7 +6673,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating architecture.', 'ناتج مكتوب قصير يوضّح architecture.',
          ARRAY['Can explain architecture', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your architecture work with one improvement and document the result.', 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
-         ARRAY['272']::text[], 'practice')
+          ARRAY[272]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6697,7 +6697,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating database.', 'ناتج مكتوب قصير يوضّح database.',
          ARRAY['Can explain database', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your database work with one improvement and document the result.', 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
-         ARRAY['273']::text[], 'lesson')
+          ARRAY[273]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6721,7 +6721,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['274']::text[], 'project')
+          ARRAY[274]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6745,7 +6745,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating features.', 'ناتج مكتوب قصير يوضّح features.',
          ARRAY['Can explain features', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your features work with one improvement and document the result.', 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
-         ARRAY['275']::text[], 'practice')
+          ARRAY[275]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6769,7 +6769,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating tests.', 'ناتج مكتوب قصير يوضّح tests.',
          ARRAY['Can explain tests', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح tests', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your tests work with one improvement and document the result.', 'وسّع عملك في tests بتحسين واحد ووثّق النتيجة.',
-         ARRAY['276']::text[], 'lesson')
+          ARRAY[276]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6793,7 +6793,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating docs.', 'ناتج مكتوب قصير يوضّح docs.',
          ARRAY['Can explain docs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح docs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your docs work with one improvement and document the result.', 'وسّع عملك في docs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['277']::text[], 'lesson')
+          ARRAY[277]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6817,7 +6817,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Scope.', 'ناتج مكتوب قصير يوضّح Scope.',
          ARRAY['Can explain Scope', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Scope work with one improvement and document the result.', 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
-         ARRAY['278']::text[], 'practice')
+          ARRAY[278]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6841,7 +6841,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating requirements.', 'ناتج مكتوب قصير يوضّح requirements.',
          ARRAY['Can explain requirements', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your requirements work with one improvement and document the result.', 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
-         ARRAY['279']::text[], 'review')
+          ARRAY[279]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6865,7 +6865,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating architecture.', 'ناتج مكتوب قصير يوضّح architecture.',
          ARRAY['Can explain architecture', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your architecture work with one improvement and document the result.', 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
-         ARRAY['280']::text[], 'lesson')
+          ARRAY[280]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6889,7 +6889,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating database.', 'ناتج مكتوب قصير يوضّح database.',
          ARRAY['Can explain database', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your database work with one improvement and document the result.', 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
-         ARRAY['281']::text[], 'practice')
+          ARRAY[281]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6913,7 +6913,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['282']::text[], 'lesson')
+          ARRAY[282]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6937,7 +6937,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating features.', 'ناتج مكتوب قصير يوضّح features.',
          ARRAY['Can explain features', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your features work with one improvement and document the result.', 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
-         ARRAY['283']::text[], 'lesson')
+          ARRAY[283]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6961,7 +6961,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating tests.', 'ناتج مكتوب قصير يوضّح tests.',
          ARRAY['Can explain tests', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح tests', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your tests work with one improvement and document the result.', 'وسّع عملك في tests بتحسين واحد ووثّق النتيجة.',
-         ARRAY['284']::text[], 'project')
+          ARRAY[284]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -6985,7 +6985,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating docs.', 'ناتج مكتوب قصير يوضّح docs.',
          ARRAY['Can explain docs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح docs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your docs work with one improvement and document the result.', 'وسّع عملك في docs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['285']::text[], 'lesson')
+          ARRAY[285]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7009,7 +7009,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Scope.', 'ناتج مكتوب قصير يوضّح Scope.',
          ARRAY['Can explain Scope', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Scope work with one improvement and document the result.', 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
-         ARRAY['286']::text[], 'lesson')
+          ARRAY[286]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7033,7 +7033,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating requirements.', 'ناتج مكتوب قصير يوضّح requirements.',
          ARRAY['Can explain requirements', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your requirements work with one improvement and document the result.', 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
-         ARRAY['287']::text[], 'practice')
+          ARRAY[287]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7057,7 +7057,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating architecture.', 'ناتج مكتوب قصير يوضّح architecture.',
          ARRAY['Can explain architecture', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your architecture work with one improvement and document the result.', 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
-         ARRAY['288']::text[], 'lesson')
+          ARRAY[288]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7081,7 +7081,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating database.', 'ناتج مكتوب قصير يوضّح database.',
          ARRAY['Can explain database', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your database work with one improvement and document the result.', 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
-         ARRAY['289']::text[], 'review')
+          ARRAY[289]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7105,7 +7105,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['290']::text[], 'practice')
+          ARRAY[290]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7129,7 +7129,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating features.', 'ناتج مكتوب قصير يوضّح features.',
          ARRAY['Can explain features', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your features work with one improvement and document the result.', 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
-         ARRAY['291']::text[], 'lesson')
+          ARRAY[291]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7153,7 +7153,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating tests.', 'ناتج مكتوب قصير يوضّح tests.',
          ARRAY['Can explain tests', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح tests', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your tests work with one improvement and document the result.', 'وسّع عملك في tests بتحسين واحد ووثّق النتيجة.',
-         ARRAY['292']::text[], 'lesson')
+          ARRAY[292]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7177,7 +7177,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating docs.', 'ناتج مكتوب قصير يوضّح docs.',
          ARRAY['Can explain docs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح docs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your docs work with one improvement and document the result.', 'وسّع عملك في docs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['293']::text[], 'practice')
+          ARRAY[293]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7201,7 +7201,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Scope.', 'ناتج مكتوب قصير يوضّح Scope.',
          ARRAY['Can explain Scope', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Scope', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Scope work with one improvement and document the result.', 'وسّع عملك في Scope بتحسين واحد ووثّق النتيجة.',
-         ARRAY['294']::text[], 'project')
+          ARRAY[294]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7225,7 +7225,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating requirements.', 'ناتج مكتوب قصير يوضّح requirements.',
          ARRAY['Can explain requirements', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح requirements', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your requirements work with one improvement and document the result.', 'وسّع عملك في requirements بتحسين واحد ووثّق النتيجة.',
-         ARRAY['295']::text[], 'lesson')
+          ARRAY[295]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7249,7 +7249,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating architecture.', 'ناتج مكتوب قصير يوضّح architecture.',
          ARRAY['Can explain architecture', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح architecture', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your architecture work with one improvement and document the result.', 'وسّع عملك في architecture بتحسين واحد ووثّق النتيجة.',
-         ARRAY['296']::text[], 'practice')
+          ARRAY[296]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7273,7 +7273,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating database.', 'ناتج مكتوب قصير يوضّح database.',
          ARRAY['Can explain database', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح database', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your database work with one improvement and document the result.', 'وسّع عملك في database بتحسين واحد ووثّق النتيجة.',
-         ARRAY['297']::text[], 'lesson')
+          ARRAY[297]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7297,7 +7297,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating auth.', 'ناتج مكتوب قصير يوضّح auth.',
          ARRAY['Can explain auth', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح auth', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your auth work with one improvement and document the result.', 'وسّع عملك في auth بتحسين واحد ووثّق النتيجة.',
-         ARRAY['298']::text[], 'lesson')
+          ARRAY[298]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7321,7 +7321,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating features.', 'ناتج مكتوب قصير يوضّح features.',
          ARRAY['Can explain features', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح features', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your features work with one improvement and document the result.', 'وسّع عملك في features بتحسين واحد ووثّق النتيجة.',
-         ARRAY['299']::text[], 'review')
+          ARRAY[299]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7345,7 +7345,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Production config.', 'ناتج مكتوب قصير يوضّح Production config.',
          ARRAY['Can explain Production config', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Production config', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Production config work with one improvement and document the result.', 'وسّع عملك في Production config بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7369,7 +7369,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating secrets.', 'ناتج مكتوب قصير يوضّح secrets.',
          ARRAY['Can explain secrets', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح secrets', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your secrets work with one improvement and document the result.', 'وسّع عملك في secrets بتحسين واحد ووثّق النتيجة.',
-         ARRAY['301']::text[], 'lesson')
+          ARRAY[301]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7393,7 +7393,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating monitoring.', 'ناتج مكتوب قصير يوضّح monitoring.',
          ARRAY['Can explain monitoring', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح monitoring', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your monitoring work with one improvement and document the result.', 'وسّع عملك في monitoring بتحسين واحد ووثّق النتيجة.',
-         ARRAY['302']::text[], 'practice')
+          ARRAY[302]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7417,7 +7417,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating performance.', 'ناتج مكتوب قصير يوضّح performance.',
          ARRAY['Can explain performance', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح performance', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your performance work with one improvement and document the result.', 'وسّع عملك في performance بتحسين واحد ووثّق النتيجة.',
-         ARRAY['303']::text[], 'lesson')
+          ARRAY[303]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7441,7 +7441,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating feedback loops.', 'ناتج مكتوب قصير يوضّح feedback loops.',
          ARRAY['Can explain feedback loops', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح feedback loops', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your feedback loops work with one improvement and document the result.', 'وسّع عملك في feedback loops بتحسين واحد ووثّق النتيجة.',
-         ARRAY['304']::text[], 'project')
+          ARRAY[304]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7465,7 +7465,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Production config.', 'ناتج مكتوب قصير يوضّح Production config.',
          ARRAY['Can explain Production config', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Production config', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Production config work with one improvement and document the result.', 'وسّع عملك في Production config بتحسين واحد ووثّق النتيجة.',
-         ARRAY['305']::text[], 'practice')
+          ARRAY[305]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7489,7 +7489,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating secrets.', 'ناتج مكتوب قصير يوضّح secrets.',
          ARRAY['Can explain secrets', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح secrets', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your secrets work with one improvement and document the result.', 'وسّع عملك في secrets بتحسين واحد ووثّق النتيجة.',
-         ARRAY['306']::text[], 'lesson')
+          ARRAY[306]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7513,7 +7513,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating monitoring.', 'ناتج مكتوب قصير يوضّح monitoring.',
          ARRAY['Can explain monitoring', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح monitoring', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your monitoring work with one improvement and document the result.', 'وسّع عملك في monitoring بتحسين واحد ووثّق النتيجة.',
-         ARRAY['307']::text[], 'lesson')
+          ARRAY[307]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7537,7 +7537,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating performance.', 'ناتج مكتوب قصير يوضّح performance.',
          ARRAY['Can explain performance', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح performance', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your performance work with one improvement and document the result.', 'وسّع عملك في performance بتحسين واحد ووثّق النتيجة.',
-         ARRAY['308']::text[], 'practice')
+          ARRAY[308]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7561,7 +7561,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating feedback loops.', 'ناتج مكتوب قصير يوضّح feedback loops.',
          ARRAY['Can explain feedback loops', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح feedback loops', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your feedback loops work with one improvement and document the result.', 'وسّع عملك في feedback loops بتحسين واحد ووثّق النتيجة.',
-         ARRAY['309']::text[], 'review')
+          ARRAY[309]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7585,7 +7585,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Production config.', 'ناتج مكتوب قصير يوضّح Production config.',
          ARRAY['Can explain Production config', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Production config', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Production config work with one improvement and document the result.', 'وسّع عملك في Production config بتحسين واحد ووثّق النتيجة.',
-         ARRAY['310']::text[], 'lesson')
+          ARRAY[310]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7609,7 +7609,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating secrets.', 'ناتج مكتوب قصير يوضّح secrets.',
          ARRAY['Can explain secrets', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح secrets', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your secrets work with one improvement and document the result.', 'وسّع عملك في secrets بتحسين واحد ووثّق النتيجة.',
-         ARRAY['311']::text[], 'practice')
+          ARRAY[311]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7633,7 +7633,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating monitoring.', 'ناتج مكتوب قصير يوضّح monitoring.',
          ARRAY['Can explain monitoring', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح monitoring', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your monitoring work with one improvement and document the result.', 'وسّع عملك في monitoring بتحسين واحد ووثّق النتيجة.',
-         ARRAY['312']::text[], 'lesson')
+          ARRAY[312]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7657,7 +7657,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating performance.', 'ناتج مكتوب قصير يوضّح performance.',
          ARRAY['Can explain performance', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح performance', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your performance work with one improvement and document the result.', 'وسّع عملك في performance بتحسين واحد ووثّق النتيجة.',
-         ARRAY['313']::text[], 'lesson')
+          ARRAY[313]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7681,7 +7681,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating feedback loops.', 'ناتج مكتوب قصير يوضّح feedback loops.',
          ARRAY['Can explain feedback loops', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح feedback loops', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your feedback loops work with one improvement and document the result.', 'وسّع عملك في feedback loops بتحسين واحد ووثّق النتيجة.',
-         ARRAY['314']::text[], 'project')
+          ARRAY[314]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7705,7 +7705,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Production config.', 'ناتج مكتوب قصير يوضّح Production config.',
          ARRAY['Can explain Production config', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Production config', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Production config work with one improvement and document the result.', 'وسّع عملك في Production config بتحسين واحد ووثّق النتيجة.',
-         ARRAY['315']::text[], 'lesson')
+          ARRAY[315]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7729,7 +7729,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating secrets.', 'ناتج مكتوب قصير يوضّح secrets.',
          ARRAY['Can explain secrets', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح secrets', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your secrets work with one improvement and document the result.', 'وسّع عملك في secrets بتحسين واحد ووثّق النتيجة.',
-         ARRAY['316']::text[], 'lesson')
+          ARRAY[316]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7753,7 +7753,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating monitoring.', 'ناتج مكتوب قصير يوضّح monitoring.',
          ARRAY['Can explain monitoring', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح monitoring', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your monitoring work with one improvement and document the result.', 'وسّع عملك في monitoring بتحسين واحد ووثّق النتيجة.',
-         ARRAY['317']::text[], 'practice')
+          ARRAY[317]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7777,7 +7777,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating performance.', 'ناتج مكتوب قصير يوضّح performance.',
          ARRAY['Can explain performance', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح performance', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your performance work with one improvement and document the result.', 'وسّع عملك في performance بتحسين واحد ووثّق النتيجة.',
-         ARRAY['318']::text[], 'lesson')
+          ARRAY[318]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7801,7 +7801,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating feedback loops.', 'ناتج مكتوب قصير يوضّح feedback loops.',
          ARRAY['Can explain feedback loops', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح feedback loops', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your feedback loops work with one improvement and document the result.', 'وسّع عملك في feedback loops بتحسين واحد ووثّق النتيجة.',
-         ARRAY['319']::text[], 'review')
+          ARRAY[319]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7825,7 +7825,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Production config.', 'ناتج مكتوب قصير يوضّح Production config.',
          ARRAY['Can explain Production config', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Production config', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Production config work with one improvement and document the result.', 'وسّع عملك في Production config بتحسين واحد ووثّق النتيجة.',
-         ARRAY['320']::text[], 'practice')
+          ARRAY[320]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7849,7 +7849,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating secrets.', 'ناتج مكتوب قصير يوضّح secrets.',
          ARRAY['Can explain secrets', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح secrets', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your secrets work with one improvement and document the result.', 'وسّع عملك في secrets بتحسين واحد ووثّق النتيجة.',
-         ARRAY['321']::text[], 'lesson')
+          ARRAY[321]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7873,7 +7873,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating monitoring.', 'ناتج مكتوب قصير يوضّح monitoring.',
          ARRAY['Can explain monitoring', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح monitoring', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your monitoring work with one improvement and document the result.', 'وسّع عملك في monitoring بتحسين واحد ووثّق النتيجة.',
-         ARRAY['322']::text[], 'lesson')
+          ARRAY[322]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7897,7 +7897,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating performance.', 'ناتج مكتوب قصير يوضّح performance.',
          ARRAY['Can explain performance', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح performance', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your performance work with one improvement and document the result.', 'وسّع عملك في performance بتحسين واحد ووثّق النتيجة.',
-         ARRAY['323']::text[], 'practice')
+          ARRAY[323]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7921,7 +7921,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating feedback loops.', 'ناتج مكتوب قصير يوضّح feedback loops.',
          ARRAY['Can explain feedback loops', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح feedback loops', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your feedback loops work with one improvement and document the result.', 'وسّع عملك في feedback loops بتحسين واحد ووثّق النتيجة.',
-         ARRAY['324']::text[], 'project')
+          ARRAY[324]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7945,7 +7945,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Production config.', 'ناتج مكتوب قصير يوضّح Production config.',
          ARRAY['Can explain Production config', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Production config', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Production config work with one improvement and document the result.', 'وسّع عملك في Production config بتحسين واحد ووثّق النتيجة.',
-         ARRAY['325']::text[], 'lesson')
+          ARRAY[325]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7969,7 +7969,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating secrets.', 'ناتج مكتوب قصير يوضّح secrets.',
          ARRAY['Can explain secrets', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح secrets', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your secrets work with one improvement and document the result.', 'وسّع عملك في secrets بتحسين واحد ووثّق النتيجة.',
-         ARRAY['326']::text[], 'practice')
+          ARRAY[326]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -7993,7 +7993,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating monitoring.', 'ناتج مكتوب قصير يوضّح monitoring.',
          ARRAY['Can explain monitoring', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح monitoring', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your monitoring work with one improvement and document the result.', 'وسّع عملك في monitoring بتحسين واحد ووثّق النتيجة.',
-         ARRAY['327']::text[], 'lesson')
+          ARRAY[327]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8017,7 +8017,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating performance.', 'ناتج مكتوب قصير يوضّح performance.',
          ARRAY['Can explain performance', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح performance', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your performance work with one improvement and document the result.', 'وسّع عملك في performance بتحسين واحد ووثّق النتيجة.',
-         ARRAY['328']::text[], 'lesson')
+          ARRAY[328]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8041,7 +8041,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating feedback loops.', 'ناتج مكتوب قصير يوضّح feedback loops.',
          ARRAY['Can explain feedback loops', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح feedback loops', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your feedback loops work with one improvement and document the result.', 'وسّع عملك في feedback loops بتحسين واحد ووثّق النتيجة.',
-         ARRAY['329']::text[], 'review')
+          ARRAY[329]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8065,7 +8065,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         '{}'::text[], 'lesson')
+          '{}'::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8089,7 +8089,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['331']::text[], 'lesson')
+          ARRAY[331]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8113,7 +8113,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['332']::text[], 'practice')
+          ARRAY[332]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8137,7 +8137,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['333']::text[], 'lesson')
+          ARRAY[333]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8161,7 +8161,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['334']::text[], 'project')
+          ARRAY[334]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8185,7 +8185,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['335']::text[], 'practice')
+          ARRAY[335]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8209,7 +8209,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['336']::text[], 'lesson')
+          ARRAY[336]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8233,7 +8233,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['337']::text[], 'lesson')
+          ARRAY[337]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8257,7 +8257,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['338']::text[], 'practice')
+          ARRAY[338]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8281,7 +8281,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['339']::text[], 'review')
+          ARRAY[339]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8305,7 +8305,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['340']::text[], 'lesson')
+          ARRAY[340]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8329,7 +8329,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['341']::text[], 'practice')
+          ARRAY[341]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8353,7 +8353,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['342']::text[], 'lesson')
+          ARRAY[342]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8377,7 +8377,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['343']::text[], 'lesson')
+          ARRAY[343]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8401,7 +8401,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['344']::text[], 'project')
+          ARRAY[344]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8425,7 +8425,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['345']::text[], 'lesson')
+          ARRAY[345]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8449,7 +8449,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['346']::text[], 'lesson')
+          ARRAY[346]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8473,7 +8473,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['347']::text[], 'practice')
+          ARRAY[347]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8497,7 +8497,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['348']::text[], 'lesson')
+          ARRAY[348]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8521,7 +8521,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['349']::text[], 'review')
+          ARRAY[349]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8545,7 +8545,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['350']::text[], 'practice')
+          ARRAY[350]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8569,7 +8569,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['351']::text[], 'lesson')
+          ARRAY[351]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8593,7 +8593,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['352']::text[], 'lesson')
+          ARRAY[352]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8617,7 +8617,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['353']::text[], 'practice')
+          ARRAY[353]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8641,7 +8641,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['354']::text[], 'project')
+          ARRAY[354]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8665,7 +8665,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['355']::text[], 'lesson')
+          ARRAY[355]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8689,7 +8689,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['356']::text[], 'practice')
+          ARRAY[356]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8713,7 +8713,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['357']::text[], 'lesson')
+          ARRAY[357]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8737,7 +8737,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['358']::text[], 'lesson')
+          ARRAY[358]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8761,7 +8761,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['359']::text[], 'review')
+          ARRAY[359]::integer[], 'review')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8785,7 +8785,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['360']::text[], 'lesson')
+          ARRAY[360]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8809,7 +8809,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating interview practice.', 'ناتج مكتوب قصير يوضّح interview practice.',
          ARRAY['Can explain interview practice', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح interview practice', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your interview practice work with one improvement and document the result.', 'وسّع عملك في interview practice بتحسين واحد ووثّق النتيجة.',
-         ARRAY['361']::text[], 'lesson')
+          ARRAY[361]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8833,7 +8833,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating Portfolio.', 'ناتج مكتوب قصير يوضّح Portfolio.',
          ARRAY['Can explain Portfolio', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح Portfolio', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your Portfolio work with one improvement and document the result.', 'وسّع عملك في Portfolio بتحسين واحد ووثّق النتيجة.',
-         ARRAY['362']::text[], 'practice')
+          ARRAY[362]::integer[], 'practice')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8857,7 +8857,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating READMEs.', 'ناتج مكتوب قصير يوضّح READMEs.',
          ARRAY['Can explain READMEs', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح READMEs', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your READMEs work with one improvement and document the result.', 'وسّع عملك في READMEs بتحسين واحد ووثّق النتيجة.',
-         ARRAY['363']::text[], 'lesson')
+          ARRAY[363]::integer[], 'lesson')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
@@ -8881,7 +8881,7 @@ INSERT INTO public.curriculum_days
          'A short written artifact demonstrating technical writing.', 'ناتج مكتوب قصير يوضّح technical writing.',
          ARRAY['Can explain technical writing', 'Completed the hands-on task', 'Documented the result']::text[], ARRAY['يمكن شرح technical writing', 'أُكملت المهمة العملية', 'تم توثيق النتيجة']::text[],
          'Extend your technical writing work with one improvement and document the result.', 'وسّع عملك في technical writing بتحسين واحد ووثّق النتيجة.',
-         ARRAY['364']::text[], 'project')
+          ARRAY[364]::integer[], 'project')
 ON CONFLICT (id) DO UPDATE SET
    title_en = EXCLUDED.title_en, title_ar = EXCLUDED.title_ar, topic = EXCLUDED.topic,
    objective_en = EXCLUDED.objective_en, objective_ar = EXCLUDED.objective_ar,
