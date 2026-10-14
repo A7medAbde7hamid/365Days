@@ -102,13 +102,21 @@ Copy the **Project URL** and the **anon / publishable key** from
 
 ### 2. Configure the environment
 
+**Local development** — create `.env.local` (gitignored):
+
 ```dotenv
-# .env.local
 VITE_SUPABASE_URL=https://<project-ref>.supabase.co
 VITE_SUPABASE_ANON_KEY=<your-anon-key>
 ```
 
-> **Never put the service-role key in `.env.local` or anywhere in `src/`.**
+**Vercel deployment** — set these in the Vercel dashboard (Project → Settings → Environment Variables), NOT in the repo:
+
+| Variable | Value |
+|----------|-------|
+| `VITE_SUPABASE_URL` | `https://<project-ref>.supabase.co` |
+| `VITE_SUPABASE_ANON_KEY` | `<your-anon-key>` |
+
+> **Never put the service-role key in `.env.local`, `.env.production`, or anywhere in `src/`.**
 > Vite inlines every `VITE_*` variable into the client bundle. Service-role
 > operations belong in server-side code only.
 
