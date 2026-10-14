@@ -23,7 +23,6 @@ AS $$
   SELECT
     (extract(isoyear FROM now()))::int,
     (extract(week    FROM now()))::int;
-END;
 $$;
 
 GRANT EXECUTE ON FUNCTION public.current_iso_period() TO authenticated;
